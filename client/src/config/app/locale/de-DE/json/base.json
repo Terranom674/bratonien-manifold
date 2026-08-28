@@ -1,0 +1,9 @@
+{
+  "locales": {
+    "de-DE": "Deutsch - Deutschland"
+  },
+  "app": {
+    "manifold": "Manifold",
+    "manifold_logo": "$t(app.manifold) Logo"
+  }
+}
