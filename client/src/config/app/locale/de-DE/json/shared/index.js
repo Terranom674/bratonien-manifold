@@ -1,9 +1,25 @@
 import actions from "./actions.json";
 import common from "./common.json";
+import counts from "./counts.json";
+import errors from "./errors.json";
+import glossary from "./glossary.json";
+import metadata from "./metadata.json";
+import modals from "./modals.json";
 import navigation from "./navigation.json";
+import notifications from "./notifications.json";
+import pageTitles from "./page-titles.json";
+import utility from "./utility.json";
 
 export default {
   ...actions,
   ...common,
-  ...navigation
+  ...counts,
+  ...errors,
+  ...glossary,
+  ...metadata,
+  ...modals,
+  ...navigation,
+  ...notifications,
+  ...pageTitles,
+  ...utility
 };
