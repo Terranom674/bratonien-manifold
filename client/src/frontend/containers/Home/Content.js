@@ -44,33 +44,19 @@ export default function Content() {
   const count = showProjects ? 1 : collections?.length;
 
   return (
-    <div className="bratonien-home">
-      <section className="bratonien-home__welcome" aria-label="Bratonien">
-        <div className="bratonien-home__welcome-inner">
-          <p className="bratonien-home__eyebrow">Geschichten aus Bratonien</p>
-          <h1 className="bratonien-home__title">Finde deine nächste Geschichte.</h1>
-          <p className="bratonien-home__intro">
-            Entdecke Bücher, Serien und neue Kapitel von Autorinnen und Autoren aus
-            der Community.
-          </p>
-        </div>
-      </section>
-      <div className="bratonien-home__featured">
-        <Feature features={features} />
-      </div>
-      <main className="bratonien-home__library">
-        {showProjects ? renderProjects : renderCollections}
-        {!!journals?.length &&
-          journals.map((journal, i) => (
-            <EntityCollection.JournalSummary
-              key={journal.id}
-              journal={journal}
-              bgColor={(count + i) % 2 === 0 ? "neutral05" : "white"}
-              limit={8}
-            />
-          ))}
-        {hasVisibleProjects && <CollectionNavigation />}
-      </main>
-    </div>
+    <>
+      <Feature features={features} />
+      {showProjects ? renderProjects : renderCollections}
+      {!!journals?.length &&
+        journals.map((journal, i) => (
+          <EntityCollection.JournalSummary
+            key={journal.id}
+            journal={journal}
+            bgColor={(count + i) % 2 === 0 ? "neutral05" : "white"}
+            limit={8}
+          />
+        ))}
+      {hasVisibleProjects && <CollectionNavigation />}
+    </>
   );
 }
