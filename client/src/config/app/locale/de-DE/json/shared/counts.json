@@ -1,8 +1,16 @@
 {
   "counts": {
     "bulk_actions_match": "<0>{{total}}</0> {{unit}} ausgewählt",
+    "categorized_and_uncategorized_issues": "$t(counts.categorized_issues, {{count}}) {{uncategorized}}",
+    "categorized_issues_one": "Es gibt <strong>{{count}}</strong> Ausgabe in <strong>{{categoryCount}}</strong> {{volume}}",
+    "categorized_issues_other": "Es gibt <strong>{{count}}</strong> Ausgaben in <strong>{{categoryCount}}</strong> {{volume}}",
     "comment_one": "{{count}} Kommentar",
     "comment_other": "{{count}} Kommentare",
+    "default_issues_one": "Es gibt <0>{{count}}</0> {{unit}}",
+    "default_issues_other": "Es gibt <0>{{count}}</0> {{unit}}",
+    "empty_volume_and_issues": "$t(counts.empty_volume, {{count}}) {{uncategorized}}",
+    "empty_volume_one": "Es gibt <0>{{count}}</0> leeren Band",
+    "empty_volume_other": "Es gibt <1>{{count}}</1> leere Bände",
     "entity_total": "{{entity}} insgesamt",
     "flag_one": "{{count}} Markierung",
     "flag_other": "{{count}} Markierungen",
@@ -12,6 +20,8 @@
     "text_annotations_one": "Dieser Text hat {{count}} Annotation",
     "text_annotations_other": "Dieser Text hat {{count}} Annotationen",
     "text_highlights_one": "Dieser Text hat {{count}} Hervorhebung",
-    "text_highlights_other": "Dieser Text hat {{count}} Hervorhebungen"
+    "text_highlights_other": "Dieser Text hat {{count}} Hervorhebungen",
+    "uncategorized_issues_one": " und <strong>{{count}}</strong> zusätzliche Ausgabe",
+    "uncategorized_issues_other": " und <strong>{{count}}</strong> zusätzliche Ausgaben"
   }
 }
