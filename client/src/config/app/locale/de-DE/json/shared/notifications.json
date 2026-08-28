@@ -1,0 +1,29 @@
+{
+  "notifications": {
+    "bulk_delete_success": "Mehrfachlöschung abgeschlossen.",
+    "bulk_delete_success_body_one": "{{count}} {{entity}} wurde entfernt.",
+    "bulk_delete_success_body_other": "{{count}} {{entity}} wurden entfernt.",
+    "delete_entity_body": "{{title}} wurde gelöscht.",
+    "delete_record_body": "Der Eintrag wurde entfernt.",
+    "email_failure": "Manifold konnte keine Test-E-Mail senden.",
+    "email_failure_body": "Bitte überprüfe die E-Mail-Konfiguration.",
+    "email_success": "Die Test-E-Mail wurde gesendet.",
+    "email_success_body": "Sie sollte in Kürze eintreffen.",
+    "entitlement_import_success": "Import erfolgreich!",
+    "entitlement_import_success_body": "Manifold verarbeitet den Upload. Berechtigungen für bestehende Benutzer werden direkt zum Projekt oder zur Zeitschrift hinzugefügt. Berechtigungen für noch nicht registrierte Benutzer erscheinen hier in Kürze.",
+    "feature_delete": "Das Feature wurde gelöscht.",
+    "journal_delete": "Die Zeitschrift wurde gelöscht.",
+    "page_delete": "Die Seite wurde gelöscht.",
+    "reading_group_delete": "Die Lesegruppe wurde gelöscht.",
+    "reading_group_update_failure": "Beim Aktualisieren der Lesegruppe ist ein Fehler aufgetreten.",
+    "reading_group_update_failure_body": "Bitte versuche es erneut.",
+    "resource_collection_delete": "Die Ressourcensammlung wurde gelöscht.",
+    "resource_delete": "Die Ressource wurde gelöscht.",
+    "text_delete": "Der Text wurde gelöscht.",
+    "text_delete_body": "{{title}} wurde gelöscht. Es kann ein bis zwei Minuten dauern, bis alle Spuren aus der Manifold-Bibliothek verschwunden sind.",
+    "user_delete": "{{name}} wurde entfernt.",
+    "user_group_delete": "{{name}} wurde entfernt.",
+    "volume_body": "Band {{number}} wurde gelöscht.",
+    "volume_delete": "Der Band wurde gelöscht."
+  }
+}
