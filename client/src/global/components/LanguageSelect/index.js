@@ -5,12 +5,17 @@ import { useTranslation } from "react-i18next";
 import { updateI18n } from "utils/i18n";
 import { Select } from "global/components/atomic/form";
 
+const normalizeLanguage = value => {
+  if (value === "de" || value === "de-DE") return "de-DE";
+  return "en-US";
+};
+
 function LanguageSelect({ authentication, language }) {
   const { t } = useTranslation();
   const userLanguage =
     authentication?.currentUser?.attributes?.persistentUi?.locale?.language;
 
-  const initialLanguage = userLanguage || language;
+  const initialLanguage = normalizeLanguage(userLanguage || language);
   const [lang, setLang] = useState(initialLanguage);
 
   const dispatch = useDispatch();
@@ -25,7 +30,7 @@ function LanguageSelect({ authentication, language }) {
   );
 
   const handleChange = event => {
-    const newLang = event.target?.value || "en-US";
+    const newLang = normalizeLanguage(event.target?.value);
     setLang(newLang);
     updateLanguage(newLang);
     updateI18n(newLang);
@@ -43,11 +48,11 @@ function LanguageSelect({ authentication, language }) {
       options={[
         {
           value: "en-US",
-          label: "English - United States"
+          label: t("locales.en-US")
         },
         {
           value: "de-DE",
-          label: "Deutsch - Deutschland"
+          label: t("locales.de-DE")
         }
       ]}
       onChange={handleChange}
