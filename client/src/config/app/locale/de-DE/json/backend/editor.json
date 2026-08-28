@@ -1,0 +1,14 @@
+{
+  "editor": {
+    "forms": {"iframe_insert_heading": "Iframe einfügen", "iframe_update_heading": "Iframe aktualisieren", "iframe_url_label": "Iframe-URL", "title_label": "Titel", "image_insert_heading": "Bild einfügen", "image_update_heading": "Bild aktualisieren", "image_url_label": "Bild-URL", "alt_text_label": "Alternativtext", "link_insert_heading": "Link einfügen", "link_url_label": "URL", "link_text_label": "Text", "labelled_by_uid": "{{uid}}-label", "described_by_uid": "{{uid}}-description"},
+    "controls": {
+      "labels": {"toolbar_html": "HTML-Werkzeugleiste", "toolbar_rte": "Rich-Text-Werkzeugleiste", "show_styles": "Stile anzeigen", "hide_styles": "Stile ausblenden", "iframe": "Iframe einfügen", "image": "Bild einfügen", "link": "Link einfügen", "span": "Span einfügen", "format": "$t(editor.tooltips.labels.{{format}}) einfügen", "text_block_select": "Textblock festlegen", "text_block_select_placeholder": "Textblock", "layout_block_select": "Aktuelle Auswahl in einen Container einfügen", "layout_block_select_placeholder": "Container", "show_html": "Umrisse aller HTML-Elemente anzeigen", "hide_html": "Umrisse aller HTML-Elemente ausblenden", "lift": "Knoten in der HTML-Hierarchie eine Ebene nach oben verschieben"},
+      "toggles": {"html_label": "HTML-Editor", "html_label_mobile": "HTML", "rte_label": "Rich-Text-Editor", "rte_label_mobile": "Rich Text", "dark_mode_label": "Dunkel", "light_mode_label": "Hell"}
+    },
+    "elements": {"placeholder": "Abschnittsinhalt…"},
+    "tooltips": {
+      "labels": {"p": "Absatz", "span": "Span", "h1": "Überschrift 1", "h2": "Überschrift 2", "h3": "Überschrift 3", "h4": "Überschrift 4", "h5": "Überschrift 5", "h6": "Überschrift 6", "ol": "Nummerierte Liste", "ul": "Aufzählung", "blockquote": "Blockzitat", "link": "Link", "pre": "Codeblock", "italic": "Kursiv", "strikethrough": "Durchgestrichen", "bold": "Fett", "underline": "Unterstrichen", "code": "Code", "undo": "Rückgängig", "redo": "Wiederholen", "img": "Bild", "iframe": "Iframe", "container": "Container", "textBlock": "Textblock", "div": "Div", "header": "Header", "footer": "Footer", "section": "Abschnitt", "article": "Artikel", "figure": "Abbildung", "figcaption": "Bildunterschrift"},
+      "descriptions": {"img": "Füge eine Bild-URL in den Editor ein.", "iframe": "Füge eine YouTube- oder Vimeo-Embed-URL ein. Andere Iframe-Inhalte können über den Dialog eingefügt werden.", "span": "Umschließt die aktuelle Auswahl oder fügt an der Cursorposition ein Span-Element ein.", "container": "Umschließt die aktuelle Auswahl bzw. den aktuellen Block mit einem HTML-Blockelement.", "textBlock": "Legt den Textblock für die aktuelle Auswahl bzw. den aktuellen Block fest."}
+    }
+  }
+}
