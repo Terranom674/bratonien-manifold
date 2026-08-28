@@ -1,0 +1,8 @@
+{
+  "pages": {
+    "events": "Ereignisse", "events_all": "Alle Aktivitäten", "journals": "Zeitschriften", "issues": "Zeitschriftenausgaben", "issues_all": "Alle Zeitschriftenausgaben", "projects": "Projekte", "projects_all": "Alle Projekte", "project_collections": "Projektsammlungen", "resource_collections_all": "Alle Ressourcensammlungen des Projekts", "resources_all": "Alle Ressourcen des Projekts", "my_notes": "Meine Notizen + Kommentare", "my_notes_truncated": "Meine Notizen", "my_starred": "Meine Favoriten", "my_groups": "Meine Lesegruppen", "public_groups": "Öffentliche Lesegruppen",
+    "reading_group": {"homepage_edit_header": "Startseite bearbeiten", "homepage_edit_instructions": "Organisiere und bearbeite die Inhalte der Startseite deiner Lesegruppe. Suche nach neuen Inhalten, erstelle Kategorien oder Markdown-Blöcke und verschiebe Inhalte per Drag-and-drop.", "search_title": "Inhalt suchen + hinzufügen:", "search_instructions": "Suche nach Inhalten und markiere die gewünschten Elemente mit einem Stern, um sie zur Startseite hinzuzufügen.", "search_button_label": "Inhalt hinzufügen"},
+    "data_use": {"header": "Welche Daten speichert Manifold über mich?", "internal_analytics": "Interne Analysen", "annotations": "Annotationen und Kommentare", "reading_groups": "Lesegruppen"},
+    "subheaders": {"journal_info": "Informationen zur Zeitschrift", "full_description": "Vollständige Beschreibung", "tags_list": "Tag-Liste", "variants": "Herunterladbare Varianten", "resource_slideshow": "Ressourcen-Slideshow", "resource_list": "Ressourcen", "group_details": "Gruppendetails", "group_summary": "Gruppenzusammenfassung"}
+  }
+}
