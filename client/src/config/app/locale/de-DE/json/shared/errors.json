@@ -1,0 +1,28 @@
+{
+  "errors": {
+    "text_missing": "Text fehlt",
+    "no_content": "Kein Inhalt angegeben.",
+    "upload_failed": "Upload fehlgeschlagen. Bitte versuche es erneut.",
+    "cookies_banner": "Beim Speichern deiner Einstellungen ist ein Fehler aufgetreten. Bitte versuche es in den Einstellungen erneut.",
+    "section_reorder": "Beim Aktualisieren der Abschnittsreihenfolge ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
+    "toc_reorder": "Beim Aktualisieren der Reihenfolge des Inhaltsverzeichnisses ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
+    "invalid_html_save": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler und versuche erneut zu speichern.",
+    "invalid_html_switch": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler, bevor du in den RTE-Modus wechselst.",
+    "video_playback": {
+      "heading": "Video kann nicht abgespielt werden.",
+      "body": "Dein Browser kann dieses Video nicht abspielen.",
+      "download": "Du kannst es über die Schaltfläche unten herunterladen und lokal abspielen."
+    },
+    "audio_playback": "Bei der Wiedergabe ist ein Fehler aufgetreten.<br/>Falls verfügbar, kannst du die Ressource herunterladen und auf deinem Gerät anhören.",
+    "unauthorized": {
+      "heading": "Zugriff verweigert",
+      "body": "Du musst angemeldet sein, um Benachrichtigungseinstellungen zu verwalten.",
+      "privacy_body": "Du musst angemeldet sein, um Datenschutzeinstellungen zu verwalten."
+    },
+    "fatal": {
+      "heading_line_one": "Hier ist etwas schiefgelaufen.",
+      "heading_line_two": "Das tut uns leid.",
+      "dismiss_link": "Erneut versuchen."
+    }
+  }
+}
