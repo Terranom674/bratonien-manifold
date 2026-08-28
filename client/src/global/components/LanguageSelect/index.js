@@ -25,11 +25,9 @@ function LanguageSelect({ authentication, language }) {
   );
 
   const handleChange = event => {
-    const newLang = event.target?.value || "en";
+    const newLang = event.target?.value || "en-US";
     setLang(newLang);
-    // dispatch
     updateLanguage(newLang);
-    // and update the I18n
     updateI18n(newLang);
   };
 
@@ -44,16 +42,12 @@ function LanguageSelect({ authentication, language }) {
       value={lang}
       options={[
         {
-          value: "en",
-          label: t(`locales.en`)
+          value: "en-US",
+          label: "English - United States"
         },
         {
-          value: "es",
-          label: t(`locales.es`)
-        },
-        {
-          value: "nl",
-          label: t(`locales.nl`)
+          value: "de-DE",
+          label: "Deutsch - Deutschland"
         }
       ]}
       onChange={handleChange}
