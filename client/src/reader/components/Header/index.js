@@ -144,6 +144,7 @@ export default function Header(props) {
           >
             <ControlMenu.DisclosurePanel direction="right">
               <ControlMenu.AppearanceMenuBody
+                // Props required by body component
                 appearance={appearance}
                 selectFont={selectFont}
                 setColorScheme={setColorScheme}
@@ -171,7 +172,10 @@ export default function Header(props) {
             <ControlMenu.DisclosurePanel direction="right">
               <SearchMenu.Body
                 toggleVisibility={panelToggleHandler("search")}
-                initialState={{ keyword: "", scope: "text" }}
+                initialState={{
+                  keyword: "",
+                  scope: "text"
+                }}
                 projectId={projectId}
                 textId={textId}
                 sectionId={sectionId}
@@ -197,13 +201,10 @@ export default function Header(props) {
   };
 
   return (
-    <header className="reader-header bratonien-reader-header">
+    <header className="reader-header">
       <Layout.PreHeader />
       <nav className="reader-header__inner">
         <div className="reader-header__menu-group reader-header__menu-group--left">
-          <span className="bratonien-reader-header__brand" aria-hidden="true">
-            B
-          </span>
           <ReturnMenu.Button
             toggleReaderMenu={panelToggleHandler("readerReturn")}
             expanded={visibility.uiPanels.readerReturn}
@@ -217,6 +218,7 @@ export default function Header(props) {
             showSection={!scrollAware.top}
           />
         )}
+        {/* Options menu */}
         <div className="reader-header__menu-group reader-header__menu-group--right">
           {renderOptionsNav()}
         </div>
@@ -233,10 +235,15 @@ export default function Header(props) {
                 text?.relationships.project.attributes.slug
               )}
               projectId={text?.relationships.project.id}
-              projectTitle={text?.relationships.project.attributes.titleFormatted}
-              isJournalArticle={text?.relationships.project.attributes.isJournalIssue}
+              projectTitle={
+                text?.relationships.project.attributes.titleFormatted
+              }
+              isJournalArticle={
+                text?.relationships.project.attributes.isJournalIssue
+              }
               toggleSignInUpOverlay={commonActions.toggleSignInUpOverlay}
               hidePanel={commonActions.hideReaderReturnPanel}
+              // TODO: More link (and eventually, the link text) should be pulled from settings
               moreLink="https://manifoldapp.org/"
             />
           </div>
