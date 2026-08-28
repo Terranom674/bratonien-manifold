@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "bulk_actions_match": "<0>{{total}}</0> {{unit}} ausgewählt",
+    "comment_one": "{{count}} Kommentar",
+    "comment_other": "{{count}} Kommentare",
+    "entity_total": "{{entity}} insgesamt",
+    "flag_one": "{{count}} Markierung",
+    "flag_other": "{{count}} Markierungen",
+    "my_starred": "Du hast <0>{{count}}</0> {{ unit }} als Favorit markiert",
+    "range": "<0>{{start}}–{{end}}</0> von <0>{{total}}</0> {{unit}} werden angezeigt",
+    "range_sr": "{{total}} {{unit}}. Ergebnisse {{start}} bis {{end}} werden angezeigt.",
+    "text_annotations_one": "Dieser Text hat {{count}} Annotation",
+    "text_annotations_other": "Dieser Text hat {{count}} Annotationen",
+    "text_highlights_one": "Dieser Text hat {{count}} Hervorhebung",
+    "text_highlights_other": "Dieser Text hat {{count}} Hervorhebungen"
+  }
+}
