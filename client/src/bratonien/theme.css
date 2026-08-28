@@ -1,0 +1,342 @@
+/* =========================================================
+   BRATONIEN - GLOBALE DESIGNBASIS
+   Abgeleitet vom bestehenden Showcase-Auftritt.
+   ========================================================= */
+
+:root {
+  --br-gold: #d4af37;
+  --br-gold-light: #ffe28a;
+  --br-gold-dark: #6f5818;
+  --br-petrol: #12363a;
+  --br-blue: #17324d;
+  --br-green: #1f3b2d;
+  --br-green-light: #244b38;
+  --br-brown: #8a642c;
+  --br-brown-border: #a97d38;
+  --br-text: #f3e5b5;
+  --br-text-light: #f8f1d3;
+  --br-dark: #17120b;
+  --br-surface: rgba(18, 54, 58, 0.82);
+  --br-surface-soft: rgba(18, 54, 58, 0.42);
+  --br-surface-green: rgba(31, 59, 45, 0.58);
+  --br-border: rgba(212, 175, 55, 0.28);
+  --br-border-strong: rgba(212, 175, 55, 0.48);
+  --br-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --br-gold-shadow: 1px 1px 0 var(--br-gold-dark), 0 0 4px rgba(0, 0, 0, 0.55);
+}
+
+html,
+body,
+#content {
+  min-height: 100%;
+}
+
+html,
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--br-green) 0%,
+    var(--br-green-light) 75%,
+    var(--br-green) 100%
+  ) fixed !important;
+  color: var(--br-text) !important;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Almendra SC", Georgia, "Times New Roman", serif !important;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#content {
+  background: transparent !important;
+  color: var(--br-text);
+}
+
+::selection {
+  background: var(--br-gold);
+  color: var(--br-dark);
+}
+
+/* ---------------------------------------------------------
+   TYPOGRAFIE UND LINKS
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+p,
+li,
+dd,
+dt,
+label,
+legend,
+figcaption,
+blockquote {
+  color: inherit;
+}
+
+a {
+  color: var(--br-gold) !important;
+  text-decoration-color: rgba(212, 175, 55, 0.5) !important;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--br-gold-light) !important;
+  text-decoration-color: var(--br-gold-light) !important;
+}
+
+hr {
+  border-color: var(--br-border) !important;
+}
+
+/* ---------------------------------------------------------
+   HEADER UND NAVIGATION
+   --------------------------------------------------------- */
+
+header,
+nav,
+[role="navigation"] {
+  color: var(--br-gold);
+}
+
+header a,
+nav a,
+[role="navigation"] a {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+header a:hover,
+header a:focus-visible,
+nav a:hover,
+nav a:focus-visible,
+[role="navigation"] a:hover,
+[role="navigation"] a:focus-visible {
+  color: var(--br-gold-light) !important;
+}
+
+/* ---------------------------------------------------------
+   FORMULARE
+   --------------------------------------------------------- */
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea,
+select {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid var(--br-border) !important;
+  border-radius: 0 !important;
+  color: var(--br-text) !important;
+  caret-color: var(--br-gold-light);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(243, 229, 181, 0.62) !important;
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background: rgba(0, 0, 0, 0.28) !important;
+  border-color: var(--br-gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12) !important;
+  color: var(--br-text-light) !important;
+  outline: none !important;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--br-gold);
+}
+
+/* ---------------------------------------------------------
+   BUTTONS UND AKTIONEN
+   --------------------------------------------------------- */
+
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  border-radius: 0 !important;
+}
+
+button:not([aria-label]),
+[role="button"]:not([aria-label]),
+input[type="submit"],
+input[type="button"] {
+  border-color: var(--br-brown-border) !important;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--br-gold-light) !important;
+  outline-offset: 2px;
+}
+
+/* Manifold benennt viele Aktionsbuttons per Klasse; diese Selektoren
+   bleiben absichtlich semantisch statt auf generierte Emotion-Klassen
+   zu zielen. */
+button[type="submit"],
+input[type="submit"] {
+  background: var(--br-brown) !important;
+  border: 1px solid var(--br-brown-border) !important;
+  color: var(--br-dark) !important;
+  font-weight: 700;
+  text-shadow: none !important;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+  background: var(--br-blue) !important;
+  border-color: var(--br-gold) !important;
+  color: var(--br-gold-light) !important;
+}
+
+/* ---------------------------------------------------------
+   DIALOGE, MENUES, KARTEN UND PANELS
+   --------------------------------------------------------- */
+
+[role="dialog"],
+[role="menu"],
+[role="listbox"] {
+  background: var(--br-petrol) !important;
+  border: 1px solid var(--br-border) !important;
+  border-radius: 0 !important;
+  color: var(--br-text) !important;
+  box-shadow: var(--br-shadow) !important;
+}
+
+[role="menuitem"],
+[role="option"] {
+  color: var(--br-gold) !important;
+}
+
+[role="menuitem"]:hover,
+[role="menuitem"]:focus,
+[role="option"]:hover,
+[role="option"][aria-selected="true"] {
+  background: rgba(212, 175, 55, 0.12) !important;
+  color: var(--br-gold-light) !important;
+}
+
+article,
+aside,
+section {
+  border-color: var(--br-border);
+}
+
+blockquote {
+  background: rgba(0, 0, 0, 0.16);
+  border-left: 3px solid var(--br-gold) !important;
+  color: var(--br-text-light) !important;
+  padding: 0.75rem 1rem;
+}
+
+/* ---------------------------------------------------------
+   TABELLEN UND DATENANSICHTEN
+   --------------------------------------------------------- */
+
+table {
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+}
+
+thead,
+th {
+  background: var(--br-petrol) !important;
+  color: var(--br-gold) !important;
+}
+
+th,
+td {
+  border-color: rgba(212, 175, 55, 0.16) !important;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(18, 54, 58, 0.28);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(31, 59, 45, 0.32);
+}
+
+/* ---------------------------------------------------------
+   SCROLLBARS
+   --------------------------------------------------------- */
+
+* {
+  scrollbar-color: var(--br-brown) var(--br-petrol);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--br-petrol);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--br-brown);
+  border: 2px solid var(--br-petrol);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--br-gold);
+}
+
+/* ---------------------------------------------------------
+   LESEN: INHALT SOLL RUHIG BLEIBEN
+   --------------------------------------------------------- */
+
+main {
+  color: var(--br-text);
+}
+
+main img,
+article img {
+  max-width: 100%;
+}
+
+/* Weiß gefärbte SVG-Icons des Originals werden in der dunklen
+   Bratonien-Oberfläche sichtbar gehalten, ohne Bildinhalte anzutasten. */
+button svg,
+nav svg,
+header svg,
+[role="button"] svg {
+  color: currentColor;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(
+      to bottom,
+      var(--br-green) 0%,
+      var(--br-green-light) 100%
+    ) fixed !important;
+  }
+}
