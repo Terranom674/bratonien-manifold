@@ -1,0 +1,8 @@
+{
+  "reading_groups": {
+    "members_header": "Mitglieder verwalten",
+    "annotations_header": "Annotationen verwalten",
+    "role_options": {"moderator": "Moderator", "member": "Mitglied"},
+    "remove_member": "Aus Gruppe entfernen"
+  }
+}
