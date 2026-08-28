@@ -1,13 +1,16 @@
 {
   "errors": {
     "text_missing": "Text fehlt",
+    "content_block": {
+      "no_contents": "Lege einen Text fest, um <0>diesen Block zu korrigieren</0>.",
+      "no_activity": "Für dieses Projekt wurde noch keine Aktivität erfasst. Dieser Hinweis verschwindet, sobald Projektaktivität vorhanden ist.",
+      "no_markdown": "Füge Markdown-Inhalt hinzu, um <0>diesen Block zu korrigieren</0>.",
+      "no_texts": "<0>Füge dem Projekt Texte hinzu</0> oder <1>passe die Blockkonfiguration an</1>.",
+      "no_resources": "Füge <0>Ressourcen</0> oder <1>Ressourcensammlungen</1> zum Projekt hinzu.",
+      "no_metadata": "<0>Füge Projektmetadaten hinzu</0>, um diesen Block zu korrigieren.",
+      "default": "<0>Diesen Inhaltsblock korrigieren.</0>"
+    },
     "no_content": "Kein Inhalt angegeben.",
-    "upload_failed": "Upload fehlgeschlagen. Bitte versuche es erneut.",
-    "cookies_banner": "Beim Speichern deiner Einstellungen ist ein Fehler aufgetreten. Bitte versuche es in den Einstellungen erneut.",
-    "section_reorder": "Beim Aktualisieren der Abschnittsreihenfolge ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
-    "toc_reorder": "Beim Aktualisieren der Reihenfolge des Inhaltsverzeichnisses ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
-    "invalid_html_save": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler und versuche erneut zu speichern.",
-    "invalid_html_switch": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler, bevor du in den RTE-Modus wechselst.",
     "video_playback": {
       "heading": "Video kann nicht abgespielt werden.",
       "body": "Dein Browser kann dieses Video nicht abspielen.",
@@ -19,10 +22,19 @@
       "body": "Du musst angemeldet sein, um Benachrichtigungseinstellungen zu verwalten.",
       "privacy_body": "Du musst angemeldet sein, um Datenschutzeinstellungen zu verwalten."
     },
+    "no_collapse_context": "Collapse-Komponenten können nicht außerhalb der Collapse-Wrapper-Komponente dargestellt werden.",
+    "color_scheme": "Fehler im Manifold-Farbschema!",
     "fatal": {
       "heading_line_one": "Hier ist etwas schiefgelaufen.",
       "heading_line_two": "Das tut uns leid.",
       "dismiss_link": "Erneut versuchen."
-    }
+    },
+    "logo_styles": "Fehler: Ungültige Logo-Stile",
+    "upload_failed": "Upload fehlgeschlagen. Bitte versuche es erneut.",
+    "cookies_banner": "Beim Speichern deiner Einstellungen ist ein Fehler aufgetreten. Bitte versuche es in den Einstellungen erneut.",
+    "section_reorder": "Beim Aktualisieren der Abschnittsreihenfolge ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
+    "toc_reorder": "Beim Aktualisieren der Reihenfolge des Inhaltsverzeichnisses ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
+    "invalid_html_save": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler und versuche erneut zu speichern.",
+    "invalid_html_switch": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler, bevor du in den RTE-Modus wechselst."
   }
 }
