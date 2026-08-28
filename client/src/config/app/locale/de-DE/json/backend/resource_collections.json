@@ -1,0 +1,6 @@
+{
+  "resource_collections": {
+    "add_button_label": "Neue Ressourcensammlung hinzufügen", "settings": "Einstellungen der Ressourcensammlung", "unauthorized": "Du darfst diese Ressourcensammlung nicht bearbeiten.", "show_all_projects": "Alle anzeigen", "show_collection_projects": "Nur Sammlung anzeigen", "add_resource": "Ressource zur Sammlung hinzufügen", "remove_resource": "Ressource aus Sammlung entfernen",
+    "forms": {"title_label": "Titel", "title_placeholder": "Titel eingeben", "descript_label": "Beschreibung", "descript_placeholder": "Beschreibung eingeben", "slug_label": "Slug", "slug_placeholder": "URL-Slug eingeben", "image_label": "Coverbild", "save": "Sammlung speichern", "new_title": "Neue Sammlung", "new_instructions": "Gib einen Namen und eine kurze Beschreibung ein. Speichere, um fortzufahren.", "new_save": "Speichern und fortfahren"}
+  }
+}
