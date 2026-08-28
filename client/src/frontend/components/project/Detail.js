@@ -14,16 +14,24 @@ function Detail({ project }) {
   const libraryDisabled = settings.attributes.general.libraryDisabled;
 
   return (
-    <>
-      <EntityHero.Project entity={project} />
-      <Authorize entity={project} ability="fullyRead" successBehavior="hide">
-        <EntityCollection
-          BodyComponent={() => <Warning.AccessDenied entity={project} />}
-        />
-      </Authorize>
-      <ContentBlockList entity={project} />
-      {!isStandalone && !libraryDisabled && <CollectionNavigation />}
-    </>
+    <article className="bratonien-book-page">
+      <header className="bratonien-book-page__hero">
+        <EntityHero.Project entity={project} />
+      </header>
+      <div className="bratonien-book-page__body">
+        <Authorize entity={project} ability="fullyRead" successBehavior="hide">
+          <EntityCollection
+            BodyComponent={() => <Warning.AccessDenied entity={project} />}
+          />
+        </Authorize>
+        <ContentBlockList entity={project} />
+      </div>
+      {!isStandalone && !libraryDisabled && (
+        <footer className="bratonien-book-page__navigation">
+          <CollectionNavigation />
+        </footer>
+      )}
+    </article>
   );
 }
 
