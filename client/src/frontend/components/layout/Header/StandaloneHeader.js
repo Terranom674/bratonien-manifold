@@ -81,6 +81,8 @@ class StandaloneHeader extends PureComponent {
   }
 
   maybeLog(direction) {
+    // Set a scroll log on direction change
+    // Note that this.state.direction is the old direction
     let log = this.state.log;
     if (this.state.direction !== direction) {
       log = this.getScrollTop();
@@ -169,7 +171,6 @@ class StandaloneHeader extends PureComponent {
 
     const wrapperClasses = classNames({
       "standalone-header": true,
-      "bratonien-project-header": true,
       "standalone-header--visible": visible,
       "standalone-header--hidden": hidden,
       "standalone-header--light": this.lightTheme,
@@ -200,23 +201,20 @@ class StandaloneHeader extends PureComponent {
               <div className={headingClasses} aria-hidden={hidden}>
                 <Link
                   to={this.projectUrl}
-                  className="standalone-header__title-link bratonien-project-header__book"
+                  className="standalone-header__title-link"
                 >
-                  <span className="bratonien-project-header__brand">Bratonien</span>
-                  <span className="bratonien-project-header__titles">
-                    {this.title && (
-                      <span
-                        className="standalone-header__title"
-                        dangerouslySetInnerHTML={{ __html: this.title }}
-                      />
-                    )}
-                    {this.subtitle && (
-                      <span
-                        className="standalone-header__subtitle"
-                        dangerouslySetInnerHTML={{ __html: this.subtitle }}
-                      />
-                    )}
-                  </span>
+                  {this.title && (
+                    <div
+                      className="standalone-header__title"
+                      dangerouslySetInnerHTML={{ __html: this.title }}
+                    />
+                  )}
+                  {this.subtitle && (
+                    <div
+                      className="standalone-header__subtitle"
+                      dangerouslySetInnerHTML={{ __html: this.subtitle }}
+                    />
+                  )}
                 </Link>
               </div>
               <Navigation.Primary
