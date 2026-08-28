@@ -4,6 +4,7 @@
  */
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import "./bratonien/theme.css";
 
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
