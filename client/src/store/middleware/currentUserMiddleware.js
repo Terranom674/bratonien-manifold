@@ -1,4 +1,5 @@
 import actions from "actions/currentUser";
+import * as localeActions from "actions/ui/locale";
 import { ApiClient, tokensAPI, meAPI } from "api";
 import BrowserCookieHelper from "helpers/cookie/Browser";
 
@@ -43,11 +44,18 @@ function getUserFromToken(token) {
   return Promise.reject();
 }
 
+function userLanguage(user) {
+  const language = user?.attributes?.persistentUi?.locale?.language;
+  if (language === "en" || language === "en-US") return "en-US";
+  return "de-DE";
+}
+
 export function handleAuthenticationSuccess(
   dispatch,
   options = { authToken: null, user: null, cookieHelper: null, setCookie: true }
 ) {
   dispatch(actions.setCurrentUser(options.user));
+  dispatch(localeActions.setLanguage(userLanguage(options.user)));
   dispatch(actions.setAuthToken(options.authToken));
   dispatch(actions.loginComplete());
   if (options.setCookie) setCookie(options.authToken, options.cookieHelper);
