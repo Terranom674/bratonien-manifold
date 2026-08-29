@@ -294,8 +294,186 @@ header svg,
   color: currentColor;
 }
 
+/* =========================================================
+   MANIFOLD FRONTEND
+   Der oeffentliche Bibliotheksbereich verwendet eigene
+   Layoutflaechen und Utility-Hintergruende. Diese Regeln
+   uebertragen die Bratonien-Basis gezielt auf body.browse.
+   ========================================================= */
+
+body.browse,
+body.browse #content,
+body.browse .main-content,
+body.browse .flex-viewport {
+  background: linear-gradient(
+    to bottom,
+    var(--br-green) 0%,
+    var(--br-green-light) 75%,
+    var(--br-green) 100%
+  ) fixed !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .main-content {
+  min-height: 65vh;
+}
+
+/* Frontend-Header */
+body.browse .header-app,
+body.browse .header-app--sticky,
+body.browse .header-app--static {
+  background: var(--br-petrol) !important;
+  color: var(--br-gold) !important;
+  border-color: var(--br-border) !important;
+}
+
+body.browse .header-app--sticky {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.browse .header-app a,
+body.browse .header-app button,
+body.browse .header-app [role="button"] {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+body.browse .header-app a:hover,
+body.browse .header-app a:focus-visible,
+body.browse .header-app button:hover,
+body.browse .header-app button:focus-visible,
+body.browse .header-app [role="button"]:hover,
+body.browse .header-app [role="button"]:focus-visible {
+  color: var(--br-gold-light) !important;
+}
+
+body.browse .header-app svg {
+  color: currentColor !important;
+}
+
+/* Manifold setzt Frontend-Sektionen abwechselnd auf white/neutral05. */
+body.browse .bg-white {
+  background-color: rgba(18, 54, 58, 0.32) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral05 {
+  background-color: rgba(31, 59, 45, 0.56) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral10,
+body.browse .bg-neutral20 {
+  background-color: rgba(18, 54, 58, 0.48) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral90,
+body.browse .bg-neutral95,
+body.browse .bg-neutral100 {
+  background-color: var(--br-petrol) !important;
+  color: var(--br-text) !important;
+}
+
+/* Frontend-Flaechen, Karten und leere Zustaende */
+body.browse main section,
+body.browse main article,
+body.browse main aside {
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+}
+
+body.browse main [class*="card"],
+body.browse main [class*="Card"] {
+  border-color: var(--br-border) !important;
+}
+
+body.browse main p,
+body.browse main li,
+body.browse main dd,
+body.browse main dt,
+body.browse main figcaption,
+body.browse main label {
+  color: var(--br-text) !important;
+}
+
+body.browse main strong,
+body.browse main b {
+  color: var(--br-text-light);
+}
+
+/* Frontend-Buttons: Braun -> Blau/Gold wie im Showcase */
+body.browse main button:not([aria-label]),
+body.browse main [role="button"]:not([aria-label]),
+body.browse main a[class*="button"],
+body.browse main a[class*="Button"] {
+  background: var(--br-brown) !important;
+  border: 1px solid var(--br-brown-border) !important;
+  color: var(--br-dark) !important;
+  text-shadow: none !important;
+}
+
+body.browse main button:not([aria-label]):hover,
+body.browse main button:not([aria-label]):focus-visible,
+body.browse main [role="button"]:not([aria-label]):hover,
+body.browse main [role="button"]:not([aria-label]):focus-visible,
+body.browse main a[class*="button"]:hover,
+body.browse main a[class*="button"]:focus-visible,
+body.browse main a[class*="Button"]:hover,
+body.browse main a[class*="Button"]:focus-visible {
+  background: var(--br-blue) !important;
+  border-color: var(--br-gold) !important;
+  color: var(--br-gold-light) !important;
+}
+
+/* Frontend-Footer */
+body.browse footer,
+body.browse .bg-neutral95 {
+  background: var(--br-petrol) !important;
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+}
+
+body.browse footer a,
+body.browse footer button,
+body.browse footer [role="button"] {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+body.browse footer a:hover,
+body.browse footer a:focus-visible,
+body.browse footer button:hover,
+body.browse footer button:focus-visible {
+  color: var(--br-gold-light) !important;
+}
+
+body.browse footer input {
+  background: rgba(0, 0, 0, 0.18) !important;
+  border-color: var(--br-border) !important;
+  color: var(--br-text) !important;
+}
+
+/* Linien und Trennungen im Frontend */
+body.browse main hr,
+body.browse footer hr,
+body.browse .header-app hr {
+  border-color: var(--br-border) !important;
+}
+
 @media (max-width: 768px) {
   body {
+    background: linear-gradient(
+      to bottom,
+      var(--br-green) 0%,
+      var(--br-green-light) 100%
+    ) fixed !important;
+  }
+
+  body.browse,
+  body.browse #content,
+  body.browse .main-content,
+  body.browse .flex-viewport {
     background: linear-gradient(
       to bottom,
       var(--br-green) 0%,
