@@ -1,8 +1,52 @@
 {
   "entitlements": {
-    "expires": "Läuft am {{val, datetime}} ab", "header": "Berechtigungen: {{ entity }}", "instructions_project": "Berechtigungen geben Benutzern und/oder Lesegruppen Zugriff auf dieses Projekt. Manifold-Projekte sind standardmäßig offen. Aktiviere unten Zugriffsbeschränkungen, um den Zugriff einzuschränken.", "instructions_journal": "Berechtigungen für Zeitschriften geben Benutzern und/oder Lesegruppen Zugriff auf alle Ausgaben dieser Zeitschrift. Der Zugriff auf einzelne Ausgaben kann über das jeweilige Projekt konfiguriert werden.", "instructions_user_groups": "Um eine Berechtigung für eine Benutzergruppe zu erstellen, gehe zu <0>Benutzergruppen</0>.", "button_label": "Berechtigung vergeben",
-    "new": {"header": "Berechtigung vergeben", "user_select_label": "Für wen gilt die Berechtigung?", "user_select_placeholder": "Benutzer oder Lesegruppe auswählen", "expiration_label": "Ablaufdatum", "expiration_instructions": "YYYY/MM/DD oder eine lesbare Angabe eingeben, z. B. „in einem Jahr“", "submit_label": "Berechtigung speichern"},
-    "pending": {"header": "Ausstehende Berechtigungen verwalten", "add_button_label": "Berechtigung hinzufügen", "add_header": "Ausstehende Berechtigung hinzufügen", "add_instructions": "Erstelle eine Berechtigung für einen Benutzer, der auf dieser Manifold-Instanz noch kein Konto besitzt. Bei der Registrierung wird die Berechtigung automatisch dem Konto hinzugefügt.", "edit_header": "Ausstehende Berechtigung bearbeiten", "user_group_label": "Benutzerdetails", "email": "E-Mail", "email_instructions": "Die E-Mail-Adresse dient zur Zuordnung neu erstellter Konten zu ausstehenden Berechtigungen.", "first_name": "Vorname", "last_name": "Nachname", "entitlement_group_label": "Berechtigungsdetails", "type_label": "Typ", "type_instructions": "Gilt diese Berechtigung für ein Projekt oder eine Zeitschrift?", "entity_id": "Projekt- oder Zeitschriften-ID", "id_instructions": "ID des Projekts oder der Zeitschrift. Sie ist in der URL zu finden.", "id_placeholder": "00000000-0000-0000-0000-00000000", "expiration": "Ablaufdatum", "expiration_instructions": "Optional ein Ablaufdatum festlegen.", "save_label": "Berechtigung speichern", "import_button_label": "Aus CSV importieren", "import_header": "Berechtigungsimport aus CSV", "upload_label": "CSV hochladen", "upload_instructions": "Manifold kann Berechtigungen aus einer CSV-Datei importieren, auch für noch nicht registrierte Benutzer.", "name_label": "Name", "name_instructions": "Optional einen Namen für den späteren Bezug vergeben.", "submit_label": "Importieren"},
-    "imports": {"header": "CSV-Berechtigungsimporte", "view_pending_label": "Ausstehende Berechtigungen anzeigen", "view_imports_label": "CSV-Importe anzeigen", "results_header": "Ergebnisse:"}
+    "expires": "Läuft am {{val, datetime}} ab",
+    "header": "Berechtigungen: {{ entity }}",
+    "instructions_project": "<0>Berechtigungen geben Benutzern und/oder Lesegruppen Zugriff auf dieses Projekt. In Manifold sind alle Projekte standardmäßig offen. Aktiviere unten Zugriffsbeschränkungen, um den Zugriff auf dein Projekt einzuschränken.</0><2/><2/>Berechtigungen können auch über Benutzergruppen vergeben werden. Diese Berechtigungen sind in der folgenden Liste enthalten. Sie können jedoch nur von Administratoren über die Benutzergruppe konfiguriert werden.<2/><2/><0>ID für CSV-Berechtigungsimporte:</0><2/><1>{{gid}}</1>",
+    "instructions_journal": "<0>Zeitschriftenberechtigungen geben Benutzern und/oder Lesegruppen Zugriff auf alle Ausgaben dieser Zeitschrift. Den Zugriff auf einzelne Ausgaben kannst du konfigurieren, indem du Berechtigungen für das Projekt einer Ausgabe vergibst.</0><2/><2/>Berechtigungen können auch über Benutzergruppen vergeben werden. Diese Berechtigungen sind in der folgenden Liste enthalten. Sie können jedoch nur von Administratoren über die Benutzergruppe konfiguriert werden.<2/><2/><0>ID für CSV-Berechtigungsimporte:</0><2/><1>{{gid}}</1>",
+    "instructions_user_groups": "Um eine Berechtigung für eine Benutzergruppe zu erstellen, gehe zu <0>Benutzergruppen</0>.",
+    "button_label": "Berechtigung vergeben",
+    "new": {
+      "header": "Berechtigung vergeben",
+      "user_select_label": "Für wen gilt die Berechtigung?",
+      "user_select_placeholder": "Benutzer oder Lesegruppe auswählen",
+      "expiration_label": "Ablaufdatum",
+      "expiration_instructions": "YYYY/MM/DD oder eine lesbare Angabe eingeben, z. B. „in einem Jahr“",
+      "submit_label": "Berechtigung speichern"
+    },
+    "pending": {
+      "header": "Ausstehende Berechtigungen verwalten",
+      "add_button_label": "Berechtigung hinzufügen",
+      "add_header": "Ausstehende Berechtigung hinzufügen",
+      "add_instructions": "Erstelle eine Berechtigung für einen Benutzer, der auf dieser Manifold-Instanz noch kein Konto besitzt. Bei der Registrierung wird die Berechtigung automatisch dem Konto hinzugefügt.",
+      "edit_header": "Ausstehende Berechtigung bearbeiten",
+      "user_group_label": "Benutzerdetails",
+      "email": "E-Mail",
+      "email_instructions": "Die E-Mail-Adresse dient zur Zuordnung neu erstellter Konten zu ausstehenden Berechtigungen.",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "entitlement_group_label": "Berechtigungsdetails",
+      "type_label": "Typ",
+      "type_instructions": "Gilt diese Berechtigung für ein Projekt oder eine Zeitschrift?",
+      "entity_id": "Projekt- oder Zeitschriften-ID",
+      "id_instructions": "ID des Projekts oder der Zeitschrift, für das bzw. die diese Berechtigung gilt. Diese ID befindet sich in der URL des Projekts.",
+      "id_placeholder": "00000000-0000-0000-0000-00000000",
+      "expiration": "Ablaufdatum",
+      "expiration_instructions": "Optional ein Ablaufdatum für diese Berechtigung festlegen.",
+      "save_label": "Berechtigung speichern",
+      "import_button_label": "Aus CSV importieren",
+      "import_header": "Berechtigungsimport aus CSV",
+      "upload_label": "CSV hochladen",
+      "upload_instructions": "Manifold kann Berechtigungen aus einer CSV-Datei importieren, einschließlich ausstehender Berechtigungen für noch nicht registrierte Benutzer. Das CSV-Format ist in der Dokumentation beschrieben.",
+      "name_label": "Name",
+      "name_instructions": "Optional einen Namen für den späteren Bezug vergeben.",
+      "submit_label": "Importieren"
+    },
+    "imports": {
+      "header": "CSV-Berechtigungsimporte",
+      "view_pending_label": "Ausstehende Berechtigungen anzeigen",
+      "view_imports_label": "CSV-Importe anzeigen",
+      "results_header": "Ergebnisse:"
+    }
   }
 }
