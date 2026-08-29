@@ -1,7 +1,7 @@
 import { handleActions } from "redux-actions";
 
 const initialState = {
-  language: "en-US"
+  language: "de-DE"
 };
 
 const setLocale = (state, action) => {
