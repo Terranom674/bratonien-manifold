@@ -237,6 +237,7 @@ class ResourceSlideshow extends PureComponent {
         key={slide.id ?? index}
         id={slide.id}
         data-active={index === position - 1}
+        aria-current={index === position - 1 ? "true" : undefined}
       >
         {this.isLoaded(index) ? (
           this.getFigureByType(slide)
@@ -268,8 +269,7 @@ class ResourceSlideshow extends PureComponent {
           ref={this.sliderRef}
           tabIndex={0}
           role="region"
-          aria-roledescription="Karussell"
-          aria-label="Ressourcenkarussell"
+          aria-label={t("navigation.resource_carousel")}
           data-bratonien-carousel="true"
           onKeyDown={this.handleKeyDown}
         >
