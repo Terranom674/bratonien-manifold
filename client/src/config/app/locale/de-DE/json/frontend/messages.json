@@ -1,15 +1,72 @@
 {
   "messages": {
-    "empty_journal_heading": "Diese Zeitschrift ist derzeit leer.", "empty_journal_body": "Füge <0>Bände</0> oder <1>Ausgaben</1> hinzu, damit diese Seite angezeigt werden kann.", "item_moved_category": "Eintrag in Kategorie {{category}} verschoben", "item_moved_position": "Eintrag um eine Position {{direction}} verschoben", "category_moved": "Kategorie um eine Position {{direction}} verschoben", "collected": "{{title}} wurde deiner Sammlung hinzugefügt", "uncollected": "{{title}} wurde aus deiner Sammlung entfernt", "confirm": "Bist du sicher?", "content_block_warning_heading": "Dieser Inhaltsblock muss bearbeitet werden, bevor er angezeigt werden kann.", "content_block_warning_note": "Hinweis: Diese Meldung ist nur für Projekteditoren sichtbar.", "showing_resource": "{{type}}-Ressource wird angezeigt: {{title}}", "unsaved_changes": "Möglicherweise gibt es ungespeicherte Änderungen. Möchtest du die Seite verlassen, ohne zu speichern?", "no_results": "Es wurden keine Ergebnisse gefunden.", "no_sections": "Dieser Text enthält keine Abschnitte.",
-    "annotation_summary": {"highlight": "{{creator}} hob „{{section}}“ in <text></text> am <date></date> hervor.", "annotation": "{{creator}} annotierte „{{section}}“ in <text></text> am <date></date>.", "source": "„{{section}}“ in <text></text>"},
-    "reading_group": {
-      "privacy_change": {"heading": "Änderung der Sichtbarkeit bestätigen", "private_to_public": "Wenn diese Gruppe von privat auf öffentlich geändert wird, werden alle Annotationen sofort für alle Leser sichtbar. Möchtest du wirklich fortfahren?", "anonymous_to_public": "Wenn diese Gruppe von anonym auf öffentlich geändert wird, werden alle Annotationen für alle Leser sichtbar und die Autoren der Annotationen werden offengelegt. Möchtest du wirklich fortfahren?", "anonymous_to_private": "Wenn diese Gruppe von anonym auf privat geändert wird, wird die Identität der Autoren der Annotationen offengelegt. Möchtest du wirklich fortfahren?"},
-      "join": {"heading": "Bitte bestätigen", "message": "Du trittst gleich der Lesegruppe <%= readingGroup.attributes.name %> bei. Bestätige mit Ja.", "join_not_found_heading": "Lesegruppe nicht gefunden", "join_not_found_message": "Zu dem eingegebenen Code wurde keine Lesegruppe gefunden. Überprüfe den Code und versuche es erneut.", "join_failure_heading": "Beitritt fehlgeschlagen", "join_failure_message": "Manifold konnte dich der Lesegruppe nicht hinzufügen. Prüfe, ob du der Gruppe bereits angehörst."},
-      "destroy_heading": "Möchtest du diese Lesegruppe wirklich löschen?", "destroy_message": "Bei anonymen oder privaten Gruppen werden alle Gruppenannotation privat und nur für deren Ersteller sichtbar. Bei öffentlichen Gruppen bleiben sie öffentlich. Diese Aktion kann nicht rückgängig gemacht werden.", "archive_heading": "Möchtest du diese Gruppe wirklich archivieren?", "archive_message": "Die Annotationen dieser Gruppe werden für dich im Reader ausgeblendet. Gruppen können jederzeit wieder aktiviert werden.", "admin_warning": "Mit deinen Administratorrechten kannst du diese Gruppe bearbeiten, bist aber kein Mitglied."
+    "empty_journal_heading": "Diese Zeitschrift ist derzeit leer.",
+    "empty_journal_body": "Füge <0>Bände</0> oder <1>Ausgaben</1> hinzu, damit diese Seite angezeigt werden kann.",
+    "item_moved_category": "Eintrag in Kategorie {{category}} verschoben",
+    "item_moved_position": "Eintrag um eine Position {{direction}} verschoben",
+    "category_moved": "Kategorie um eine Position {{direction}} verschoben",
+    "collected": "Du hast {{title}} deiner Sammlung hinzugefügt",
+    "uncollected": "Du hast {{title}} aus deiner Sammlung entfernt",
+    "confirm": "Bist du sicher?",
+    "content_block_warning_heading": "Dieser Inhaltsblock muss bearbeitet werden, bevor er angezeigt werden kann.",
+    "content_block_warning_note": "Hinweis: Diese Meldung ist nur für Projekteditoren sichtbar.",
+    "showing_resource": "{{type}}-Ressource wird angezeigt: {{title}}",
+    "unsaved_changes": "Möglicherweise gibt es ungespeicherte Änderungen. Möchtest du die Seite verlassen, ohne deine Änderungen zu speichern?",
+    "no_results": "Es wurden leider keine Ergebnisse gefunden.",
+    "no_sections": "Dieser Text enthält keine Abschnitte.",
+    "annotation_summary": {
+      "highlight": "{{creator}} hob „{{section}}“ in <text></text> am <date></date> hervor.",
+      "annotation": "{{creator}} annotierte „{{section}}“ in <text></text> am <date></date>.",
+      "source": "„{{section}}“ in <text></text>"
     },
-    "membership": {"destroy_heading": "Möchtest du diesen Benutzer wirklich aus der Gruppe entfernen?", "destroy_message": "Der Benutzer wird aus der Gruppe entfernt. Seine Annotationen bleiben erhalten.", "leave_heading": "Möchtest du diese Lesegruppe wirklich verlassen?", "leave_message": "Du wirst aus der Gruppe entfernt. Deine Annotationen bleiben erhalten, bis du sie bearbeitest und speicherst.", "role_change": {"heading": "Rollenänderung bestätigen", "member_to_moderator": "Moderatoren können Mitglieder verwalten und Gruppeneinstellungen ändern. Möchtest du wirklich fortfahren?", "moderator_to_member": "Nach dieser Änderung kann der Benutzer keine Mitglieder und Gruppeneinstellungen mehr verwalten. Möchtest du wirklich fortfahren?"}},
-    "project_authorization_warning": {"heading": "Nur berechtigte Benutzer dürfen auf dieses Projekt zugreifen.", "body": "Nur Benutzer mit entsprechender Berechtigung können Texte, Ressourcen und weitere Inhalte dieses Projekts ansehen."},
-    "project_authorization_notice": {"heading": "Der Zugriff auf dieses Projekt ist eingeschränkt.", "body": "Nur Benutzer mit entsprechender Berechtigung können Texte, Ressourcen und weitere Inhalte dieses Projekts ansehen."},
-    "cookies_banner": {"header": "Manifold verwendet Cookies", "body": "Wir verwenden Cookies zur Analyse des Datenverkehrs. Bitte entscheide, ob du Cookies von dieser Website akzeptieren möchtest. Du kannst diese Einstellung jederzeit unter <0>Datenschutzeinstellungen</0> ändern.", "body_annonymous_user": "Wir verwenden Cookies zur Analyse des Datenverkehrs. Wenn du deine Auswahl bei späteren Besuchen ändern möchtest, <0>erstelle ein Konto.</0>", "settings_button_label": "Einstellungen", "accept_button_label": "Alle akzeptieren", "accept_label_truncated": "Akzeptieren", "decline_button_label": "Alle ablehnen"}
+    "reading_group": {
+      "privacy_change": {
+        "heading": "Änderung der Sichtbarkeit bestätigen",
+        "private_to_public": "Wenn diese Gruppe von privat auf öffentlich geändert wird, werden alle Annotationen der Gruppe sofort für alle Leser sichtbar. Möchtest du wirklich fortfahren?",
+        "anonymous_to_public": "Wenn diese Gruppe von anonym auf öffentlich geändert wird, werden alle Annotationen der Gruppe sofort für alle Leser sichtbar und die Autoren der Annotationen werden offengelegt. Möchtest du wirklich fortfahren?",
+        "anonymous_to_private": "Wenn diese Gruppe von anonym auf privat geändert wird, wird die Identität der Autoren der Annotationen offengelegt. Möchtest du wirklich fortfahren?"
+      },
+      "join": {
+        "heading": "Bitte bestätigen",
+        "message": "Du trittst gleich der Lesegruppe <%= readingGroup.attributes.name %> bei. Klicke zur Bestätigung auf Ja.",
+        "join_not_found_heading": "Lesegruppe nicht gefunden",
+        "join_not_found_message": "Keine Lesegruppe entspricht dem eingegebenen Code. Überprüfe den Code und versuche es erneut.",
+        "join_failure_heading": "Beitritt fehlgeschlagen",
+        "join_failure_message": "Manifold konnte dich der Lesegruppe nicht hinzufügen. Prüfe, ob du der Gruppe bereits angehörst."
+      },
+      "destroy_heading": "Möchtest du diese Lesegruppe wirklich löschen?",
+      "destroy_message": "Wenn die Lesegruppe anonym oder privat ist, werden alle Annotationen innerhalb der Gruppe privat und nur noch für den jeweiligen Ersteller der Annotation sichtbar. Ist die Gruppe öffentlich, bleiben die Annotationen öffentlich. Diese Aktion kann nicht rückgängig gemacht werden.",
+      "archive_heading": "Möchtest du diese Gruppe wirklich archivieren?",
+      "archive_message": "Die Annotationen dieser Gruppe werden für dich im Reader ausgeblendet. Gruppen können jederzeit wieder aktiviert werden.",
+      "admin_warning": "Mit deinen Administratorrechten kannst du diese Gruppe bearbeiten, bist aber kein Mitglied."
+    },
+    "membership": {
+      "destroy_heading": "Möchtest du diesen Benutzer wirklich aus der Gruppe entfernen?",
+      "destroy_message": "Wenn du Ja auswählst, wird der Benutzer aus dieser Gruppe entfernt. Seine Annotationen bleiben in der Gruppe erhalten.",
+      "leave_heading": "Möchtest du diese Lesegruppe wirklich verlassen?",
+      "leave_message": "Wenn du Ja auswählst, wirst du aus dieser Gruppe entfernt. Deine Annotationen bleiben in der Gruppe, bis du sie bearbeitest und speicherst.",
+      "role_change": {
+        "heading": "Rollenänderung bestätigen",
+        "member_to_moderator": "Moderatoren können Mitglieder verwalten und Gruppeneinstellungen ändern. Möchtest du wirklich fortfahren?",
+        "moderator_to_member": "Nach dieser Änderung kann der Benutzer Mitglieder und Gruppeneinstellungen nicht mehr verwalten. Möchtest du wirklich fortfahren?"
+      }
+    },
+    "project_authorization_warning": {
+      "heading": "Nur berechtigte Benutzer dürfen auf dieses Projekt zugreifen.",
+      "body": "Nur Benutzer mit entsprechender Berechtigung können Texte, Ressourcen und weitere Inhalte dieses Projekts ansehen."
+    },
+    "project_authorization_notice": {
+      "heading": "Der Zugriff auf dieses Projekt ist eingeschränkt.",
+      "body": "Nur Benutzer mit entsprechender Berechtigung können Texte, Ressourcen und weitere Inhalte dieses Projekts ansehen."
+    },
+    "cookies_banner": {
+      "header": "Manifold verwendet Cookies",
+      "body": "Wir verwenden Cookies zur Analyse unseres Datenverkehrs. Bitte entscheide, ob du Cookies von unserer Website akzeptieren möchtest. Du kannst diese Einstellung jederzeit unter <0>Datenschutzeinstellungen</0> ändern.",
+      "body_annonymous_user": "Wir verwenden Cookies zur Analyse unseres Datenverkehrs. Bitte entscheide, ob du Cookies von unserer Website akzeptieren möchtest. Wenn du deine Einstellungen bei späteren Besuchen ändern möchtest, <0>erstelle ein Konto.</0>",
+      "settings_button_label": "Einstellungen",
+      "accept_button_label": "Alle akzeptieren",
+      "accept_label_truncated": "Akzeptieren",
+      "decline_button_label": "Alle ablehnen"
+    }
   }
 }
