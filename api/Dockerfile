@@ -20,7 +20,10 @@ COPY Gemfile /srv/app/Gemfile
 COPY Gemfile.lock /srv/app/Gemfile.lock
 WORKDIR /srv/app
 
-RUN gem update --system 4.0.9 && bundle install
+# Bundler/RubyGems 4 can race native-extension dependencies when installing in
+# parallel (notably http-parser -> ffi-compiler -> ffi). Keep gem installation
+# deterministic inside the image build; this affects build time only.
+RUN gem update --system 4.0.9 && BUNDLE_JOBS=1 bundle install
 
 # Strip build artifacts from gems to reduce size
 RUN find /bundle -name "*.c" -delete \
