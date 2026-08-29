@@ -72,6 +72,18 @@ body.browse .main-content > * {
   animation: bratonien-reader-neutral 180ms ease-out both;
 }
 
+/* Fortschritt bleibt zwischen der vorhandenen Vor-/Zurueck-
+   Navigation ruhig lesbar, ohne deren Klickflaechen zu veraendern. */
+body.reader .section-pagination__progress {
+  align-self: center;
+  flex: 0 0 auto;
+  margin-inline: clamp(12px, 3vw, 36px);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  opacity: 0.78;
+  pointer-events: none;
+}
+
 /* Opt-in-Klasse fuer weitere Bereiche, die bewusst horizontal
    in den sichtbaren Bereich wechseln sollen. */
 .bratonien-slide-in {
@@ -80,10 +92,18 @@ body.browse .main-content > * {
 
 /* Native horizontale Slider/Karussells wirken mit Snap und
    Momentum-Scrolling auf Touchgeraeten deutlich direkter. */
-body.browse [data-bratonien-carousel="true"] {
+body.browse [data-bratonien-carousel="true"],
+body.reader [data-bratonien-carousel="true"] {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  body.reader .section-pagination__progress {
+    margin-inline: 8px;
+    font-size: 0.85em;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -93,7 +113,8 @@ body.browse [data-bratonien-carousel="true"] {
     animation: none !important;
   }
 
-  body.browse [data-bratonien-carousel="true"] {
+  body.browse [data-bratonien-carousel="true"],
+  body.reader [data-bratonien-carousel="true"] {
     scroll-behavior: auto !important;
   }
 }
