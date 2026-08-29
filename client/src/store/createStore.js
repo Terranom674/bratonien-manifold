@@ -12,6 +12,7 @@ import apiErrorMiddleware from "./middleware/apiErrorMiddleware";
 import pluginMiddleware from "./middleware/pluginMiddleware";
 import updatePersistentUi from "./subscriptions/updatePersistentUi";
 import updateCurrentUser from "./subscriptions/updateCurrentUser";
+import syncLocale from "./subscriptions/syncLocale";
 
 import promiseMiddleware from "redux-promise";
 import reducers from "./reducers";
@@ -49,8 +50,11 @@ export default function createStore(data) {
   /* eslint-enable no-unused-vars */
 
   const store = finalCreateStore(reducers, data);
+  const localeSubscription = syncLocale(store);
   store.subscribe(updatePersistentUi(store));
   store.subscribe(updateCurrentUser(store));
+  store.subscribe(localeSubscription);
+  localeSubscription();
 
   pluginInitializer.initialize(store);
 
