@@ -152,9 +152,7 @@ function Get-LatestImageRevision {
 
     $FullTag = "${RemoteRepo}:$Tag"
 
-    $Revision = & docker image inspect `
-        --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' `
-        $FullTag 2>$null
+    $InspectJson = & docker image inspect $FullTag 2>$null
 
     if ($LASTEXITCODE -ne 0) {
         Write-Host "  Lade Metadaten der letzten Version: $FullTag"
@@ -165,22 +163,26 @@ function Get-LatestImageRevision {
             return $null
         }
 
-        $Revision = & docker image inspect `
-            --format '{{ index .Config.Labels "org.opencontainers.image.revision" }}' `
-            $FullTag 2>$null
+        $InspectJson = & docker image inspect $FullTag 2>$null
     }
 
-    if ($LASTEXITCODE -ne 0) {
+    if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace(($InspectJson -join "`n"))) {
         return $null
     }
 
-    $Revision = "$Revision".Trim()
-
-    if ([string]::IsNullOrWhiteSpace($Revision) -or $Revision -eq "<no value>") {
+    try {
+        $ImageInfo = ($InspectJson -join "`n" | ConvertFrom-Json)[0]
+        $Revision = $ImageInfo.Config.Labels.'org.opencontainers.image.revision'
+    }
+    catch {
         return $null
     }
 
-    return $Revision
+    if ([string]::IsNullOrWhiteSpace($Revision)) {
+        return $null
+    }
+
+    return "$Revision".Trim()
 }
 
 function Test-WorkingTreeChanged {
