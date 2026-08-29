@@ -4,8 +4,8 @@
       "copy": "Kopieren",
       "cite": "Zitieren",
       "select_reading_group": "$t(glossary.reading_group_one) auswählen",
-      "annotate_passage": "Diese Passage annotieren",
-      "visit_resource_page": "Seite der Ressource öffnen",
+      "annotate_passage": "$t(actions.annotate) diese Passage",
+      "visit_resource_page": "$t(glossary.resource_title_case_one)-$t(glossary.page_title_case_one) $t(actions.visit)",
       "return_to_reader": "Zum Reader zurückkehren"
     },
     "menus": {
@@ -28,27 +28,84 @@
         "appearance_reset": "Farbschema und Typografie des Readers wurden auf die Standardwerte zurückgesetzt.",
         "font_size_decreased": "Schriftgröße im Reader wurde verkleinert.",
         "font_size_increased": "Schriftgröße im Reader wurde vergrößert.",
-        "font_size_decreased_min": "Minimale Schriftgröße erreicht.",
-        "font_size_increased_max": "Maximale Schriftgröße erreicht.",
+        "font_size_decreased_min": "Schriftgröße im Reader wurde auf die minimale Größe verkleinert.",
+        "font_size_increased_max": "Schriftgröße im Reader wurde auf die maximale Größe vergrößert.",
         "margin_size_decreased": "Ränder im Reader wurden verkleinert.",
         "margin_size_increased": "Ränder im Reader wurden vergrößert.",
-        "margin_size_decreased_min": "Minimale Randbreite erreicht.",
-        "margin_size_increased_max": "Maximale Randbreite erreicht.",
-        "reset_option_message": "{{appearanceType}} ist auf {{option}} eingestellt."
+        "margin_size_decreased_min": "Ränder im Reader wurden auf die minimale Größe verkleinert.",
+        "margin_size_increased_max": "Ränder im Reader wurden auf die maximale Größe vergrößert.",
+        "reset_option_message": "Reader-{{appearanceType}} ist auf {{option}} eingestellt."
       },
-      "citation": {"citation_style": "Zitierstil:", "copied": "Kopiert!", "custom_label": "Empfohlene Zitierangabe"},
+      "citation": {
+        "citation_style": "Zitierstil:",
+        "copied": "Kopiert!",
+        "custom_label": "Empfohlene Zitierangabe"
+      },
       "popup": {
-        "cite": "Zitieren", "cite_selection": "Auswahl zitieren", "current_group": "Aktuelle Gruppe", "manage_groups": "Gruppen verwalten", "current_visibility": "Aktuelle Sichtbarkeit", "annotate_selection": "Auswahl annotieren", "log_in_annotate": "Zum Annotieren anmelden", "highlight": "Hervorheben", "highlight_selection": "Auswahl hervorheben", "unhighlight_selection": "Hervorhebung entfernen", "you_highlighted": "Von dir hervorgehoben", "reader_highlighted": "Von einem Leser hervorgehoben", "attach_resource": "Ressource an Auswahl anhängen", "app_share": "Externe App", "share_selection": "Auswahl mit externer App teilen", "follow_link": "Link öffnen", "copy": "URL kopieren", "copy_selection": "Link zur Auswahl kopieren"
+        "cite": "Zitieren",
+        "cite_selection": "$t(reader.actions.cite) $t(glossary.selection_one)",
+        "current_group": "Aktuelle Gruppe",
+        "manage_groups": "Gruppen verwalten",
+        "current_visibility": "Aktuelle $t(common.visibility)",
+        "annotate_selection": "$t(glossary.selection_one) annotieren",
+        "log_in_annotate": "Zum $t(actions.annotate) anmelden",
+        "highlight": "Hervorheben",
+        "highlight_selection": "$t(glossary.selection_one) $t(reader.menus.popup.highlight)",
+        "unhighlight_selection": "Hervorhebung entfernen",
+        "you_highlighted": "Von dir hervorgehoben",
+        "reader_highlighted": "Von einem Leser hervorgehoben",
+        "attach_resource": "Ressource an $t(glossary.selection_one) anhängen",
+        "app_share": "Externe App",
+        "share_selection": "$t(glossary.selection_one) mit externer App $t(actions.share)",
+        "follow_link": "Link öffnen",
+        "copy": "URL kopieren",
+        "copy_selection": "Link zur Auswahl kopieren"
       },
-      "visibility": {"all_reading_groups": "Alle Lesegruppen", "show_the_following": "Folgendes anzeigen:", "highlights_label": "Deine Hervorhebungen"},
+      "visibility": {
+        "all_reading_groups": "Alle $t(glossary.reading_group_title_case_other)",
+        "show_the_following": "Folgendes anzeigen:",
+        "highlights_label": "Deine Hervorhebungen"
+      },
       "notes": {
-        "delete_notation": "Notiz löschen", "no_annotations": "Keine Annotationen gefunden", "no_matches_with_filters": "Keine Annotationen entsprechen den gesetzten Filtern. Passe die Filter an, um weitere Ergebnisse anzuzeigen.", "this_group": "Diese Gruppe", "no_group_annotations_message": "Sobald jemand in der Gruppe eine Passage in diesem Text hervorhebt oder annotiert, erscheint sie hier. Wähle zum Annotieren oder Hervorheben eine Passage im Text aus.", "no_group_annotations": "{{name}} hat diesen Text noch nicht annotiert", "no_annotations_by_me": "Du hast diesen Text noch nicht annotiert", "no_annotations_by_me_message": "Sobald du eine Passage in diesem Text hervorhebst oder annotierst, erscheint sie hier.", "my_notes": "Meine Notizen", "all_notes": "Alle Notizen der Gruppe:", "orphaned_notes": "Meine Notizen zu früheren Versionen", "no_orphans_message": "Wenn ein Text bearbeitet wird, versucht Manifold, Annotationen im aktualisierten Text wieder zuzuordnen. Existiert die annotierte Passage nicht mehr, erscheint die Annotation hier.", "unverified_message": "Um Texte öffentlich zu annotieren, musst du zuerst deine E-Mail-Adresse bestätigen."
+        "delete_notation": "$t(glossary.notation_title_case_other) $t(actions.delete)",
+        "no_annotations": "Keine $t(glossary.annotation_other) gefunden",
+        "no_matches_with_filters": "Keine Annotationen entsprechen den oben gesetzten Filtern. Passe die Filter an, um weitere Ergebnisse anzuzeigen.",
+        "this_group": "Diese Gruppe",
+        "no_group_annotations_message": "Sobald jemand in der Gruppe eine Passage in diesem Text hervorgehoben oder annotiert hat, erscheint sie hier. Wähle zum Annotieren oder Hervorheben eine Passage im Text aus und klicke im Pop-up-Menü auf die entsprechende Schaltfläche.",
+        "no_group_annotations": "{{name}} hat diesen Text noch nicht annotiert",
+        "no_annotations_by_me": "Du hast diesen Text noch nicht annotiert",
+        "no_annotations_by_me_message": "Sobald du eine Passage in diesem Text hervorgehoben oder annotiert hast, erscheint sie hier. Wähle zum Annotieren oder Hervorheben eine Passage im Text aus und klicke im Pop-up-Menü auf die entsprechende Schaltfläche.",
+        "my_notes": "Meine $t(glossary.note_title_case_other)",
+        "all_notes": "Alle $t(glossary.note_other) der Gruppe:",
+        "orphaned_notes": "Meine Notizen zu früheren Versionen",
+        "no_orphans_message": "Wenn ein Text bearbeitet wird, versucht Manifold, Annotationen im aktualisierten Text wieder zuzuordnen. Existiert die annotierte Passage nicht mehr im Text, erscheinen deine Annotationen hier.",
+        "unverified_message": "Um Texte öffentlich zu annotieren, musst du zuerst deine E-Mail-Adresse bestätigen"
       },
-      "return": {"project_home": "Projektstartseite", "issue_home": "Startseite der Ausgabe", "learn_more_about_manifold": "Mehr über <0>$t(app.manifold)</0> erfahren"}
+      "return": {
+        "project_home": "$t(glossary.project_title_case_one)-Startseite",
+        "issue_home": "$t(glossary.issue_truncated_title_case_one)-Startseite",
+        "learn_more_about_manifold": "Mehr über <0>$t(app.manifold)</0> erfahren"
+      }
     },
-    "header": {"contents": "Inhalt", "reader_settings_search": "Reader-Einstellungen und Suche", "reader_appearance": "Reader-Darstellung"},
-    "my_private_annotations": "Meine privaten Annotationen", "my_public_annotations": "Meine öffentlichen Annotationen", "full_text": "Volltext", "section_description": "Diesen Text auf {{appName}} lesen", "section_label": "Textabschnitt",
-    "report_annotation": {"header": "{{ type }} melden", "instructions": "Die Administratoren dieser Instanz werden benachrichtigt.", "placeholder": "Optional kannst du angeben, warum du diesen Inhalt meldest.", "message_input_label": "Nachricht"},
-    "annotated_passage": "Annotierte Passage", "highlight_aria_label": "Beginn der Hervorhebung; {{chunk}}; Ende der Hervorhebung.", "annotation_aria_label": "Beginn der Annotation; {{chunk}}; Ende der Annotation.", "annotation_highlight_aria_label": "Beginn von Hervorhebung und Annotation; {{chunk}}; Ende von Hervorhebung und Annotation."
+    "header": {
+      "contents": "Inhalt",
+      "reader_settings_search": "Reader-Einstellungen und Suche",
+      "reader_appearance": "Reader-Darstellung"
+    },
+    "my_private_annotations": "Meine privaten $t(glossary.annotation_title_case_other)",
+    "my_public_annotations": "Meine öffentlichen $t(glossary.annotation_title_case_other)",
+    "full_text": "Volltext",
+    "section_description": "Diesen Text auf {{appName}} lesen",
+    "section_label": "Textabschnitt",
+    "report_annotation": {
+      "header": "{{ type }} melden",
+      "instructions": "Die Administratoren dieser Instanz werden benachrichtigt.",
+      "placeholder": "Optional kannst du angeben, warum du diesen Inhalt meldest.",
+      "message_input_label": "Nachricht"
+    },
+    "annotated_passage": "Annotierte Passage",
+    "highlight_aria_label": "Beginn der Hervorhebung; {{chunk}}; Ende der Hervorhebung.",
+    "annotation_aria_label": "Beginn der Annotation; {{chunk}}; Ende der Annotation.",
+    "annotation_highlight_aria_label": "Beginn von Hervorhebung und Annotation; {{chunk}}; Ende von Hervorhebung und Annotation."
   }
 }
