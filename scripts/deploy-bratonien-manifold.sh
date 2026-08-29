@@ -7,28 +7,38 @@ VERSION_PREFIX="${VERSION_PREFIX:-bratonien-v-0-}"
 
 get_latest_tag() {
   local package="$1"
-  local url="https://api.github.com/users/${OWNER}/packages/container/${package}/versions?per_page=100"
-  local json
+  local scope="repository:${OWNER}/${package}:pull"
+  local token_json
+  local token
+  local tags_json
   local tag
 
-  json="$(curl -fsSL -H 'Accept: application/vnd.github+json' "$url")"
+  token_json="$(curl -fsSL "https://ghcr.io/token?scope=${scope}")"
+  token="$(printf '%s' "$token_json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["token"])')"
 
-  tag="$(printf '%s' "$json" | python3 -c '
+  if [[ -z "$token" ]]; then
+    echo "Anonymer GHCR-Lesetoken fuer ${package} konnte nicht ermittelt werden." >&2
+    exit 1
+  fi
+
+  tags_json="$(curl -fsSL \
+    -H "Authorization: Bearer ${token}" \
+    "https://ghcr.io/v2/${OWNER}/${package}/tags/list")"
+
+  tag="$(printf '%s' "$tags_json" | python3 -c '
 import json
 import re
 import sys
 
 prefix = sys.argv[1]
-versions = json.load(sys.stdin)
-pattern = re.compile(r"^" + re.escape(prefix) + r"(\\d+)$")
+data = json.load(sys.stdin)
+pattern = re.compile(r"^" + re.escape(prefix) + r"(\d+)$")
 found = []
 
-for version in versions:
-    tags = (((version.get("metadata") or {}).get("container") or {}).get("tags") or [])
-    for tag in tags:
-        match = pattern.match(tag)
-        if match:
-            found.append((int(match.group(1)), tag))
+for tag in data.get("tags") or []:
+    match = pattern.match(tag)
+    if match:
+        found.append((int(match.group(1)), tag))
 
 if not found:
     raise SystemExit(1)
