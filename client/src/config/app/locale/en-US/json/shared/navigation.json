@@ -75,7 +75,8 @@
     "visit_collection": "Visit Collection Page",
     "go_to_page": "Go to page {{page}}",
     "carousel_item": "{{item}} {{current}} of {{total}}",
-    "reader_progress": "Chapter {{current}} of {{total}}"
+    "reader_progress": "Chapter {{current}} of {{total}}",
+    "resource_carousel": "Resource carousel"
   },
   "external_links": {
     "view_on_social": "View this project on {{service}}",
