@@ -6,6 +6,7 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import "./bratonien/theme.css";
 import "./bratonien/manifold-components.css";
+import "./bratonien/motion.css";
 
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
