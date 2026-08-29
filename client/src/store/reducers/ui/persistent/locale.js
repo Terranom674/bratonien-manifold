@@ -4,18 +4,26 @@ const initialState = {
   language: "de-DE"
 };
 
-const setLocale = (state, action) => {
-  return { ...state, ...action.payload };
+const normalizeLanguage = value => {
+  if (value === "de" || value === "de-DE") return "de-DE";
+  return "en-US";
 };
 
+const setLanguage = (state, action) => ({
+  ...state,
+  language: normalizeLanguage(action.payload)
+});
+
 const setPersistentUI = (state, action) => {
-  return { ...state, ...action.payload.locale };
+  const language = action.payload?.locale?.language;
+  if (!language) return state;
+  return { ...state, language: normalizeLanguage(language) };
 };
 
 export default handleActions(
   {
-    SET_PERSISTENT_UI: setPersistentUI,
-    SET_LOCALE: setLocale
+    SET_LANGUAGE: setLanguage,
+    SET_PERSISTENT_UI: setPersistentUI
   },
   initialState
 );
