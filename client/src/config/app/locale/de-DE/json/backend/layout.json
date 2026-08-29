@@ -1,12 +1,108 @@
 {
   "layout": {
-    "add_block": "Inhaltsblock „{{blockTitle}}“ hinzufügen", "delete_block": "Inhaltsblock „{{blockTitle}}“ löschen", "edit_block": "Inhaltsblock „{{blockTitle}}“ bearbeiten", "hide_block": "Inhaltsblock „{{blockTitle}}“ ausblenden", "show_block": "Inhaltsblock „{{blockTitle}}“ anzeigen", "authorized": "Berechtigt", "unauthorized": "Nicht berechtigt", "markdown_block_title": "Markdown", "recent_activity_block_title": "Letzte Aktivität", "metadata_block_title": "Metadaten", "table_of_contents_block_title": "Inhaltsverzeichnis", "resources_block_title": "Ressourcen", "resources_block_resources_subtitle": "Einzelne Ressourcen", "texts_block_title": "Texte", "blocks": "Blöcke:", "layout": "Layout:", "normal": "Normal", "shaded": "Schattiert", "customize_blocks_message": "Passe die Inhalte deiner Projektseite an. Füge Inhaltsblöcke hinzu, lösche oder sortiere sie, bearbeite Einstellungen und ändere die Sichtbarkeit.", "left_side": "Linke Seite", "right_side": "Rechte Seite", "buttons": "Schaltflächen", "links": "Links", "description_and_images": "Beschreibung + Bilder", "description_and_images_description": "Beschreibungstext, Cover und Hintergrundbild", "hero_block": "Hero-Bereich", "hero_block_instructions": "Der Hero-Bereich steht oben auf deiner {{entity}}-Seite. Passe hier Inhalt, Layout und Einstellungen an.", "calls_to_action": "Call-to-Actions", "calls_to_action_description": "Schaltflächen und Links zu verwandten Ressourcen", "visibility_options": {"always": "Immer sichtbar", "authorized": "Nur für Berechtigte sichtbar", "unauthorized": "Nur für Nichtberechtigte sichtbar"}
+    "add_block": "Inhaltsblock „{{blockTitle}}“ hinzufügen",
+    "delete_block": "Inhaltsblock „{{blockTitle}}“ löschen",
+    "edit_block": "Inhaltsblock „{{blockTitle}}“ bearbeiten",
+    "hide_block": "Inhaltsblock „{{blockTitle}}“ ausblenden",
+    "show_block": "Inhaltsblock „{{blockTitle}}“ anzeigen",
+    "authorized": "Berechtigt",
+    "unauthorized": "Nicht berechtigt",
+    "markdown_block_title": "Markdown",
+    "recent_activity_block_title": "Letzte Aktivität",
+    "metadata_block_title": "Metadaten",
+    "table_of_contents_block_title": "$t(glossary.table_of_contents_title_case)",
+    "resources_block_title": "$t(glossary.resource_title_case_other)",
+    "resources_block_resources_subtitle": "Einzelne Ressourcen",
+    "texts_block_title": "$t(glossary.text_title_case_other)",
+    "blocks": "Blöcke:",
+    "layout": "Layout:",
+    "normal": "Normal",
+    "shaded": "Schattiert",
+    "customize_blocks_message": "Passe die übrigen Inhalte deiner Projektseite an. Füge Inhaltsblöcke hinzu, lösche und sortiere sie neu, bearbeite Einstellungen und schalte ihre Sichtbarkeit um.",
+    "left_side": "Linke Seite",
+    "right_side": "Rechte Seite",
+    "buttons": "Schaltflächen",
+    "links": "Links",
+    "description_and_images": "Beschreibung + Bilder",
+    "description_and_images_description": "Beschreibungstext, Cover und Hintergrundbild",
+    "hero_block": "Hero-Bereich",
+    "hero_block_instructions": "Der Hero-Bereich steht oben auf deiner {{entity}}-Seite. Passe hier Inhalt, Layout und Einstellungen an.",
+    "calls_to_action": "Call-to-Actions",
+    "calls_to_action_description": "Schaltflächen und Links zu verwandten Ressourcen",
+    "visibility_options": {
+      "always": "Immer sichtbar",
+      "authorized": "Nur für Berechtigte sichtbar",
+      "unauthorized": "Nur für Nichtberechtigte sichtbar"
+    }
   },
-  "hero": {"dark_mode": "Dunkelmodus", "description_placeholder": "{{entity}} beschreiben", "description_instructions": "Gib eine kurze Beschreibung ein. Einfaches Markdown wird unterstützt.", "image_label": "Hintergrundbild", "image_alt_label": "Alternativtext des Hintergrundbildes", "image_instructions": "Bilder werden auf 1280×800 skaliert und am unteren Rand zugeschnitten.", "layout": "Hero-Layout:", "square_inset": "Quadratischer Einsatz", "wide_inset": "Breiter Einsatz", "full_bleed": "Vollflächig", "background_color": "Hintergrundfarbe", "background_color_instructions": "CSS-Farbname, Hexadezimalwert, rgb, rgba, hsl, hsla oder hwb eingeben. Leer lassen, um die Standardfarbe zu verwenden.", "image_credits": "Bildnachweise", "image_credits_placeholder": "Bildnachweise hinzufügen", "image_credits_instructions": "Bildnachweise für Hero und Cover eingeben. Einfaches Markdown wird unterstützt.", "cover_image": "Coverbild", "cover_image_alt_label": "Alternativtext des Coverbildes", "cover_image_instructions": "Wenn ein Cover für {{entity}} festgelegt ist, wird es rechts neben der Beschreibung angezeigt.", "hashtag": "Hashtag", "hashtag_placeholder": "Hashtag für {{entity}} eingeben"},
-  "call_to_action": {"edit_drawer_title": "Call-to-Action bearbeiten", "create_drawer_title": "Neuer Call-to-Action", "text_select_placeholder": "Text auswählen", "input_labels": {"title": "Titel", "type": "Typ", "visibility": "Sichtbarkeit", "text": "Mit Text verknüpfen", "url": "URL", "download": "Datei herunterladen", "save": "Speichern"}},
+  "hero": {
+    "dark_mode": "Dunkelmodus",
+    "description_placeholder": "{{entity}} beschreiben",
+    "description_instructions": "Gib eine kurze Beschreibung deiner {{entity}} ein. Dieses Feld unterstützt einfaches Markdown.",
+    "image_label": "Hintergrundbild",
+    "image_alt_label": "Alternativtext des Hintergrundbildes",
+    "image_instructions": "Bilder werden auf 1280×800 skaliert und am unteren Rand zugeschnitten.",
+    "layout": "Hero-Layout:",
+    "square_inset": "Quadratischer Einsatz",
+    "wide_inset": "Breiter Einsatz",
+    "full_bleed": "Vollflächig",
+    "background_color": "Hintergrundfarbe",
+    "background_color_instructions": "Gib eine Farbe in einem der folgenden Formate ein: CSS-Farbname, Hexadezimalwert, rgb, rgba, hsl, hsla oder hwb. Leer lassen, um die Standard-Hintergrundfarbe wiederherzustellen.",
+    "image_credits": "Bildnachweise",
+    "image_credits_placeholder": "Bildnachweise hinzufügen",
+    "image_credits_instructions": "Bildnachweise für Hero und Cover eingeben. Dieses Feld unterstützt einfaches Markdown.",
+    "cover_image": "Coverbild",
+    "cover_image_alt_label": "Alternativtext des Coverbildes",
+    "cover_image_instructions": "Wenn ein Cover für {{entity}} festgelegt ist, wird es über dem Hero-Bereich rechts neben der Beschreibung angezeigt.",
+    "hashtag": "Hashtag",
+    "hashtag_placeholder": "Hashtag für {{entity}} eingeben"
+  },
+  "call_to_action": {
+    "edit_drawer_title": "Call-to-Action bearbeiten",
+    "create_drawer_title": "Neuer Call-to-Action",
+    "text_select_placeholder": "Text auswählen",
+    "input_labels": {
+      "title": "Titel",
+      "type": "Typ",
+      "visibility": "Sichtbarkeit",
+      "text": "Mit Text verknüpfen",
+      "url": "URL",
+      "download": "Datei herunterladen",
+      "save": "Speichern"
+    }
+  },
   "content_blocks": {
-    "texts": {"show_author_names": "Autorennamen anzeigen?", "show_descriptions": "Beschreibungen anzeigen?", "show_subtitles": "Untertitel anzeigen?", "show_cover_images": "Coverbilder anzeigen?", "show_dates": "Datumsangaben anzeigen?", "show_category_labels": "Kategorien anzeigen?", "show_uncategorized_texts": "Nicht kategorisierte Texte anzeigen?", "add_text_category": "Textkategorie hinzufügen", "include_texts_in_category": "Texte aus diesen Kategorien einbeziehen"},
-    "resources": {"default_title_message": "Wenn leer, lautet der Blocktitel standardmäßig „Ressourcen“.", "collections_switch": "Alle Sammlungen anzeigen?", "collections_switch_info": "Wenn aktiviert, werden alle Ressourcensammlungen einbezogen. Andernfalls nur hervorgehobene Auswahl.", "select_collection_placeholder": "Ressourcensammlung hinzufügen", "select_collection": "Bestimmte Sammlungen anzeigen", "resources_switch": "Zusätzlich einzelne Ressourcen anzeigen?", "resources_switch_info": "Wenn aktiviert, werden zusätzlich zu den Sammlungen einzelne Ressourcen angezeigt.", "select_resource_placeholder": "Ressource hinzufügen", "select_resources": "Diese Ressourcen anzeigen", "select_resources_info": "Bis zu 10 Ressourcen auswählen. Ohne Auswahl werden die ersten 10 in Standardsortierung angezeigt."},
-    "markdown": {"body": "Inhalt", "style": "Stil"}, "toc": {"depth": "Tiefe", "select_text": "Text auswählen", "show_text_title": "Texttitel anzeigen?"}
+    "texts": {
+      "show_author_names": "Autorennamen anzeigen?",
+      "show_descriptions": "Beschreibungen anzeigen?",
+      "show_subtitles": "Untertitel anzeigen?",
+      "show_cover_images": "Coverbilder anzeigen?",
+      "show_dates": "Datumsangaben anzeigen?",
+      "show_category_labels": "Kategorien anzeigen?",
+      "show_uncategorized_texts": "Nicht kategorisierte Texte anzeigen?",
+      "add_text_category": "Textkategorie hinzufügen",
+      "include_texts_in_category": "Texte aus diesen Kategorien einbeziehen"
+    },
+    "resources": {
+      "default_title_message": "Wenn leer, lautet der Blocktitel standardmäßig „$t(layout.resources_block_title)“",
+      "collections_switch": "Alle Sammlungen anzeigen?",
+      "collections_switch_info": "Wenn aktiviert, werden alle Ressourcensammlungen in den Block aufgenommen. Andernfalls werden nur hervorgehobene Auswahlen angezeigt.",
+      "select_collection_placeholder": "Ressourcensammlung hinzufügen",
+      "select_collection": "Bestimmte Sammlungen anzeigen",
+      "resources_switch": "Zusätzlich zu Sammlungen auch Ressourcen anzeigen?",
+      "resources_switch_info": "Wenn aktiviert, werden zusätzlich zu den ausgewählten Ressourcensammlungen einzelne Ressourcen angezeigt.",
+      "select_resource_placeholder": "Ressource hinzufügen",
+      "select_resources": "Diese Ressourcen anzeigen",
+      "select_resources_info": "Wähle bis zu 10 Ressourcen zur Anzeige aus. Wenn keine ausgewählt sind, werden die ersten 10 Ressourcen in Standardsortierung angezeigt."
+    },
+    "markdown": {
+      "body": "Inhalt",
+      "style": "Stil"
+    },
+    "toc": {
+      "depth": "Tiefe",
+      "select_text": "$t(glossary.text_one) auswählen",
+      "show_text_title": "Titel von $t(glossary.text_one) anzeigen?"
+    }
   }
 }
