@@ -27,9 +27,9 @@ export class SettingsPropertiesContainer extends PureComponent {
     const t = this.props.t;
     return (
       <div>
-        <PageHeader title="Settings" type="settings" />
+        <PageHeader title={t("titles.settings")} type="settings" />
         <Layout.BackendPanel>
-          <Form.FieldGroup label={t("localize-content")}>
+          <Form.FieldGroup label={t("app.interface_language")}>
             <LanguageSelect />
           </Form.FieldGroup>
         </Layout.BackendPanel>
