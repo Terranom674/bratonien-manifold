@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Layout from "backend/components/layout";
 import Form from "global/components/form";
 import FormContainer from "global/containers/form";
+import LanguageSelect from "global/components/LanguageSelect";
 import { settingsAPI, requests } from "api";
 import { select } from "utils/entityUtils";
 import PageHeader from "backend/components/layout/PageHeader";
@@ -27,6 +28,11 @@ export class SettingsPropertiesContainer extends PureComponent {
     return (
       <div>
         <PageHeader title="Settings" type="settings" />
+        <Layout.BackendPanel>
+          <Form.FieldGroup label={t("localize-content")}>
+            <LanguageSelect />
+          </Form.FieldGroup>
+        </Layout.BackendPanel>
         <Layout.BackendPanel>
           <FormContainer.Form
             model={this.props.settings}
