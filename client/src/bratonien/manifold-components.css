@@ -1,0 +1,319 @@
+/* =========================================================
+   BRATONIEN - MANIFOLD-KOMPONENTENBASIS
+   Baut auf theme.css auf und uebersetzt die Bratonien-Basis
+   auf Manifolds semantische CSS-Variablen und UI-Flaechen.
+
+   Die Manifold-Einstellungen duerfen diese Basis weiterhin
+   gezielt ueberschreiben.
+   ========================================================= */
+
+body.browse,
+body.backend {
+  /* Manifold-Grundfarben */
+  --color: var(--br-text);
+  --background-color: var(--br-green);
+  --hover-color: var(--br-gold-light);
+  --focus-color: var(--br-gold);
+
+  /* Neutrale Manifold-Palette auf Bratonien-Flaechen abbilden */
+  --color-base-neutral-white: var(--br-surface-soft);
+  --color-base-neutral05: rgba(31, 59, 45, 0.56);
+  --color-base-neutral10: rgba(18, 54, 58, 0.48);
+  --color-base-neutral20: rgba(18, 54, 58, 0.62);
+  --color-base-neutral30: rgba(18, 54, 58, 0.74);
+  --color-base-neutral40: rgba(212, 175, 55, 0.32);
+  --color-base-neutral45: rgba(212, 175, 55, 0.42);
+  --color-base-neutral50: rgba(212, 175, 55, 0.52);
+  --color-base-neutral70: var(--br-brown-border);
+  --color-base-neutral75: var(--br-brown);
+  --color-base-neutral80: var(--br-petrol);
+  --color-base-neutral85: var(--br-petrol);
+  --color-base-neutral90: var(--br-petrol);
+  --color-base-neutral95: var(--br-petrol);
+  --color-base-neutral100: var(--br-dark);
+  --color-base-neutral110: var(--br-dark);
+
+  /* Text- und UI-Hierarchie */
+  --color-neutral-text-extra-light: var(--br-text-light);
+  --color-neutral-text-light: var(--br-text);
+  --color-neutral-text-dark: var(--br-text);
+  --color-neutral-text-extra-dark: var(--br-gold);
+  --color-neutral-ui-dull-light: var(--br-border);
+  --color-neutral-ui-light: var(--br-border-strong);
+  --color-neutral-ui-dull-dark: var(--br-border);
+  --color-neutral-ui-dark: var(--br-gold);
+  --color-neutral-ui-extra-dark: var(--br-gold-light);
+
+  /* Interaktionen */
+  --color-interaction-light: var(--br-gold);
+  --color-interaction-dark: var(--br-gold);
+  --color-interaction-extra-dark: var(--br-gold-dark);
+  --color-interaction-focus-secondary: var(--br-gold-light);
+  --color-interaction-focus-tertiary: var(--br-border-strong);
+
+  /* Header-Variablen */
+  --color-header-background: var(--br-petrol);
+  --color-header-background-light: rgba(18, 54, 58, 0.92);
+  --color-header-foreground: var(--br-gold);
+  --color-header-foreground-active: var(--br-gold-light);
+  --color-header-foreground-hover: var(--br-gold-light);
+
+  /* Formulare */
+  --color-input-placeholder: rgba(243, 229, 181, 0.62);
+  --color-input-border: var(--br-border-strong);
+  --input-color: var(--br-text);
+  --input-bg-color: rgba(0, 0, 0, 0.18);
+  --input-border-color: var(--br-border);
+  --input-font-family: "Almendra SC", Georgia, "Times New Roman", serif;
+
+  /* Semantische Komponentenvariablen, die in Emotion-Komponenten
+     direkt verwendet werden. */
+  --strong-color: var(--br-gold);
+  --medium-color: var(--br-text);
+  --weak-color: rgba(243, 229, 181, 0.72);
+  --highlight-color: var(--br-gold-light);
+  --box-color: var(--br-text);
+  --box-bg-color: rgba(18, 54, 58, 0.58);
+  --box-strong-bg-color: var(--br-petrol);
+  --box-border-color: var(--br-border);
+  --box-border-radius: 0;
+  --placeholder-icon-color: var(--br-gold);
+  --marker-bg-color: rgba(18, 54, 58, 0.82);
+  --dropzone-bg-color: rgba(212, 175, 55, 0.1);
+}
+
+/* =========================================================
+   GEMEINSAME MANIFOLD-FLAECHEN
+   ========================================================= */
+
+body.browse .main-content,
+body.backend .main-content {
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-white,
+body.backend .bg-white {
+  background-color: rgba(18, 54, 58, 0.32) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral05,
+body.backend .bg-neutral05 {
+  background-color: rgba(31, 59, 45, 0.56) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral10,
+body.browse .bg-neutral20,
+body.backend .bg-neutral10,
+body.backend .bg-neutral20 {
+  background-color: rgba(18, 54, 58, 0.48) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse .bg-neutral80,
+body.browse .bg-neutral85,
+body.browse .bg-neutral90,
+body.browse .bg-neutral95,
+body.browse .bg-neutral100,
+body.backend .bg-neutral80,
+body.backend .bg-neutral85,
+body.backend .bg-neutral90,
+body.backend .bg-neutral95,
+body.backend .bg-neutral100 {
+  background-color: var(--br-petrol) !important;
+  color: var(--br-text) !important;
+}
+
+/* Emotion-Panels, Karten, leere Zustaende und andere visuelle Boxen */
+body.browse main > div,
+body.backend .main-content > div {
+  border-color: var(--br-border);
+}
+
+body.browse main [class*="panel"],
+body.browse main [class*="Panel"],
+body.backend .main-content [class*="panel"],
+body.backend .main-content [class*="Panel"] {
+  border-color: var(--br-border) !important;
+}
+
+body.browse main [class*="card"],
+body.browse main [class*="Card"],
+body.backend .main-content [class*="card"],
+body.backend .main-content [class*="Card"] {
+  border-color: var(--br-border) !important;
+  box-shadow: none;
+}
+
+/* Runde Standard-Panels aus Manifold werden in der Bratonien-Basis kantig. */
+body.browse main [style*="border-radius"],
+body.backend .main-content [style*="border-radius"] {
+  border-radius: 0;
+}
+
+/* =========================================================
+   FRONTEND
+   ========================================================= */
+
+body.browse .header-app,
+body.browse .header-app--sticky,
+body.browse .header-app--static {
+  background-color: var(--br-petrol) !important;
+  border-color: var(--br-border) !important;
+}
+
+body.browse .header-app button,
+body.browse .header-app a,
+body.browse .header-app [role="button"] {
+  color: var(--br-gold) !important;
+}
+
+body.browse .header-app button:hover,
+body.browse .header-app button:focus-visible,
+body.browse .header-app a:hover,
+body.browse .header-app a:focus-visible,
+body.browse .header-app [role="button"]:hover,
+body.browse .header-app [role="button"]:focus-visible {
+  color: var(--br-gold-light) !important;
+}
+
+/* CollectionPlaceholder und vergleichbare Empty-State-Panels nutzen
+   --box-* und --placeholder-icon-color; die Variablen oben sind die
+   primaere Anpassung. Diese Regeln sichern Rand und Typografie ab. */
+body.browse main h1,
+body.browse main h2,
+body.browse main h3,
+body.browse main h4,
+body.browse main h5,
+body.browse main h6 {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+body.browse main p,
+body.browse main li,
+body.browse main label,
+body.browse main figcaption,
+body.browse main dd,
+body.browse main dt {
+  color: var(--br-text) !important;
+}
+
+body.browse footer {
+  background-color: var(--br-petrol) !important;
+  border-color: var(--br-border) !important;
+  color: var(--br-text) !important;
+}
+
+body.browse footer a,
+body.browse footer button,
+body.browse footer [role="button"] {
+  color: var(--br-gold) !important;
+}
+
+body.browse footer a:hover,
+body.browse footer a:focus-visible,
+body.browse footer button:hover,
+body.browse footer button:focus-visible,
+body.browse footer [role="button"]:hover,
+body.browse footer [role="button"]:focus-visible {
+  color: var(--br-gold-light) !important;
+}
+
+/* =========================================================
+   ADMIN / BACKEND
+   ========================================================= */
+
+body.backend {
+  background: linear-gradient(
+    to bottom,
+    var(--br-green) 0%,
+    var(--br-green-light) 75%,
+    var(--br-green) 100%
+  ) fixed !important;
+}
+
+body.backend #content,
+body.backend .main-content {
+  background: transparent !important;
+}
+
+body.backend header,
+body.backend nav,
+body.backend [role="navigation"] {
+  border-color: var(--br-border) !important;
+}
+
+body.backend .main-content h1,
+body.backend .main-content h2,
+body.backend .main-content h3,
+body.backend .main-content h4,
+body.backend .main-content h5,
+body.backend .main-content h6 {
+  color: var(--br-gold) !important;
+  text-shadow: var(--br-gold-shadow);
+}
+
+body.backend .main-content p,
+body.backend .main-content li,
+body.backend .main-content label,
+body.backend .main-content figcaption,
+body.backend .main-content dd,
+body.backend .main-content dt {
+  color: var(--br-text) !important;
+}
+
+body.backend .main-content input:not([type="checkbox"]):not([type="radio"]),
+body.backend .main-content textarea,
+body.backend .main-content select {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+  border-color: var(--br-border) !important;
+  color: var(--br-text) !important;
+}
+
+body.backend .main-content input:focus,
+body.backend .main-content textarea:focus,
+body.backend .main-content select:focus {
+  border-color: var(--br-gold) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12) !important;
+}
+
+body.backend .main-content table {
+  color: var(--br-text) !important;
+}
+
+body.backend .main-content thead,
+body.backend .main-content th {
+  background-color: var(--br-petrol) !important;
+  color: var(--br-gold) !important;
+}
+
+body.backend .main-content th,
+body.backend .main-content td {
+  border-color: rgba(212, 175, 55, 0.16) !important;
+}
+
+body.backend .main-content tbody tr:nth-child(odd) {
+  background-color: rgba(18, 54, 58, 0.28);
+}
+
+body.backend .main-content tbody tr:nth-child(even) {
+  background-color: rgba(31, 59, 45, 0.32);
+}
+
+body.backend footer {
+  background-color: var(--br-petrol) !important;
+  color: var(--br-text) !important;
+  border-color: var(--br-border) !important;
+}
+
+@media (max-width: 768px) {
+  body.backend {
+    background: linear-gradient(
+      to bottom,
+      var(--br-green) 0%,
+      var(--br-green-light) 100%
+    ) fixed !important;
+  }
+}
