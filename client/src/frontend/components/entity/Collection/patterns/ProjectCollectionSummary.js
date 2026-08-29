@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import lh from "helpers/linkHandler";
 import { useTranslation } from "react-i18next";
 import EntityThumbnail from "global/components/atomic/EntityThumbnail";
-import ThumbnailGrid from "global/components/entity/ThumbnailGrid";
+import Carousel from "frontend/components/Carousel";
 import { FooterLink, ProjectCollectionIcon } from "../parts";
 import EntityCollection from "../EntityCollection";
 import { getHeroImage, getHeaderLayout } from "../helpers";
@@ -54,20 +54,22 @@ function ProjectCollectionSummaryEntityCollection({
       headerLayout={headerLayout}
       headerWidth="100%"
       headerLink={lh.link("frontendProjectCollection", slug)}
-      BodyComponent={props =>
+      BodyComponent={() =>
         !!projects?.length && (
-          <ThumbnailGrid isList={projects.length > 1} {...props}>
-            {({ stack }) =>
-              projects.map(item => (
-                <EntityThumbnail
-                  key={item.id}
-                  entity={item}
-                  stack={stack}
-                  isListItem={projects.length > 1}
-                />
-              ))
-            }
-          </ThumbnailGrid>
+          <Carousel
+            label={title}
+            itemLabel={t("glossary.project_one")}
+            variant="cards"
+          >
+            {projects.map(item => (
+              <EntityThumbnail
+                key={item.id}
+                entity={item}
+                stack
+                isListItem={false}
+              />
+            ))}
+          </Carousel>
         )
       }
       FooterComponent={() =>
