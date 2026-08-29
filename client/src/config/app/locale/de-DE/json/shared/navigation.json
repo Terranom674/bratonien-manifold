@@ -5,13 +5,16 @@
       "sign_out": "Abmelden",
       "log_in": "Anmelden",
       "login": "Anmeldung",
+      "log_in_to_manifold": "$(t.user.navigation.log_in) bei Manifold",
       "log_out": "Abmelden",
       "logout": "Abmeldung",
       "my_starred": "Meine Favoriten",
       "my_notes_comments": "Meine Notizen + Kommentare",
       "back": "Zurück",
       "notifications": "Benachrichtigungen",
+      "notifications_sr_title": "Meine Benachrichtigungseinstellungen bearbeiten",
       "edit_profile": "Profil bearbeiten",
+      "edit_profile_sr_title": "Mein Profil bearbeiten",
       "settings": "Benutzereinstellungen",
       "privacy": "Datenschutz"
     },
@@ -23,7 +26,23 @@
       "details": "Details",
       "my_groups": "Meine Lesegruppen",
       "public_groups": "Öffentliche Lesegruppen",
-      "create": "Neue Gruppe erstellen"
+      "create": "Neue Gruppe erstellen",
+      "my_private_annotations": "Meine privaten Annotationen",
+      "my_public_annotations": "Meine öffentlichen Annotationen"
+    },
+    "breadcrumbs": {
+      "aria_label": "Brotkrümelnavigation",
+      "all_journals": "Alle $t(glossary.journal_other)",
+      "issues": "$t(glossary.issue_truncated_other)",
+      "all_project_collections": "Alle $t(glossary.project_collection_other)",
+      "all_projects": "Alle $t(glossary.project_other)"
+    },
+    "mobile": {
+      "aria_label": "Mobile Navigation",
+      "toggle_open": "Mobiles Navigationsmenü $t(actions.open)",
+      "toggle_closed": "Mobiles Navigationsmenü $t(actions.close)",
+      "open_submenu": "Untermenü $t(actions.open)",
+      "close_submenu": "Untermenü $t(actions.close)"
     },
     "backend": {
       "enter_admin": "Admin-Modus öffnen",
@@ -33,18 +52,28 @@
       "exit_author": "Autorenmodus verlassen"
     },
     "library_links": "Bibliothekslinks",
-    "browse_library": "Bibliothek durchsuchen",
-    "browse_projects": "Projekte durchsuchen",
+    "browse_library": "Bibliothek $t(actions.browse)",
+    "browse_projects": "Projekte $t(actions.browse)",
+    "see_full_collection": "Vollständige Sammlung anzeigen",
+    "see_all_projects": "$t(actions.see_all) $t(glossary.project_other)",
     "search_by_keyword": "Nach Stichwort suchen",
-    "return_home": "Zur Startseite",
+    "see_all_activity": "$t(actions.see_all) Aktivitäten",
+    "return_home": "Zur Startseite zurückkehren",
+    "visit_page": "Seite aufrufen",
+    "view_interactive_resource": "Interaktive Ressource $t(actions.view)",
+    "see_all_issues": "$t(actions.see_all) $t(glossary.issue_truncated_other)",
+    "see_all_volumes": "$t(actions.see_all) $t(glossary.volume_other)",
     "back": "Zurück",
     "menu": "Menü",
+    "next_entity": "Nächste {{entity}}",
     "primary": "Hauptnavigation",
     "secondary": "Sekundärnavigation",
     "page_links": "Seitenlinks",
     "user_links": "Benutzerlinks",
     "skip_to_main": "Zum Hauptinhalt springen",
-    "return_to_reader": "Zum Reader zurückkehren"
+    "return_to_reader": "Zum Reader zurückkehren",
+    "visit_collection": "Sammlungsseite aufrufen",
+    "go_to_page": "Zu Seite {{page}} wechseln"
   },
   "external_links": {
     "view_on_social": "Dieses Projekt auf {{service}} ansehen",
