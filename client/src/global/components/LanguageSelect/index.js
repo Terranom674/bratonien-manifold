@@ -1,58 +1,39 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { updateI18n } from "utils/i18n";
+import { uiLocaleActions } from "actions";
 import { Select } from "global/components/atomic/form";
 
 const normalizeLanguage = value => {
-  if (value === "de" || value === "de-DE") return "de-DE";
-  return "en-US";
+  if (value === "en" || value === "en-US") return "en-US";
+  return "de-DE";
 };
 
-function LanguageSelect({ authentication, language }) {
+function LanguageSelect({ language, label, instructions }) {
   const { t } = useTranslation();
-  const userLanguage =
-    authentication?.currentUser?.attributes?.persistentUi?.locale?.language;
-
-  const initialLanguage = normalizeLanguage(userLanguage || language);
-  const [lang, setLang] = useState(initialLanguage);
-
   const dispatch = useDispatch();
-  const updateLanguage = useCallback(
-    l => {
-      dispatch({
-        type: "SET_LOCALE",
-        payload: { language: l }
-      });
-    },
-    [dispatch]
-  );
+  const lang = normalizeLanguage(language);
 
   const handleChange = event => {
     const newLang = normalizeLanguage(event.target?.value);
-    setLang(newLang);
-    updateLanguage(newLang);
-    updateI18n(newLang);
+    if (newLang === lang) return;
+    dispatch(uiLocaleActions.setLanguage(newLang));
   };
-
-  useEffect(() => {
-    setLang(initialLanguage);
-    updateI18n(initialLanguage);
-  }, [initialLanguage]);
 
   return (
     <Select
-      label={t("localize-content")}
+      label={label || t("localize-content")}
+      instructions={instructions}
       value={lang}
       options={[
         {
-          value: "en-US",
-          label: t("locales.en-US")
-        },
-        {
           value: "de-DE",
           label: t("locales.de-DE")
+        },
+        {
+          value: "en-US",
+          label: t("locales.en-US")
         }
       ]}
       onChange={handleChange}
@@ -61,12 +42,9 @@ function LanguageSelect({ authentication, language }) {
   );
 }
 
-LanguageSelect.mapStateToProps = state => {
-  return {
-    authentication: state.authentication,
-    language: state.ui.persistent.locale.language
-  };
-};
+LanguageSelect.mapStateToProps = state => ({
+  language: state.ui.persistent.locale.language
+});
 
 LanguageSelect.displayName = "Global.LanguageSelect";
 export default connect(LanguageSelect.mapStateToProps)(LanguageSelect);
