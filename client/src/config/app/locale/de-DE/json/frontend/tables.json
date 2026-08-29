@@ -1,7 +1,27 @@
 {
   "tables": {
-    "generic": {"title": "Tabelle: {{label}}", "list": "Liste: {{label}}", "view_details": "Details anzeigen"},
-    "reading_groups": {"headers": {"name": "Name", "role": "Rolle", "members": "Mitglieder", "activity": "Aktivität", "actions": "Aktionen"}},
-    "reading_group_members": {"headers": {"name": "Name des Mitglieds", "role": "Rolle", "activity": "Aktivität", "note_style": "Notizstil", "actions": "Aktionen"}}
+    "generic": {
+      "title": "Tabelle: {{label}}",
+      "list": "Liste: {{label}}",
+      "view_details": "$t(actions.view) Details"
+    },
+    "reading_groups": {
+      "headers": {
+        "name": "Name",
+        "role": "Rolle",
+        "members": "Mitglieder",
+        "activity": "Aktivität",
+        "actions": "Aktionen"
+      }
+    },
+    "reading_group_members": {
+      "headers": {
+        "name": "Name des Mitglieds",
+        "role": "Rolle",
+        "activity": "Aktivität",
+        "note_style": "Notizstil",
+        "actions": "Aktionen"
+      }
+    }
   }
 }
