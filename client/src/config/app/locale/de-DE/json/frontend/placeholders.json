@@ -1,27 +1,120 @@
 {
   "placeholders": {
-    "link": "Link", "documentation_button_label": "Dokumentation öffnen",
+    "link": "Link",
+    "documentation_button_label": "Dokumentation öffnen",
     "reading_group": {
-      "customize": "<0>Bereit, deine Gruppe anzupassen?</0><1>Glückwunsch, du hast eine Lesegruppe erstellt. Jetzt kannst du Inhalte hinzufügen, Reihenfolge, Gruppierung und Beschreibungen auf deiner Startseite bearbeiten und Mitglieder einladen.</1><2>Inhalte hinzufügen:</2><3>Lesegruppen können Projekte, Texte, Textabschnitte, Ressourcensammlungen und einzelne Ressourcen enthalten. Suche in der Bibliothek oder per Stichwort. Wenn du etwas hinzufügen möchtest, wähle das Sternsymbol und ordne den Inhalt dieser oder einer anderen von dir verwalteten Lesegruppe zu.</3>",
-      "settings": "<0>Einstellungen bearbeiten und Mitglieder einladen:</0><1>Du kannst die Einstellungen deiner Gruppe jederzeit ändern: Name, Sichtbarkeit und E-Mail-Benachrichtigungen. Außerdem kannst du den Einladungscode oder eine Einladungs-URL verwenden.</1>"
+      "customize": "<0>Bereit, deine Gruppe anzupassen?</0><1>Glückwunsch, du hast eine Lesegruppe erstellt. Jetzt kannst du Inhalte hinzufügen, Reihenfolge, Gruppierung und Beschreibungen auf deiner Startseite bearbeiten und Einladungen an neue Mitglieder versenden.</1><2>Inhalte hinzufügen:</2><3>Lesegruppen können verschiedene Inhalte enthalten: Projekte, Texte, Textabschnitte, Ressourcensammlungen und einzelne Ressourcen können deiner Gruppe hinzugefügt werden. Um Inhalte zu finden und hinzuzufügen, kannst du entweder die Bibliothek durchsuchen oder die Stichwortsuche verwenden. Wenn du ein Element gefunden hast, das du hinzufügen möchtest, wähle einfach das Sternsymbol und ordne es dieser Gruppe oder einer anderen von dir verwalteten Lesegruppe zu.</3>",
+      "settings": "<0>Einstellungen bearbeiten und Mitglieder einladen:</0><1>Du kannst die Einstellungen deiner Gruppe jederzeit ändern. Ändere den Namen, die Sichtbarkeit oder die E-Mail-Benachrichtigungen deiner Gruppe. Du kannst außerdem den Einladungscode deiner Gruppe anzeigen oder eine Einladungs-URL verwenden, mit der du Mitglieder einfach über die Adresse der Einladungsseite einladen kannst.</1>"
     },
-    "resource_collection": "Diese Sammlung enthält keine Ressourcen.", "resource_collection_annotations": "Diese Ressourcensammlung wurde bisher in keinem Text annotiert.", "resource_annotations": "Diese Ressource wurde bisher in keinem Text annotiert.", "table_of_contents": "Dieser Text hat kein Inhaltsverzeichnis.",
-    "comments": {"edit": "Diesen Kommentar bearbeiten…", "reply": "Auf diesen Kommentar antworten…", "discuss_entity": "{{entity}} diskutieren…", "unauthenticated": "Zum Kommentieren anmelden", "unauthenticated_full": "<0>Anmelden</0>, um Kommentare anzusehen und hinzuzufügen.", "unverified": "Du musst dein Konto bestätigen, bevor du Kommentare ansehen oder hinzufügen kannst. Die Bestätigungs-E-Mail kann auf deiner <0>Profilseite</0> erneut gesendet werden.", "deleted": "Dieser Kommentar wurde gelöscht."},
-    "my_starred": {"title": "Du hast noch keine Favoriten markiert.", "body": "Überall, wo du ein leeres Sternsymbol siehst, kannst du es auswählen und das Element deiner Sammlung hinzufügen. Du kannst viele Arten von Inhalten favorisieren – schau dich in den Projekten um.", "animation_label": "Ein Raster aus Kacheln mit eingeblendeten Sternsymbolen."},
-    "annotations_filtered": {"title": "Keine Annotation entspricht deinen Suchkriterien.", "body": "Entferne einen der Filter, um weitere Annotationen anzuzeigen."},
+    "resource_collection": "Diese Sammlung enthält keine Ressourcen.",
+    "resource_collection_annotations": "Diese Ressourcensammlung wurde bisher in keinem Text annotiert.",
+    "resource_annotations": "Diese Ressource wurde bisher in keinem Text annotiert.",
+    "table_of_contents": "Dieser Text hat kein Inhaltsverzeichnis.",
+    "comments": {
+      "edit": "Diesen Kommentar bearbeiten…",
+      "reply": "Auf diesen Kommentar antworten…",
+      "discuss_entity": "{{entity}} diskutieren…",
+      "unauthenticated": "Zum Kommentieren anmelden",
+      "unauthenticated_full": "<0>Anmelden</0>, um Kommentare anzusehen und hinzuzufügen.",
+      "unverified": "Du musst dein Konto bestätigen, bevor du Kommentare ansehen oder hinzufügen kannst. Du kannst die Bestätigungs-E-Mail auf deiner <0>Profilseite</0> erneut senden.",
+      "deleted": "Dieser Kommentar wurde gelöscht."
+    },
+    "my_starred": {
+      "title": "Du hast noch keine Elemente mit einem Stern markiert … noch nicht.",
+      "body": "Aber keine Sorge, wir haben es einfach gemacht. Überall dort, wo du ein leeres Sternsymbol siehst, kannst du es auswählen, um das Element deiner Sammlung hinzuzufügen. Du kannst viele verschiedene Arten von Inhalten markieren – stöbere also durch die Projekte und vergib Sterne!",
+      "animation_label": "Ein Raster aus Kacheln mit Sternsymbolen, die eingeblendet werden."
+    },
+    "annotations_filtered": {
+      "title": "Keine Annotation entspricht deinen Suchkriterien.",
+      "body": "Entferne einen der obigen Filter, um weitere Annotationen anzuzeigen."
+    },
     "annotations_group": {
-      "no_user": {"title": "Diese Gruppe hat noch keine Annotationen.", "body": "Registriere dich oder melde dich an, tritt der Gruppe bei und erstelle die erste Annotation."},
-      "user_not_member": {"title": "Diese Gruppe hat noch keine Annotationen.", "body": "Tritt der Gruppe bei und erstelle die erste Annotation. Beim Lesen kannst du neue oder vorhandene Annotationen dieser Gruppe zuordnen."},
-      "user_is_member": {"title": "Sei der erste Leser, der in dieser Gruppe annotiert!", "body": "Beim Lesen kannst du neue oder vorhandene Annotationen dieser Gruppe zuordnen."}
+      "no_user": {
+        "title": "Diese Gruppe hat noch keine Annotationen.",
+        "body": "Registriere dich oder melde dich an, tritt dieser Gruppe bei und sei das erste Mitglied, das eine Annotation erstellt!"
+      },
+      "user_not_member": {
+        "title": "Diese Gruppe hat noch keine Annotationen.",
+        "body": "Tritt der Gruppe bei und sei das erste Mitglied, das eine Annotation erstellt! Beim Lesen kannst du eine neue oder bestehende Annotation dieser Gruppe zuordnen."
+      },
+      "user_is_member": {
+        "title": "Sei der erste Leser, der in dieser Gruppe annotiert!",
+        "body": "Beim Lesen kannst du eine neue oder bestehende Annotation dieser Gruppe zuordnen."
+      }
     },
-    "annotations_my": {"title": "Erstelle deine erste Annotation!", "body": "Füge beim Lesen Notizen und Annotationen zum Text hinzu. Speichere sie privat oder ordne sie einer Lesegruppe zu."},
-    "journal_issues": {"authorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Zeitschriftenausgaben.", "body": "Neue Ausgaben lassen sich im Administrationsbereich erstellen und einer Zeitschrift zuordnen. Weitere Informationen findest du in <2>der Dokumentation</2>."}, "unauthorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Zeitschriftenausgaben.", "body": "Schau bald wieder vorbei!"}},
-    "journals": {"authorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Zeitschriften.", "body": "Neue Zeitschriften lassen sich im Administrationsbereich erstellen. Weitere Informationen findest du in <2>der Dokumentation</2>."}, "unauthorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Zeitschriften.", "body": "Schau bald wieder vorbei!"}},
-    "project_collections_admin": {"title": "Bereit für eine Projektsammlung?", "body": "Mit Projektsammlungen bestimmst du, was auf der Startseite deiner Manifold-Bibliothek erscheint. Projekte können manuell zusammengestellt und sortiert oder anhand von Filterkriterien automatisch in dynamischen Sammlungen organisiert werden."},
-    "projects": {"authorized": {"title": "Diese Manifold-Bibliothek ist leer.", "body": "Projekte lassen sich im Administrationsbereich erstellen und veröffentlichen. Weitere Informationen findest du in der Dokumentation."}, "unauthorized": {"title": "Diese Manifold-Bibliothek ist leer.", "body": "Schau bald wieder vorbei!"}},
-    "project_collections": {"authorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Projektsammlungen.", "body": "Projektsammlungen lassen sich im Administrationsbereich erstellen und veröffentlichen."}, "unauthorized": {"title": "In dieser Manifold-Bibliothek gibt es noch keine Projektsammlungen.", "body": "Schau bald wieder vorbei!"}},
-    "reading_groups": {"no_user": {"title": "Dieses Manifold hat noch keine Lesegruppen.", "body": "Registriere dich oder melde dich an, um die erste Gruppe zu erstellen."}, "public": {"title": "Dieses Manifold hat noch keine Lesegruppen.", "body": "Erstelle die erste Lesegruppe."}, "user": {"title": "Tritt einer Gruppe bei oder erstelle eine neue.", "body": "Gib unten einen Einladungscode ein, um einer Gruppe beizutreten. Du kannst auch eine eigene Gruppe erstellen."}},
-    "resource_collections": {"authorized": {"title": "Dieses Projekt hat noch keine Ressourcensammlungen.", "body": "Ressourcensammlungen bündeln Ressourcen zu Themen oder ermöglichen es, mehrere Ressourcen gemeinsam an einer Stelle in einem Text einzufügen."}, "unauthorized": {"title": "Dieses Projekt hat noch keine Ressourcensammlungen.", "body": "Schau bald wieder vorbei!"}},
-    "volume_no_issues": "Dieser Band enthält noch keine Ausgaben.", "journal_no_issues": "Diese Zeitschrift enthält noch keine Ausgaben."
+    "annotations_my": {
+      "title": "Erstelle deine erste Annotation!",
+      "body": "Füge beim Lesen deine Notizen und Annotationen zum Text hinzu. Speichere sie privat oder ordne sie einer Lesegruppe zu."
+    },
+    "journal_issues": {
+      "authorized": {
+        "title": "Oh nein. In dieser Manifold-Bibliothek gibt es keine Zeitschriftenausgaben.",
+        "body": "Mit Manifold lassen sich neue Ausgaben ganz einfach erstellen. Wenn du Zugriff auf den Administrationsbereich hast, <0>wechsle zum Administrationsbereich</0> und wähle zunächst <1>Neue Zeitschrift hinzufügen</1>. Sobald du eine Zeitschrift erstellt hast, kannst du ihr neue Ausgaben hinzufügen oder bestehende Projekte in Zeitschriftenausgaben umwandeln. Weitere Hilfe zum Erstellen und Veröffentlichen von Manifold-Ausgaben findest du in <2>unserer Dokumentation</2>."
+      },
+      "unauthorized": {
+        "title": "In dieser Manifold-Bibliothek gibt es keine Zeitschriftenausgaben.",
+        "body": "Schau bald wieder vorbei!"
+      }
+    },
+    "journals": {
+      "authorized": {
+        "title": "Oh nein. In dieser Manifold-Bibliothek gibt es keine Zeitschriften.",
+        "body": "Mit Manifold lassen sich neue Zeitschriften ganz einfach erstellen. Wenn du Zugriff auf den Administrationsbereich hast, <0>wechsle zum Administrationsbereich</0> und wähle <1>Neue Zeitschrift hinzufügen</1>. Weitere Hilfe zum Erstellen und Veröffentlichen von Manifold-Ausgaben findest du in <2>unserer Dokumentation</2>."
+      },
+      "unauthorized": {
+        "title": "In dieser Manifold-Bibliothek gibt es keine Zeitschriften.",
+        "body": "Schau bald wieder vorbei!"
+      }
+    },
+    "project_collections_admin": {
+      "title": "Bereit, eine Projektsammlung zu erstellen?",
+      "body": "Mit Projektsammlungen bestimmst du, was auf der Startseite deiner Manifold-Bibliothek erscheint. Erstelle eigene Gruppierungen von Projekten und ändere deren Reihenfolge und Sichtbarkeit. Du kannst Sammlungen gezielt zusammenstellen und manuell sortieren oder intelligente Sammlungen erstellen, die sich anhand deiner Filterkriterien automatisch aktualisieren."
+    },
+    "projects": {
+      "authorized": {
+        "title": "Oh nein. Diese Manifold-Bibliothek ist leer.",
+        "body": "Mit Manifold lassen sich Projekte ganz einfach erstellen und veröffentlichen. Wenn du Zugriff auf den Administrationsbereich hast, <0>wechsle zum Administrationsbereich</0> und wähle <1>Neues Projekt hinzufügen</1>. Weitere Hilfe zum Erstellen und Veröffentlichen von Manifold-Projekten findest du <2>hier</2>."
+      },
+      "unauthorized": {
+        "title": "Diese Manifold-Bibliothek ist leer.",
+        "body": "Schau bald wieder vorbei!"
+      }
+    },
+    "project_collections": {
+      "authorized": {
+        "title": "Oh nein. In dieser Manifold-Bibliothek gibt es keine Projektsammlungen.",
+        "body": "Mit Manifold lassen sich neue Projektsammlungen ganz einfach erstellen. Wenn du Zugriff auf den Administrationsbereich hast, <0>wechsle zum Administrationsbereich</0> und wähle <1>Neue Projektsammlung hinzufügen</1>. Weitere Hilfe zum Erstellen und Veröffentlichen von Manifold-Projektsammlungen findest du <2>hier</2>."
+      },
+      "unauthorized": {
+        "title": "In dieser Manifold-Bibliothek gibt es keine Projektsammlungen.",
+        "body": "Schau bald wieder vorbei!"
+      }
+    },
+    "reading_groups": {
+      "no_user": {
+        "title": "Dieses Manifold hat noch keine Lesegruppen.",
+        "body": "Registriere dich oder melde dich an, um die erste Gruppe zu erstellen, oder erfahre in unserer Dokumentation mehr über Lesegruppen."
+      },
+      "public": {
+        "title": "Dieses Manifold hat noch keine Lesegruppen.",
+        "body": "Sei die erste Person, die eine erstellt, oder erfahre in unserer Dokumentation mehr über Lesegruppen."
+      },
+      "user": {
+        "title": "Tritt einer Gruppe bei oder erstelle eine neue.",
+        "body": "Um einer Gruppe beizutreten, gib unten den Einladungscode deiner Gruppe ein. Du kannst auch eine eigene Gruppe erstellen oder in unserer Dokumentation mehr über Lesegruppen erfahren."
+      }
+    },
+    "resource_collections": {
+      "authorized": {
+        "title": "Oh nein. Dieses Projekt hat noch keine Sammlungen.",
+        "body": "Ressourcensammlungen sind Gruppierungen von Ressourcen, die Leser an bestimmten Themen orientieren oder es ermöglichen, mehrere Ressourcen mit einer einzigen Einfügung an einem Text zu platzieren."
+      },
+      "unauthorized": {
+        "title": "Dieses Projekt hat noch keine Sammlungen.",
+        "body": "Schau bald wieder vorbei!"
+      }
+    },
+    "volume_no_issues": "Dieser Band enthält noch keine Ausgaben.",
+    "journal_no_issues": "Diese Zeitschrift enthält noch keine Ausgaben."
   }
 }
