@@ -32,7 +32,10 @@ class Pagination extends Component {
       const previousPath = this.getSectionPath(previousNode);
       previousLink = (
         <Link
-          to={{ pathname: previousPath, state: { pageChange: true } }}
+          to={{
+            pathname: previousPath,
+            state: { pageChange: true, sectionDirection: "backward" }
+          }}
           className="section-pagination__link section-pagination__link--previous"
         >
           <IconComposer
@@ -59,7 +62,10 @@ class Pagination extends Component {
       const nextPath = this.getSectionPath(nextNode);
       nextLink = (
         <Link
-          to={{ pathname: nextPath, state: { pageChange: true } }}
+          to={{
+            pathname: nextPath,
+            state: { pageChange: true, sectionDirection: "forward" }
+          }}
           className="section-pagination__link section-pagination__link--next"
         >
           <span className="section-pagination__text">
