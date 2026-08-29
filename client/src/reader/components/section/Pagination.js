@@ -82,6 +82,24 @@ class Pagination extends Component {
     return nextLink;
   }
 
+  getProgress() {
+    if (!Array.isArray(this.props.sectionsMap)) return null;
+    const visibleSections = this.props.sectionsMap.filter(section => !section.hidden);
+    const index = visibleSections.findIndex(
+      section => section.id === this.props.sectionId
+    );
+    if (index < 0 || visibleSections.length < 2) return null;
+
+    return (
+      <span className="section-pagination__progress" aria-live="polite">
+        {this.props.t("navigation.reader_progress", {
+          current: index + 1,
+          total: visibleSections.length
+        })}
+      </span>
+    );
+  }
+
   render() {
     const text = this.props.text;
     if (!text) return null;
@@ -93,6 +111,7 @@ class Pagination extends Component {
       >
         <div className="section-pagination__inner container flush">
           {this.getPreviousLink(text)}
+          {this.getProgress()}
           {this.getNextLink(text)}
         </div>
       </nav>
