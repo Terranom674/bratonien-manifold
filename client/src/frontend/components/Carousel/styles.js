@@ -9,7 +9,8 @@ export const Root = styled.section`
 export const Viewport = styled.div`
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 100%;
+  grid-auto-columns: ${({ $variant }) =>
+    $variant === "cards" ? "minmax(240px, 31%)" : "100%"};
   gap: var(--carousel-gap);
   width: 100%;
   overflow-x: auto;
@@ -19,6 +20,7 @@ export const Viewport = styled.div`
   scroll-behavior: smooth;
   scrollbar-width: none;
   touch-action: pan-x pan-y;
+  padding-block: 4px;
 
   &::-webkit-scrollbar {
     display: none;
@@ -27,6 +29,16 @@ export const Viewport = styled.div`
   &:focus-visible {
     outline: 2px solid var(--focus-color);
     outline-offset: 4px;
+  }
+
+  @media (max-width: 900px) {
+    grid-auto-columns: ${({ $variant }) =>
+      $variant === "cards" ? "minmax(230px, 47%)" : "100%"};
+  }
+
+  @media (max-width: 600px) {
+    grid-auto-columns: ${({ $variant }) =>
+      $variant === "cards" ? "minmax(220px, 82%)" : "100%"};
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -40,11 +52,16 @@ export const Slide = styled.div`
   scroll-snap-stop: always;
   opacity: 0.72;
   transform: scale(0.985);
+  transform-origin: center;
   transition: opacity 180ms ease, transform 180ms ease;
 
   &[data-active="true"] {
     opacity: 1;
     transform: scale(1);
+  }
+
+  > * {
+    height: 100%;
   }
 
   @media (prefers-reduced-motion: reduce) {
