@@ -21,13 +21,17 @@ function CreateTextForm({
   const uidSeed = useUIDSeed();
   const navigate = useNavigate();
 
-  const [sectionName, setSectionName] = useState();
+  const [sectionName, setSectionName] = useState("");
   const [sections, setSections] = useState([]);
 
   const setSectionOrder = result => {
     const { draggableId, destination, title, announce, callback } =
       result ?? {};
+    if (!draggableId || !destination) return;
+
     const entity = sections.find(s => s.id === draggableId);
+    if (!entity) return;
+
     const newOrder = sections.filter(s => s.id !== draggableId);
     newOrder.splice(destination.index, 0, entity);
     setSections(newOrder);
@@ -51,10 +55,13 @@ function CreateTextForm({
   };
 
   const handleAddSection = (e, el) => {
-    const duplicate = sections.filter(s => s.name === el.value);
-    const id = duplicate.length ? `${el.value}_${duplicate.length}` : el.value;
-    setSections([...sections, { id: uidSeed(id), name: el.value }]);
-    setSectionName(null);
+    const value = (el?.value ?? sectionName).trim();
+    if (!value) return;
+
+    const duplicate = sections.filter(s => s.name === value);
+    const id = duplicate.length ? `${value}_${duplicate.length}` : value;
+    setSections([...sections, { id: uidSeed(id), name: value }]);
+    setSectionName("");
   };
 
   const addSectionsToRequest = data => {
@@ -111,12 +118,9 @@ function CreateTextForm({
         <div>
           <Form.TextInput
             placeholder={t("texts.create.section_name_placeholder")}
-            onChange={e => {
-              e.preventDefault();
-              setSectionName(e.target.value);
-            }}
+            onChange={e => setSectionName(e.target.value)}
             onKeyDown={(e, el) => {
-              if (e.keyCode === 13) {
+              if (e.key === "Enter") {
                 e.preventDefault();
                 handleAddSection(e, el);
               }
