@@ -59,6 +59,7 @@ export class SectionContainer extends Component {
     section: PropTypes.object,
     route: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
+    location: PropTypes.object,
     settings: PropTypes.object.isRequired,
     annotations: PropTypes.array,
     resources: PropTypes.array,
@@ -205,6 +206,13 @@ export class SectionContainer extends Component {
     return childRoutes(this.props.route, { childProps });
   }
 
+  get pageDirection() {
+    const direction = this.props.location?.state?.sectionDirection;
+    return direction === "backward" || direction === "forward"
+      ? direction
+      : "neutral";
+  }
+
   render() {
     if (!this.props.section || !this.props.text) return null;
     const { text, section } = this.props;
@@ -217,26 +225,32 @@ export class SectionContainer extends Component {
         />
         {this.renderStyles(this.props)}
         <HeadContent section={section} text={text} />
-        {this.renderRoutes()}
-        <Section.Text {...this.props} />
-        <div>
-          <Section.NextSection
-            sectionsMap={text.attributes.sectionsMap}
-            text={text}
-            sectionId={this.props.section.id}
-            typography={this.props.appearance.typography}
-          />
-          <Section.Pagination
-            text={text}
-            sectionId={this.props.section.id}
-            sectionsMap={text.attributes.sectionsMap}
-          />
+        <div
+          key={section.id}
+          className="bratonien-reader-page"
+          data-section-direction={this.pageDirection}
+        >
+          {this.renderRoutes()}
+          <Section.Text {...this.props} />
+          <div>
+            <Section.NextSection
+              sectionsMap={text.attributes.sectionsMap}
+              text={text}
+              sectionId={this.props.section.id}
+              typography={this.props.appearance.typography}
+            />
+            <Section.Pagination
+              text={text}
+              sectionId={this.props.section.id}
+              sectionsMap={text.attributes.sectionsMap}
+            />
+          </div>
+          {this.showLabel() && (
+            <Section.Label
+              label={get(text, "relationships.category.attributes.title")}
+            />
+          )}
         </div>
-        {this.showLabel() && (
-          <Section.Label
-            label={get(text, "relationships.category.attributes.title")}
-          />
-        )}
       </>
     );
   }
