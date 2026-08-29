@@ -16,11 +16,60 @@
   }
 }
 
+@keyframes bratonien-reader-forward {
+  from {
+    opacity: 0;
+    transform: translate3d(44px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bratonien-reader-backward {
+  from {
+    opacity: 0;
+    transform: translate3d(-44px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bratonien-reader-neutral {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* React Router ersetzt beim Navigieren die jeweilige direkte
    Seitenkomponente innerhalb von .main-content. Dadurch startet
    die Animation bei einem neuen Seiteninhalt erneut. */
 body.browse .main-content > * {
   animation: bratonien-page-enter 240ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Reader-Kapitel erhalten eine Richtungsinformation von der
+   Vor-/Zurueck-Navigation. So bewegt sich das neue Kapitel in
+   derselben Richtung wie die Navigation. */
+.bratonien-reader-page[data-section-direction="forward"] {
+  animation: bratonien-reader-forward 280ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.bratonien-reader-page[data-section-direction="backward"] {
+  animation: bratonien-reader-backward 280ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.bratonien-reader-page[data-section-direction="neutral"] {
+  animation: bratonien-reader-neutral 180ms ease-out both;
 }
 
 /* Opt-in-Klasse fuer weitere Bereiche, die bewusst horizontal
@@ -39,6 +88,7 @@ body.browse [data-bratonien-carousel="true"] {
 
 @media (prefers-reduced-motion: reduce) {
   body.browse .main-content > *,
+  .bratonien-reader-page,
   .bratonien-slide-in {
     animation: none !important;
   }
