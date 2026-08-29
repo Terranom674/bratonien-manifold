@@ -1,0 +1,49 @@
+/* =========================================================
+   BRATONIEN - BEWEGUNGSBASIS
+   Dezente Seitenwechsel und horizontale Inhalte ohne
+   Abhaengigkeit von einer zusaetzlichen Animationsbibliothek.
+   ========================================================= */
+
+@keyframes bratonien-page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* React Router ersetzt beim Navigieren die jeweilige direkte
+   Seitenkomponente innerhalb von .main-content. Dadurch startet
+   die Animation bei einem neuen Seiteninhalt erneut. */
+body.browse .main-content > * {
+  animation: bratonien-page-enter 240ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Opt-in-Klasse fuer weitere Bereiche, die bewusst horizontal
+   in den sichtbaren Bereich wechseln sollen. */
+.bratonien-slide-in {
+  animation: bratonien-page-enter 240ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Native horizontale Slider/Karussells wirken mit Snap und
+   Momentum-Scrolling auf Touchgeraeten deutlich direkter. */
+body.browse [data-bratonien-carousel="true"] {
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.browse .main-content > *,
+  .bratonien-slide-in {
+    animation: none !important;
+  }
+
+  body.browse [data-bratonien-carousel="true"] {
+    scroll-behavior: auto !important;
+  }
+}
