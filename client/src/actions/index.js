@@ -11,6 +11,7 @@ export * as uiStateSnapshotActions from "./ui/stateSnapshot";
 export * as uiSearchActions from "./ui/search";
 export * as uiFrontendModeActions from "./ui/frontendMode";
 export * as uiReadingGroupActions from "./ui/readingGroup";
+export * as uiLocaleActions from "./ui/locale";
 export * as persistentUI from "./ui/persistentUi";
 export * as entityEditorActions from "./entityEditor";
 export * as oauthActions from "./oauth";
