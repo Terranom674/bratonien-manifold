@@ -4,6 +4,7 @@ set -euo pipefail
 COMPOSE_FILE="${COMPOSE_FILE:-/opt/bratonien-manifold/compose.yml}"
 OWNER="${OWNER:-terranom674}"
 VERSION_PREFIX="${VERSION_PREFIX:-bratonien-v-0-}"
+PROJECT_NAME="${PROJECT_NAME:-bratonien-manifold}"
 
 get_latest_tag() {
   local package="$1"
@@ -52,6 +53,51 @@ print(max(found)[1])
   printf '%s\n' "$tag"
 }
 
+get_compose_image() {
+  local service="$1"
+  python3 - "$COMPOSE_FILE" "$service" <<'PY'
+import re
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+service = sys.argv[2]
+text = path.read_text()
+pattern = rf"(?ms)^  {re.escape(service)}:\n.*?^    image: ([^\n]+)"
+match = re.search(pattern, text)
+if not match:
+    raise SystemExit(1)
+print(match.group(1).strip())
+PY
+}
+
+get_running_image() {
+  local service="$1"
+  local container="${PROJECT_NAME}-${service}-1"
+
+  if ! docker container inspect "$container" >/dev/null 2>&1; then
+    printf '%s\n' ""
+    return 0
+  fi
+
+  docker container inspect "$container" --format '{{.Config.Image}}'
+}
+
+resolve_digest() {
+  local image="$1"
+  local digest
+
+  docker pull "$image" >/dev/null
+  digest="$(docker image inspect "$image" --format '{{index .RepoDigests 0}}')"
+
+  if [[ -z "$digest" || "$digest" == "<no value>" ]]; then
+    echo "Digest konnte nicht ermittelt werden: $image" >&2
+    exit 1
+  fi
+
+  printf '%s\n' "$digest"
+}
+
 CLIENT_TAG="${1:-}"
 API_TAG="${2:-}"
 
@@ -71,36 +117,61 @@ fi
 CLIENT_IMAGE="ghcr.io/${OWNER}/bratonien-manifold-client:${CLIENT_TAG}"
 API_IMAGE="ghcr.io/${OWNER}/bratonien-manifold-api:${API_TAG}"
 
-resolve_digest() {
-  local image="$1"
-  local digest
+CLIENT_PIN="$(resolve_digest "$CLIENT_IMAGE")"
+API_PIN="$(resolve_digest "$API_IMAGE")"
 
-  docker pull "$image" >/dev/null
-  digest="$(docker image inspect "$image" --format '{{index .RepoDigests 0}}')"
+CLIENT_COMPOSE="$(get_compose_image client)"
+INIT_COMPOSE="$(get_compose_image init)"
+WEB_COMPOSE="$(get_compose_image web)"
+WORKER_COMPOSE="$(get_compose_image worker)"
 
-  if [[ -z "$digest" || "$digest" == "<no value>" ]]; then
-    echo "Digest konnte nicht ermittelt werden: $image" >&2
-    exit 1
-  fi
+CLIENT_RUNNING="$(get_running_image client)"
+WEB_RUNNING="$(get_running_image web)"
+WORKER_RUNNING="$(get_running_image worker)"
 
-  printf '%s\n' "$digest"
-}
+CLIENT_CHANGED=0
+API_CHANGED=0
+COMPOSE_CHANGED=0
+
+if [[ "$CLIENT_COMPOSE" != "$CLIENT_PIN" || "$CLIENT_RUNNING" != "$CLIENT_PIN" ]]; then
+  CLIENT_CHANGED=1
+fi
+
+if [[ "$INIT_COMPOSE" != "$API_PIN" || "$WEB_COMPOSE" != "$API_PIN" || "$WORKER_COMPOSE" != "$API_PIN" || "$WEB_RUNNING" != "$API_PIN" || "$WORKER_RUNNING" != "$API_PIN" ]]; then
+  API_CHANGED=1
+fi
+
+if [[ "$CLIENT_COMPOSE" != "$CLIENT_PIN" || "$INIT_COMPOSE" != "$API_PIN" || "$WEB_COMPOSE" != "$API_PIN" || "$WORKER_COMPOSE" != "$API_PIN" ]]; then
+  COMPOSE_CHANGED=1
+fi
 
 echo "Ermittelte Versionen:"
 echo "Client: $CLIENT_TAG"
 echo "API:    $API_TAG"
 
-CLIENT_PIN="$(resolve_digest "$CLIENT_IMAGE")"
-API_PIN="$(resolve_digest "$API_IMAGE")"
+if [[ "$CLIENT_CHANGED" -eq 0 ]]; then
+  echo "Client: aktuell"
+else
+  echo "Client: Update erforderlich"
+fi
 
-BACKUP="${COMPOSE_FILE}.bak-$(date +%Y%m%d-%H%M%S)"
-cp "$COMPOSE_FILE" "$BACKUP"
+if [[ "$API_CHANGED" -eq 0 ]]; then
+  echo "API:    aktuell"
+else
+  echo "API:    Update erforderlich"
+fi
 
-echo "Backup: $BACKUP"
-echo "Client: $CLIENT_PIN"
-echo "API:    $API_PIN"
+if [[ "$CLIENT_CHANGED" -eq 0 && "$API_CHANGED" -eq 0 ]]; then
+  echo "Keine Aktualisierung notwendig."
+  exit 0
+fi
 
-python3 - "$COMPOSE_FILE" "$CLIENT_PIN" "$API_PIN" <<'PY'
+if [[ "$COMPOSE_CHANGED" -eq 1 ]]; then
+  BACKUP="${COMPOSE_FILE}.bak-$(date +%Y%m%d-%H%M%S)"
+  cp "$COMPOSE_FILE" "$BACKUP"
+  echo "Backup: $BACKUP"
+
+  python3 - "$COMPOSE_FILE" "$CLIENT_PIN" "$API_PIN" "$CLIENT_CHANGED" "$API_CHANGED" <<'PY'
 import re
 import sys
 from pathlib import Path
@@ -108,14 +179,15 @@ from pathlib import Path
 path = Path(sys.argv[1])
 client = sys.argv[2]
 api = sys.argv[3]
+client_changed = sys.argv[4] == "1"
+api_changed = sys.argv[5] == "1"
 text = path.read_text()
 
-services = {
-    "init": api,
-    "web": api,
-    "worker": api,
-    "client": client,
-}
+services = {}
+if client_changed:
+    services["client"] = client
+if api_changed:
+    services.update({"init": api, "web": api, "worker": api})
 
 for service, image in services.items():
     pattern = rf"(?ms)(^  {re.escape(service)}:\n.*?^    image: )[^\n]+"
@@ -126,15 +198,22 @@ for service, image in services.items():
 path.write_text(text)
 PY
 
-docker compose -f "$COMPOSE_FILE" config >/dev/null
+  docker compose -f "$COMPOSE_FILE" config >/dev/null
+  echo "Compose-Konfiguration gueltig."
+fi
 
-echo "Compose-Konfiguration gueltig."
+if [[ "$API_CHANGED" -eq 1 ]]; then
+  echo "Starte Datenbank-Upgrade..."
+  docker compose -f "$COMPOSE_FILE" run --rm -T init </dev/null
 
-echo "Starte Datenbank-Upgrade..."
-docker compose -f "$COMPOSE_FILE" run --rm -T init </dev/null
+  echo "Erstelle Web und Worker neu..."
+  docker compose -f "$COMPOSE_FILE" up -d --force-recreate web worker
+fi
 
-echo "Erstelle Client, Web und Worker neu..."
-docker compose -f "$COMPOSE_FILE" up -d --force-recreate client web worker
+if [[ "$CLIENT_CHANGED" -eq 1 ]]; then
+  echo "Erstelle Client neu..."
+  docker compose -f "$COMPOSE_FILE" up -d --force-recreate client
+fi
 
 echo
 echo "Aktiver Stand:"
