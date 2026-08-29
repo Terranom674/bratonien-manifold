@@ -6,7 +6,8 @@ export default function Carousel({
   children,
   label,
   itemLabel = "Element",
-  initialIndex = 0
+  initialIndex = 0,
+  variant = "full"
 }) {
   const items = React.Children.toArray(children);
   const viewportRef = useRef(null);
@@ -20,8 +21,10 @@ export default function Carousel({
       if (!viewport || !items.length) return;
 
       const nextIndex = Math.min(Math.max(index, 0), items.length - 1);
-      const width = viewport.clientWidth;
-      viewport.scrollTo({ left: nextIndex * width, behavior: "smooth" });
+      const target = viewport.children[nextIndex];
+      if (!target) return;
+
+      viewport.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
       setActiveIndex(nextIndex);
     },
     [items.length]
@@ -29,12 +32,22 @@ export default function Carousel({
 
   const updateFromScroll = useCallback(() => {
     const viewport = viewportRef.current;
-    if (!viewport || !viewport.clientWidth) return;
+    if (!viewport || !viewport.children.length) return;
 
-    const index = Math.round(viewport.scrollLeft / viewport.clientWidth);
-    const nextIndex = Math.min(Math.max(index, 0), Math.max(items.length - 1, 0));
-    setActiveIndex(nextIndex);
-  }, [items.length]);
+    const scrollLeft = viewport.scrollLeft;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    Array.from(viewport.children).forEach((child, index) => {
+      const distance = Math.abs(child.offsetLeft - scrollLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setActiveIndex(closestIndex);
+  }, []);
 
   useEffect(() => {
     const viewport = viewportRef.current;
@@ -52,6 +65,12 @@ export default function Carousel({
       viewport.removeEventListener("scroll", onScroll);
     };
   }, [updateFromScroll]);
+
+  useEffect(() => {
+    if (!items.length) return;
+    const safeIndex = Math.min(activeIndex, items.length - 1);
+    if (safeIndex !== activeIndex) setActiveIndex(safeIndex);
+  }, [activeIndex, items.length]);
 
   const handleKeyDown = event => {
     if (event.key === "ArrowRight" || event.key === "PageDown") {
@@ -76,11 +95,13 @@ export default function Carousel({
       role="region"
       aria-roledescription="Karussell"
       aria-label={label}
+      data-variant={variant}
     >
       <Styled.Viewport
         ref={viewportRef}
         tabIndex={0}
         onKeyDown={handleKeyDown}
+        $variant={variant}
       >
         {items.map((item, index) => (
           <Styled.Slide
@@ -125,5 +146,6 @@ Carousel.propTypes = {
   children: PropTypes.node,
   label: PropTypes.string.isRequired,
   itemLabel: PropTypes.string,
-  initialIndex: PropTypes.number
+  initialIndex: PropTypes.number,
+  variant: PropTypes.oneOf(["full", "cards"])
 };
