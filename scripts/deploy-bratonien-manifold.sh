@@ -13,14 +13,14 @@ get_latest_tag() {
 
   json="$(curl -fsSL -H 'Accept: application/vnd.github+json' "$url")"
 
-  tag="$(python3 - "$VERSION_PREFIX" <<'PY' <<<"$json"
+  tag="$(printf '%s' "$json" | python3 -c '
 import json
 import re
 import sys
 
 prefix = sys.argv[1]
 versions = json.load(sys.stdin)
-pattern = re.compile(r"^" + re.escape(prefix) + r"(\d+)$")
+pattern = re.compile(r"^" + re.escape(prefix) + r"(\\d+)$")
 found = []
 
 for version in versions:
@@ -34,8 +34,7 @@ if not found:
     raise SystemExit(1)
 
 print(max(found)[1])
-PY
-)" || {
+' "$VERSION_PREFIX")" || {
     echo "Keine verwaltete Version fuer ${package} gefunden." >&2
     exit 1
   }
@@ -122,7 +121,7 @@ docker compose -f "$COMPOSE_FILE" config >/dev/null
 echo "Compose-Konfiguration gueltig."
 
 echo "Starte Datenbank-Upgrade..."
-docker compose -f "$COMPOSE_FILE" run --rm init
+docker compose -f "$COMPOSE_FILE" run --rm -T init </dev/null
 
 echo "Erstelle Client, Web und Worker neu..."
 docker compose -f "$COMPOSE_FILE" up -d --force-recreate client web worker
