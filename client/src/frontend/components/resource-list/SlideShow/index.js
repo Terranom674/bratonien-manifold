@@ -71,8 +71,6 @@ class ResourceSlideshow extends PureComponent {
   }
 
   componentDidMount() {
-    document.addEventListener("keyup", this.bindKeyboard, false);
-
     if (this.sliderRef.current) {
       this.sliderRef.current.addEventListener("scroll", this.debouncedScroll);
     }
@@ -88,14 +86,13 @@ class ResourceSlideshow extends PureComponent {
 
       this.sliderRef.current.scrollTo({
         left: (this.state.position - 1) * clientWidth,
-        top: 0
+        top: 0,
+        behavior: "smooth"
       });
     }
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keyup", this.bindKeyboard, false);
-
     if (this.sliderRef.current) {
       this.sliderRef.current.removeEventListener(
         "scroll",
@@ -120,11 +117,19 @@ class ResourceSlideshow extends PureComponent {
     );
   }
 
-  bindKeyboard = event => {
-    if (event.keyCode === 39) {
+  handleKeyDown = event => {
+    if (event.key === "ArrowRight" || event.key === "PageDown") {
+      event.preventDefault();
       this.handleSlideNext();
-    } else if (event.keyCode === 37) {
+    } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
+      event.preventDefault();
       this.handleSlidePrev();
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      this.updatePosition(1);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      this.updatePosition(this.state.totalCount);
     }
   };
 
@@ -259,7 +264,15 @@ class ResourceSlideshow extends PureComponent {
 
     return (
       <Styled.SlideShow>
-        <Styled.SlidesWrapper ref={this.sliderRef}>
+        <Styled.SlidesWrapper
+          ref={this.sliderRef}
+          tabIndex={0}
+          role="region"
+          aria-roledescription="Karussell"
+          aria-label="Ressourcenkarussell"
+          data-bratonien-carousel="true"
+          onKeyDown={this.handleKeyDown}
+        >
           {collectionResourcesCount > 0
             ? this.renderSlideShow()
             : this.renderPlaceholder()}
