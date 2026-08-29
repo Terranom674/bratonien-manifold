@@ -29,7 +29,7 @@ class NextSection extends PureComponent {
       <Link
         to={{
           pathname: this.getSectionPath(nextSection.id),
-          state: { pageChange: true }
+          state: { pageChange: true, sectionDirection: "forward" }
         }}
         className="section-next-section__link"
       >
