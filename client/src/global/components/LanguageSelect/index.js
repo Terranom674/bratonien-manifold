@@ -23,7 +23,7 @@ function LanguageSelect({ language, label, instructions }) {
 
   return (
     <Select
-      label={label || t("localize-content")}
+      label={label || t("app.interface_language")}
       instructions={instructions}
       value={lang}
       options={[
