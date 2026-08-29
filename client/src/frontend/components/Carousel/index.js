@@ -102,6 +102,7 @@ export default function Carousel({
         tabIndex={0}
         onKeyDown={handleKeyDown}
         $variant={variant}
+        data-bratonien-carousel="true"
       >
         {items.map((item, index) => (
           <Styled.Slide
