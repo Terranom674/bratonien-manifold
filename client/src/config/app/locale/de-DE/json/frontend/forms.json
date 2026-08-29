@@ -3,40 +3,271 @@
     "add_to": "Hinzufügen zu",
     "my_starred_label": "Meine Favoriten",
     "category": {
-      "create": "Neue Kategorie", "edit": "Kategorie bearbeiten", "name": "Kategoriename", "delete": "Kategorie löschen", "name_placeholder": "Kategoriename eingeben…", "title": "Titel (optional)", "title_placeholder": "Titel eingeben…", "description": "Kategoriebeschreibung", "description_placeholder": "Kategoriebeschreibung eingeben", "description_instructions": "Gib eine kurze Beschreibung der Kategorie ein. Dieses Feld unterstützt einfaches Markdown.", "block_content": "Blockinhalt", "empty_placeholder": "Zum Hinzufügen hierher ziehen", "markdown_body_placeholder": "Markdown-Inhalt eingeben", "add_block": "Neuen Block hinzufügen:", "add_markdown": "Markdown", "add_category": "Kategorie", "organize": "Organisieren:", "expand_category": "Kategorieinhalt aufklappen", "collapse_category": "Kategorieinhalt zuklappen", "expand_block": "Blockinhalt aufklappen", "collapse_block": "Blockinhalt zuklappen", "edit_dialog_title": "{{title}} bearbeiten", "create_dialog_title": "Neuen Kategorieblock hinzufügen", "create_dialog_title_markdown": "Neuen Markdown-Block hinzufügen"
+      "create": "Neue Kategorie",
+      "edit": "Kategorie bearbeiten",
+      "name": "Kategoriename",
+      "delete": "Kategorie löschen",
+      "name_placeholder": "Kategoriename eingeben…",
+      "title": "Titel (optional)",
+      "title_placeholder": "Titel eingeben…",
+      "description": "Kategoriebeschreibung",
+      "description_placeholder": "Kategoriebeschreibung eingeben",
+      "description_instructions": "Gib eine kurze Beschreibung der Kategorie ein. Dieses Feld unterstützt einfaches Markdown.",
+      "block_content": "Blockinhalt",
+      "empty_placeholder": "Zum Hinzufügen hierher ziehen",
+      "markdown_body_placeholder": "Markdown-Inhalt eingeben",
+      "add_block": "Neuen Block hinzufügen:",
+      "add_markdown": "Markdown",
+      "add_category": "Kategorie",
+      "organize": "Organisieren:",
+      "expand_category": "Kategorieinhalt aufklappen",
+      "collapse_category": "Kategorieinhalt zuklappen",
+      "expand_block": "Blockinhalt aufklappen",
+      "collapse_block": "Blockinhalt zuklappen",
+      "edit_dialog_title": "{{title}} bearbeiten",
+      "create_dialog_title": "Neuen Kategorieblock hinzufügen",
+      "create_dialog_title_markdown": "Neuen Markdown-Block hinzufügen"
     },
     "reading_group": {
-      "drawer_title": "Neue Lesegruppe", "name": "Gruppenname", "name_placeholder": "Gruppenname wählen", "privacy": "Sichtbarkeit", "privacy_instructions": "Annotationen in öffentlichen Gruppen können von allen gelesen werden. Annotationen in privaten Gruppen sind nur für Gruppenmitglieder sichtbar. In anonymen Gruppen sind Kommentare privat und nur der Ersteller der Gruppe kann die Identität der Autoren sehen.",
-      "privacy_options": {"public": "Öffentlich", "private": "Privat", "anonymous": "Anonym"},
-      "invitation_code": "Einladungscode", "invitation_code_buttons": {"regenerate": "neu erzeugen", "copy": "kopieren"}, "invitation_code_instructions": "Benutzer können den Einladungscode auf der Seite „Lesegruppen verwalten“ eingeben, um dieser Gruppe beizutreten. Du kannst den Code jederzeit ändern; ältere Codes funktionieren danach nicht mehr.", "invitation_url": "Einladungs-URL", "invitation_url_instructions": "Die URL basiert auf dem Einladungscode. Leser können der Gruppe auch direkt über diese URL beitreten.", "invitation_url_button_label": "kopieren", "course": "Kurs", "course_instructions": "Kursinformationen werden für interne Auswertungen und Berichte verwendet.", "course_options": {"yes": "Ja", "no": "Nein"}, "course_start_date": "Kursbeginn:", "course_end_date": "Kursende:", "notifications": "Benachrichtigungen", "notifications_instructions": "E-Mail senden, wenn jemand dieser Gruppe beitritt"
+      "drawer_title": "Neue Lesegruppe",
+      "name": "Gruppenname",
+      "name_placeholder": "Gruppenname wählen",
+      "privacy": "Sichtbarkeit",
+      "privacy_instructions": "Annotationen in öffentlichen Gruppen können von allen gelesen werden. Annotationen in privaten Gruppen sind nur für Gruppenmitglieder sichtbar. In anonymen Gruppen sind Kommentare privat und nur der Ersteller der Gruppe kann die Identität der Autoren sehen.",
+      "privacy_options": {
+        "public": "Öffentlich",
+        "private": "Privat",
+        "anonymous": "Anonym"
+      },
+      "invitation_code": "Einladungscode",
+      "invitation_code_buttons": {
+        "regenerate": "neu erzeugen",
+        "copy": "kopieren"
+      },
+      "invitation_code_instructions": "Benutzer können den Einladungscode auf der Seite „Lesegruppen verwalten“ eingeben, um dieser Gruppe beizutreten. Du kannst den Code jederzeit ändern; ältere Codes funktionieren danach nicht mehr.",
+      "invitation_url": "Einladungs-URL",
+      "invitation_url_instructions": "Die URL basiert auf dem Einladungscode. Leser können der Gruppe auch direkt über diese URL beitreten.",
+      "invitation_url_button_label": "kopieren",
+      "course": "Kurs",
+      "course_instructions": "Kursinformationen werden für interne Auswertungen und Berichte verwendet.",
+      "course_options": {
+        "yes": "Ja",
+        "no": "Nein"
+      },
+      "course_start_date": "Kursbeginn:",
+      "course_end_date": "Kursende:",
+      "notifications": "Benachrichtigungen",
+      "notifications_instructions": "E-Mail senden, wenn jemand dieser Gruppe beitritt"
     },
     "reading_group_member": {
-      "title": "Gruppenmitglied bearbeiten", "name": "Name des Mitglieds", "role": "Rolle", "role_instructions": "Mitglieder können Gruppenannotation sehen und innerhalb der Gruppe annotieren. Moderatoren können Mitglieder verwalten und Gruppeneinstellungen ändern.", "role_options": {"member": "Mitglied", "moderator": "Moderator"}, "label": "Bezeichnung", "label_placeholder": "Bezeichnung eingeben", "label_instructions": "Bezeichnungen beschreiben bestimmte Mitglieder und erscheinen neben dem Namen in der Mitgliederliste.", "annotation_style": "Annotationsstil", "annotation_style_instructions": "Der Annotationsstil wird im Manifold-Reader dargestellt und hilft dabei, Annotationen verschiedener Benutzer innerhalb einer Lesegruppe zu unterscheiden.", "annotation_style_options": {"dashed": "Gestrichelt", "dotted": "Gepunktet", "solid": "Durchgezogen", "wavy": "Gewellt"}, "style_preview": "So wird der ausgewählte Annotationsstil im Reader dargestellt. Schrift und Größe können abhängig von den Reader-Einstellungen abweichen."
+      "title": "Gruppenmitglied bearbeiten",
+      "name": "Name des Mitglieds",
+      "role": "Rolle",
+      "role_instructions": "Mitglieder können Gruppenannotation sehen und innerhalb der Gruppe annotieren. Moderatoren können Mitglieder verwalten und Gruppeneinstellungen ändern.",
+      "role_options": {
+        "member": "Mitglied",
+        "moderator": "Moderator"
+      },
+      "label": "Bezeichnung",
+      "label_placeholder": "Bezeichnung eingeben",
+      "label_instructions": "Bezeichnungen beschreiben bestimmte Mitglieder und erscheinen neben dem Namen in der Mitgliederliste.",
+      "annotation_style": "Annotationsstil",
+      "annotation_style_instructions": "Der Annotationsstil wird im Manifold-Reader dargestellt und hilft dabei, Annotationen verschiedener Benutzer innerhalb einer Lesegruppe zu unterscheiden.",
+      "annotation_style_options": {
+        "dashed": "Gestrichelt",
+        "dotted": "Gepunktet",
+        "solid": "Durchgezogen",
+        "wavy": "Gewellt"
+      },
+      "style_preview": "So wird der ausgewählte Annotationsstil im Reader dargestellt. Schrift und Größe können abhängig von den Reader-Einstellungen abweichen."
     },
-    "manage_group": {"title": "Gruppe verwalten:", "instructions": "Bearbeite die Startseite oder die Einstellungen deiner Lesegruppe.", "edit_homepage": "Startseite bearbeiten:", "edit_homepage_sr": "Gruppenstartseite bearbeiten", "view_homepage": "Gruppenstartseite anzeigen", "edit_settings": "Einstellungen bearbeiten"},
-    "join_group": {"title": "Einer Gruppe beitreten:", "instructions": "Gib den Code ein und wähle „Beitreten“.", "join_code": "Beitrittscode", "code_placeholder": "Code eingeben", "button_label": "Beitreten", "confirm_button_label": "OK"},
-    "edit_group": {"title": "Lesegruppe bearbeiten", "duplicate": {"label": "Duplizieren", "heading": "Kopie von {{group}} erstellen", "instructions": "Dadurch wird eine Kopie deiner Lesegruppe erstellt. Anschließend musst du der neuen Gruppe Benutzer hinzufügen.", "group_name": "Name der Lesegruppe", "copy_annotations": "Meine Annotationen kopieren", "archive": "Kopierte Gruppe archivieren", "open_after": "Neue Gruppe nach dem Duplizieren öffnen"}},
-    "contact": {"title": "Nachricht senden", "email": "E-Mail", "email_placeholder": "E-Mail", "name": "Name", "name_placeholder": "Name", "message": "Nachricht", "message_placeholder": "Nachricht", "button_label": "Nachricht senden"},
-    "password_reset": {"password": "Passwort", "title": "Passwort zurücksetzen", "new": "Neues Passwort", "new_placeholder": "Passwort", "confirm": "Passwort bestätigen", "confirm_placeholder": "Passwort bestätigen", "submit_reset": "Passwort zurücksetzen", "generate_password": "Neues Passwort erzeugen", "set_password": "Neues Passwort festlegen", "show": "Passwort anzeigen", "hide": "Passwort ausblenden", "enter_password": "Passwort eingeben"},
+    "manage_group": {
+      "title": "Gruppe verwalten:",
+      "instructions": "Bearbeite die Startseite oder die Einstellungen deiner Lesegruppe.",
+      "edit_homepage": "Startseite bearbeiten:",
+      "edit_homepage_sr": "Gruppenstartseite bearbeiten",
+      "view_homepage": "Gruppenstartseite anzeigen",
+      "edit_settings": "Einstellungen bearbeiten"
+    },
+    "join_group": {
+      "title": "Einer Gruppe beitreten:",
+      "instructions": "Gib den Code ein und wähle „Beitreten“.",
+      "join_code": "Beitrittscode",
+      "code_placeholder": "Code eingeben",
+      "button_label": "Beitreten",
+      "confirm_button_label": "OK"
+    },
+    "edit_group": {
+      "title": "Lesegruppe bearbeiten",
+      "duplicate": {
+        "label": "Duplizieren",
+        "heading": "Kopie von {{group}} erstellen",
+        "instructions": "Dadurch wird eine Kopie deiner Lesegruppe erstellt. Anschließend musst du der neuen Gruppe Benutzer hinzufügen.",
+        "group_name": "Name der Lesegruppe",
+        "copy_annotations": "Meine Annotationen kopieren",
+        "archive": "Kopierte Gruppe archivieren",
+        "open_after": "Neue Gruppe nach dem Duplizieren öffnen"
+      }
+    },
+    "contact": {
+      "title": "Nachricht senden",
+      "email": "E-Mail",
+      "email_placeholder": "E-Mail",
+      "name": "Name",
+      "name_placeholder": "Name",
+      "message": "Nachricht",
+      "message_placeholder": "Nachricht",
+      "button_label": "Nachricht senden"
+    },
+    "password_reset": {
+      "password": "Passwort",
+      "title": "Passwort zurücksetzen",
+      "new": "Neues Passwort",
+      "new_placeholder": "$t(forms.password_reset.password)",
+      "confirm": "Passwort bestätigen",
+      "confirm_placeholder": "Passwort bestätigen",
+      "submit_reset": "Passwort zurücksetzen",
+      "generate_password": "Neues Passwort erzeugen",
+      "set_password": "Neues Passwort festlegen",
+      "show": "Passwort anzeigen",
+      "hide": "Passwort ausblenden",
+      "enter_password": "Passwort eingeben"
+    },
     "notifications": {
-      "title": "Benachrichtigungseinstellungen", "instructions": "E-Mail-Benachrichtigungen und Abonnements bearbeiten.", "submit_label": "Änderungen speichern", "project_activity": "Projektaktivität", "project_activity_instructions": "Manifold kann dir täglich oder wöchentlich Informationen über neue Texte, Ressourcen und Ressourcensammlungen in Projekten per E-Mail senden.", "other_activity": "Weitere Aktivität", "unsubscribe": "Alle abbestellen",
-      "project_preferences": {"frequency_label": "Wie oft möchtest du benachrichtigt werden?", "never": "Nie", "daily": "Täglich", "weekly": "Wöchentlich", "digest_projects_label": "Welche Projekte sollen enthalten sein?", "all_projects": "Alle Projekte", "only_starred": "Nur meine favorisierten Projekte", "digest_comments_label": "Neue Kommentare und Annotationen einbeziehen?"},
-      "activity_preferences": {"replies_to_me_label": "Benachrichtigen, wenn jemand dir antwortet?", "replies_to_me_instructions": "Manifold sendet dir eine E-Mail, wenn auf deine Annotationen oder Kommentare geantwortet wird.", "project_comments_and_annotations_label": "Über alle Kommentare und Annotationen benachrichtigen?", "project_comments_and_annotations_instructions": "Manifold sendet dir eine E-Mail, wenn ein Kommentar oder eine Annotation erstellt wird.", "flagged_resources_label": "Benachrichtigen, wenn Kommentare gemeldet werden.", "flagged_resources_instructions": "Du erhältst eine E-Mail, sobald ein Benutzer einen Kommentar meldet."}
+      "title": "Benachrichtigungseinstellungen",
+      "instructions": "E-Mail-Benachrichtigungen und Abonnements bearbeiten.",
+      "submit_label": "Änderungen speichern",
+      "project_activity": "Projektaktivität",
+      "project_activity_instructions": "Manifold kann dir täglich oder wöchentlich Informationen über neue Texte, Ressourcen und Ressourcensammlungen in Projekten per E-Mail senden.",
+      "other_activity": "Weitere Aktivität",
+      "unsubscribe": "Alle abbestellen",
+      "project_preferences": {
+        "frequency_label": "Wie oft möchtest du benachrichtigt werden?",
+        "never": "Nie",
+        "daily": "Täglich",
+        "weekly": "Wöchentlich",
+        "digest_projects_label": "Welche Projekte sollen enthalten sein?",
+        "all_projects": "Alle $t(glossary.project_title_case_other)",
+        "only_starred": "Nur meine favorisierten Projekte",
+        "digest_comments_label": "Neue Kommentare und Annotationen einbeziehen?"
+      },
+      "activity_preferences": {
+        "replies_to_me_label": "Benachrichtigen, wenn jemand dir antwortet?",
+        "replies_to_me_instructions": "Manifold sendet dir eine E-Mail, wenn auf deine Annotationen oder Kommentare geantwortet wird.",
+        "project_comments_and_annotations_label": "Über alle Kommentare und Annotationen benachrichtigen?",
+        "project_comments_and_annotations_instructions": "Manifold sendet dir eine E-Mail, wenn ein Kommentar oder eine Annotation erstellt wird.",
+        "flagged_resources_label": "Benachrichtigen, wenn Kommentare gemeldet werden.",
+        "flagged_resources_instructions": "Du erhältst eine E-Mail, sobald ein Benutzer einen Kommentar meldet."
+      }
     },
     "signin_overlay": {
-      "terms_and_conditions": "Mit der Erstellung dieses Kontos stimmst du den <0>Nutzungsbedingungen</0> von {{appName}} zu.", "create_account": "Konto erstellen", "email": "E-Mail", "name": "Name", "password": "Passwort", "confirm_password": "Passwort bestätigen", "confirm_new_password": "Neues Passwort bestätigen", "reset_password": "Passwort zurücksetzen", "new_password": "Neues Passwort", "forgot_password": "Passwort vergessen?", "remember_password": "Passwort wieder eingefallen?", "send_password_reset": "E-Mail zum Zurücksetzen senden", "send_reset_success": "Eine E-Mail mit Anweisungen zum Zurücksetzen wurde an {{email}} gesendet.", "oauth_instructions": "Du kannst auch mit deinen Zugangsdaten von {{providers, list(style: long; type: conjunction;)}} ein {{appName}}-Konto erstellen.", "have_account": "Du hast bereits ein Konto?", "need_account": "Noch kein Konto?", "log_in": "Anmelden", "log_in_with_provider": "Mit {{provider}} anmelden", "log_out": "Abmelden", "current_user": "Du bist als {{name}} angemeldet.", "sr_title": "Konto erstellen/verwalten", "update_nickname": "Möchtest du deinen Anzeigenamen ändern?", "nickname": "Anzeigename", "familiar_name": "Möchtest du anders angesprochen werden?", "registered_email": "Deine registrierte E-Mail-Adresse lautet:", "profile_img": "Profilbild", "profile_img_instructions": "Du kannst hier ein Profilbild hochladen.", "remove_avatar": "Aktuellen Avatar entfernen", "upload_avatar_instructions": "<0>Datei hochladen</0> oder <br/> per Drag-and-drop ablegen", "edit_account": "Möchtest du deine Kontoinformationen bearbeiten?", "first_name": "Vorname", "last_name": "Nachname", "update_sr_title": "Konto aktualisieren", "submit_update_label": "Änderungen speichern", "notification_settings": "Benachrichtigungseinstellungen", "subscriptions__label": "Einstellungen für E-Mail-Benachrichtigungen anpassen:", "greeting": "Hallo, <0>{{name}}</0>.", "update_notification_header": "Profil erfolgreich aktualisiert!", "terms_header": "Zuerst das Wichtigste…", "accept_checkbox_label": "Ich stimme der <privacyLink>Datenschutzerklärung</privacyLink> und den <termsLink>Nutzungsbedingungen</termsLink> von {{installationName}} zu.", "accept_checkbox_label_truncated": "Ich stimme den <termsLink>Nutzungsbedingungen</termsLink> von {{installationName}} zu.", "not_verified_warning": "Deine E-Mail-Adresse ist noch nicht bestätigt. Bis zur Bestätigung kannst du nicht öffentlich mit Projekten oder Lesegruppen interagieren.", "trusted_not_verified_warning": "Deine E-Mail-Adresse ist noch nicht bestätigt.", "resend_verification": "Bestätigungs-E-Mail erneut senden", "email_success_notification": "Bestätigungs-E-Mail gesendet!", "email_failure_notiication": "Bestätigungs-E-Mail konnte nicht gesendet werden. Bitte versuche es erneut."
+      "terms_and_conditions": "Mit der Erstellung dieses Kontos stimmst du den <0>Nutzungsbedingungen</0> von {{appName}} zu.",
+      "create_account": "$t(actions.create) Konto",
+      "email": "E-Mail",
+      "name": "Name",
+      "password": "Passwort",
+      "confirm_password": "$t(forms.signin_overlay.password) bestätigen",
+      "confirm_new_password": "Neues $t(forms.signin_overlay.password) bestätigen",
+      "reset_password": "$t(forms.signin_overlay.password) zurücksetzen",
+      "new_password": "Neues $t(forms.signin_overlay.password)",
+      "forgot_password": "Passwort vergessen?",
+      "remember_password": "Passwort wieder eingefallen?",
+      "send_password_reset": "E-Mail zum Zurücksetzen senden",
+      "send_reset_success": "Eine E-Mail mit Anweisungen zum Zurücksetzen wurde an {{email}} gesendet.",
+      "oauth_instructions": "Du kannst auch mit deinen Zugangsdaten von {{providers, list(style: long; type: conjunction;)}} ein {{appName}}-Konto erstellen.",
+      "have_account": "Du hast bereits ein Konto?",
+      "need_account": "Noch kein Konto?",
+      "log_in": "Anmelden",
+      "log_in_with_provider": "Mit {{provider}} anmelden",
+      "log_out": "Abmelden",
+      "current_user": "Du bist als {{name}} angemeldet.",
+      "sr_title": "Konto erstellen/verwalten",
+      "update_nickname": "Möchtest du deinen Anzeigenamen ändern?",
+      "nickname": "Anzeigename",
+      "familiar_name": "Möchtest du anders angesprochen werden?",
+      "registered_email": "Deine registrierte E-Mail-Adresse lautet:",
+      "profile_img": "Profilbild",
+      "profile_img_instructions": "Du kannst hier ein Profilbild hochladen.",
+      "remove_avatar": "Aktuellen Avatar entfernen",
+      "upload_avatar_instructions": "<0>Datei hochladen</0> oder <br/> per Drag-and-drop ablegen",
+      "edit_account": "Möchtest du deine Kontoinformationen bearbeiten?",
+      "first_name": "Vorname",
+      "last_name": "Nachname",
+      "update_sr_title": "Konto aktualisieren",
+      "submit_update_label": "Änderungen speichern",
+      "notification_settings": "Benachrichtigungseinstellungen",
+      "subscriptions__label": "Einstellungen für E-Mail-Benachrichtigungen anpassen:",
+      "create_success_message": "<0>Glückwunsch! </0><1>Dein Konto wurde erfolgreich erstellt und du bist jetzt bei Manifold angemeldet. Von jetzt an nenne ich dich </1><2>{{name}}</h4>",
+      "greeting": "Hallo, <0>{{name}}</0>.",
+      "update_notification_header": "Profil erfolgreich aktualisiert!",
+      "terms_header": "Zuerst das Wichtigste…",
+      "accept_checkbox_label": "Ich stimme der <privacyLink>Datenschutzerklärung</privacyLink> und den <termsLink>Nutzungsbedingungen</termsLink> von {{installationName}} zu.",
+      "accept_checkbox_label_truncated": "Ich stimme den <termsLink>Nutzungsbedingungen</termsLink> von {{installationName}} zu.",
+      "not_verified_warning": "Deine E-Mail-Adresse ist noch nicht bestätigt. Bis zur Bestätigung kannst du nicht öffentlich mit Projekten oder Lesegruppen interagieren.",
+      "trusted_not_verified_warning": "Deine E-Mail-Adresse ist noch nicht bestätigt.",
+      "resend_verification": "Bestätigungs-E-Mail erneut senden",
+      "email_success_notification": "Bestätigungs-E-Mail gesendet!",
+      "email_failure_notiication": "Bestätigungs-E-Mail konnte nicht gesendet werden. Bitte versuche es erneut."
     },
-    "attribute_map": {"cancel": "Zuordnung von {{name}} zu {{mapping}} aufheben", "placeholder": "Spalte hierher ziehen…", "auto_map": "Attribute automatisch zuordnen", "spreadsheet_cols": "Tabellenspalten", "col_header_placeholder": "Spalte {{num}}", "available": "Verfügbare Attribute", "instructions": "Links stehen die Spaltenüberschriften aus deiner Tabelle, rechts die verfügbaren Manifold-Attribute. Ziehe die Attribute rechts auf die passenden Spalten links. Über „Attribute automatisch zuordnen“ versucht Manifold, passende Zuordnungen selbst zu erkennen."},
-    "picker": {"remove_all": "Alle entfernen", "add_all": "Alle hinzufügen", "no_options": "Keine Optionen", "clear_selection": "Auswahl aufheben", "reset": "Zurücksetzen"},
-    "upload": {"instructions": "<0>Datei hochladen</0> oder <br/> hierher ziehen <br/>", "instructions_with_existing": "<0>Diese Datei entfernen</0><br/>oder <1>neue Datei hochladen</1>", "progress": "Datei wird zu Manifold hochgeladen. <br/>{{percent}} % abgeschlossen.", "image_preview": "<0>Dieses Bild entfernen</0><br/>oder <1>neue Datei hochladen</1>", "image_preview_alt": "Upload-Vorschau"},
-    "date_picker": {"date_change_sr_status": "Du hast {{date}} eingegeben.", "date_clear_sr_status": "Du hast das Datum gelöscht."},
+    "attribute_map": {
+      "cancel": "Zuordnung von {{name}} zu {{mapping}} aufheben",
+      "placeholder": "Spalte hierher ziehen…",
+      "auto_map": "Attribute automatisch zuordnen",
+      "spreadsheet_cols": "Tabellenspalten",
+      "col_header_placeholder": "Spalte {{num}}",
+      "available": "Verfügbare Attribute",
+      "instructions": "Links stehen die Spaltenüberschriften aus deiner Tabelle, rechts die verfügbaren Manifold-Attribute. Ziehe die Attribute rechts auf die passenden Spalten links. Über „Attribute automatisch zuordnen“ versucht Manifold, passende Zuordnungen selbst zu erkennen."
+    },
+    "picker": {
+      "remove_all": "Alle entfernen",
+      "add_all": "Alle hinzufügen",
+      "no_options": "Keine Optionen",
+      "clear_selection": "Auswahl aufheben",
+      "reset": "Zurücksetzen"
+    },
+    "upload": {
+      "instructions": "<0>Datei hochladen</0> oder <br/> hierher ziehen <br/>",
+      "instructions_with_existing": "<0>Diese Datei entfernen</0><br/>oder <1>neue Datei hochladen</1>",
+      "progress": "Datei wird zu Manifold hochgeladen. <br/>{{percent}} % abgeschlossen.",
+      "image_preview": "<0>Dieses Bild entfernen</0><br/>oder <1>neue Datei hochladen</1>",
+      "image_preview_alt": "Upload-Vorschau"
+    },
+    "date_picker": {
+      "date_change_sr_status": "Du hast {{date}} eingegeben.",
+      "date_clear_sr_status": "Du hast das Datum gelöscht."
+    },
     "privacy": {
-      "title": "Datenschutzeinstellungen", "instructions": "Datenschutzeinstellungen bearbeiten.", "cookies": "Cookies", "no_analytics_message": "{{name}} verwendet keine Cookies, um deine Aktivität zu verfolgen.",
-      "internal_analytics": {"label": "Interne Analysen", "description": "Mit „Ja“ erlaubst du dieser Website, VISIT_TOKEN und VISITOR_TOKEN für anonyme interne Analysen zu setzen."},
-      "google_analytics": {"label": "Google Analytics", "description": "Mit „Ja“ erlaubst du Google Analytics, anonymisierte Interaktionen mit der Website zu erfassen."},
-      "submit_button": "Änderungen speichern", "account_data": "Kontodaten",
-      "download": {"header": "Deine Daten herunterladen", "description": "Exportiere eine Kopie deiner Manifold-Kontodaten. Sobald der Export bereitsteht, erhältst du einen Download-Link per E-Mail.", "button_label": "Export starten"},
-      "delete": {"header": "Konto löschen", "description": "Dadurch werden dein gesamtes Konto und deine Annotationen aus der Datenbank gelöscht. Von dir erstellte Projekte und Texte bleiben bestehen. Gelöschte Konten können nicht wiederhergestellt werden.", "button_label": "Mein Konto löschen", "confirm_header": "Möchtest du dein Konto wirklich löschen?", "confirm_instructions": "Gib zum Fortfahren deine E-Mail-Adresse ein.", "email_placeholder": "E-Mail-Adresse", "email_mismatch_error": "Die eingegebene E-Mail-Adresse stimmt nicht mit deinem Konto überein.", "confirm_button_label": "Ja, mein Konto löschen", "confirmation_body": "{{name}} und alle zugehörigen Kontodaten wurden aus Manifold entfernt.", "confirmation_header": "Schade, dass du gehst!"}
+      "title": "Datenschutzeinstellungen",
+      "instructions": "Datenschutzeinstellungen bearbeiten.",
+      "cookies": "Cookies",
+      "no_analytics_message": "{{name}} verwendet keine Cookies, um deine Aktivität zu verfolgen.",
+      "internal_analytics": {
+        "label": "Interne Analysen",
+        "description": "Mit „Ja“ erlaubst du dieser Website, VISIT_TOKEN und VISITOR_TOKEN für anonyme interne Analysen zu setzen."
+      },
+      "google_analytics": {
+        "label": "Google Analytics",
+        "description": "Mit „Ja“ erlaubst du Google Analytics, anonymisierte Interaktionen mit der Website zu erfassen."
+      },
+      "submit_button": "Änderungen speichern",
+      "account_data": "Kontodaten",
+      "download": {
+        "header": "Deine Daten herunterladen",
+        "description": "Exportiere eine Kopie deiner Manifold-Kontodaten. Sobald der Export bereitsteht, erhältst du einen Download-Link per E-Mail.",
+        "button_label": "Export starten"
+      },
+      "delete": {
+        "header": "Konto löschen",
+        "description": "Dadurch werden dein gesamtes Konto und deine Annotationen aus der Datenbank gelöscht. Von dir erstellte Projekte und Texte bleiben bestehen. Gelöschte Konten können nicht wiederhergestellt werden.",
+        "button_label": "Mein Konto löschen",
+        "confirm_header": "Möchtest du dein Konto wirklich löschen?",
+        "confirm_instructions": "Gib zum Fortfahren deine E-Mail-Adresse ein.",
+        "email_placeholder": "E-Mail-Adresse",
+        "email_mismatch_error": "Die eingegebene E-Mail-Adresse stimmt nicht mit deinem Konto überein.",
+        "confirm_button_label": "Ja, mein Konto löschen",
+        "confirmation_body": "{{name}} und alle zugehörigen Kontodaten wurden aus Manifold entfernt.",
+        "confirmation_header": "Schade, dass du gehst!"
+      }
     }
   }
 }
