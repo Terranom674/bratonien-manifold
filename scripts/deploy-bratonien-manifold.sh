@@ -3,14 +3,55 @@ set -euo pipefail
 
 COMPOSE_FILE="${COMPOSE_FILE:-/opt/bratonien-manifold/compose.yml}"
 OWNER="${OWNER:-terranom674}"
-CLIENT_TAG="${1:-}"
-API_TAG="${2:-${1:-}}"
+VERSION_PREFIX="${VERSION_PREFIX:-bratonien-v-0-}"
 
-if [[ -z "$CLIENT_TAG" || -z "$API_TAG" ]]; then
-  echo "Usage: $0 <client-tag> [api-tag]"
-  echo "Example: $0 bratonien-v-0-1"
-  echo "Example: $0 bratonien-v-0-3 bratonien-v-0-2"
-  exit 2
+get_latest_tag() {
+  local package="$1"
+  local url="https://api.github.com/users/${OWNER}/packages/container/${package}/versions?per_page=100"
+  local json
+  local tag
+
+  json="$(curl -fsSL -H 'Accept: application/vnd.github+json' "$url")"
+
+  tag="$(python3 - "$VERSION_PREFIX" <<'PY' <<<"$json"
+import json
+import re
+import sys
+
+prefix = sys.argv[1]
+versions = json.load(sys.stdin)
+pattern = re.compile(r"^" + re.escape(prefix) + r"(\d+)$")
+found = []
+
+for version in versions:
+    tags = (((version.get("metadata") or {}).get("container") or {}).get("tags") or [])
+    for tag in tags:
+        match = pattern.match(tag)
+        if match:
+            found.append((int(match.group(1)), tag))
+
+if not found:
+    raise SystemExit(1)
+
+print(max(found)[1])
+PY
+)" || {
+    echo "Keine verwaltete Version fuer ${package} gefunden." >&2
+    exit 1
+  }
+
+  printf '%s\n' "$tag"
+}
+
+CLIENT_TAG="${1:-}"
+API_TAG="${2:-}"
+
+if [[ -z "$CLIENT_TAG" ]]; then
+  CLIENT_TAG="$(get_latest_tag bratonien-manifold-client)"
+fi
+
+if [[ -z "$API_TAG" ]]; then
+  API_TAG="$(get_latest_tag bratonien-manifold-api)"
 fi
 
 if [[ ! -f "$COMPOSE_FILE" ]]; then
@@ -35,6 +76,10 @@ resolve_digest() {
 
   printf '%s\n' "$digest"
 }
+
+echo "Ermittelte Versionen:"
+echo "Client: $CLIENT_TAG"
+echo "API:    $API_TAG"
 
 CLIENT_PIN="$(resolve_digest "$CLIENT_IMAGE")"
 API_PIN="$(resolve_digest "$API_IMAGE")"
