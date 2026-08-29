@@ -398,7 +398,7 @@ function Build-And-PushComponent {
         --target production `
         --label "org.opencontainers.image.revision=$CurrentCommit" `
         -t $Component.LocalImage `
-        ".\$($Component.Path)"
+        ".\$($Component.Path)" | Out-Host
 
     if ($LASTEXITCODE -ne 0) {
         throw "$($Component.Name)-Build fehlgeschlagen."
