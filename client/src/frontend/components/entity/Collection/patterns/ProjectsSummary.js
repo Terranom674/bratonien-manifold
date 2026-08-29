@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import lh from "helpers/linkHandler";
 import EntityThumbnail from "global/components/atomic/EntityThumbnail";
-import ThumbnailGrid from "global/components/entity/ThumbnailGrid";
+import Carousel from "frontend/components/Carousel";
 import FooterLink from "../parts/FooterLink";
 import EntityCollection from "../EntityCollection";
 
@@ -14,19 +14,21 @@ function ProjectsSummaryEntityCollection({ projects, ...passThroughProps }) {
     <EntityCollection
       title={t("pages.projects_all")}
       icon="projects64"
-      BodyComponent={props => (
-        <ThumbnailGrid isList={projects.length > 1} {...props}>
-          {({ stack }) =>
-            projects.map(item => (
-              <EntityThumbnail
-                key={item.id}
-                entity={item}
-                stack={stack}
-                isListItem={projects.length > 1}
-              />
-            ))
-          }
-        </ThumbnailGrid>
+      BodyComponent={() => (
+        <Carousel
+          label={t("pages.projects_all")}
+          itemLabel={t("glossary.project_one")}
+          variant="cards"
+        >
+          {projects.map(item => (
+            <EntityThumbnail
+              key={item.id}
+              entity={item}
+              stack
+              isListItem={false}
+            />
+          ))}
+        </Carousel>
       )}
       FooterComponent={() => (
         <FooterLink
