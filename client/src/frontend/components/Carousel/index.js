@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 import * as Styled from "./styles";
 
 export default function Carousel({
@@ -9,6 +10,7 @@ export default function Carousel({
   initialIndex = 0,
   variant = "full"
 }) {
+  const { t } = useTranslation();
   const items = React.Children.toArray(children);
   const viewportRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(
@@ -91,12 +93,7 @@ export default function Carousel({
   if (!items.length) return null;
 
   return (
-    <Styled.Root
-      role="region"
-      aria-roledescription="Karussell"
-      aria-label={label}
-      data-variant={variant}
-    >
+    <Styled.Root role="region" aria-label={label} data-variant={variant}>
       <Styled.Viewport
         ref={viewportRef}
         tabIndex={0}
@@ -107,8 +104,12 @@ export default function Carousel({
         {items.map((item, index) => (
           <Styled.Slide
             key={item.key ?? index}
-            aria-roledescription="Folie"
-            aria-label={`${itemLabel} ${index + 1} von ${items.length}`}
+            aria-label={t("navigation.carousel_item", {
+              item: itemLabel,
+              current: index + 1,
+              total: items.length
+            })}
+            aria-current={index === activeIndex ? "true" : undefined}
             data-active={index === activeIndex}
           >
             {item}
@@ -122,7 +123,7 @@ export default function Carousel({
             type="button"
             onClick={() => scrollToIndex(activeIndex - 1)}
             disabled={activeIndex === 0}
-            aria-label="Vorheriges Element"
+            aria-label={t("pagination.previous")}
           >
             <span aria-hidden="true">‹</span>
           </Styled.Button>
@@ -133,7 +134,7 @@ export default function Carousel({
             type="button"
             onClick={() => scrollToIndex(activeIndex + 1)}
             disabled={activeIndex === items.length - 1}
-            aria-label="Nächstes Element"
+            aria-label={t("pagination.next")}
           >
             <span aria-hidden="true">›</span>
           </Styled.Button>
