@@ -30,6 +30,10 @@ import BodyClass from "hoc/BodyClass";
 import Authorize from "hoc/Authorize";
 import { ReaderContext } from "helpers/contexts";
 import EventTracker, { EVENTS } from "global/components/EventTracker";
+import {
+  getNextVisible,
+  getPrevVisible
+} from "reader/components/section/helpers/hiddenSections";
 
 const {
   selectFont,
@@ -41,6 +45,21 @@ const {
 } = uiTypographyActions;
 const { setColorScheme, setHighContrast } = uiColorActions;
 const { request, flush } = entityStoreActions;
+
+const SWIPE_MIN_DISTANCE = 72;
+const SWIPE_MAX_DURATION = 700;
+const SWIPE_AXIS_RATIO = 1.25;
+const SWIPE_EXCLUDED_SELECTOR = [
+  "a",
+  "button",
+  "input",
+  "textarea",
+  "select",
+  "[contenteditable='true']",
+  "[role='button']",
+  "[role='slider']",
+  "[data-bratonien-carousel='true']"
+].join(",");
 
 export class ReaderContainer extends Component {
   static fetchData = (getState, dispatch, location, match) => {
@@ -106,6 +125,7 @@ export class ReaderContainer extends Component {
     };
     this.readerActions = this.makeReaderActions(props.dispatch);
     this.commonActions = commonActions(props.dispatch);
+    this.swipeStart = null;
   }
 
   componentDidMount() {
@@ -239,6 +259,68 @@ export class ReaderContainer extends Component {
     return childRoutes(this.props.route, { childProps, switch: false });
   }
 
+  swipeIsBlocked = target => {
+    if (this.state.showMeta || this.props.location.hash === "#group-annotations")
+      return true;
+    if (target?.closest?.(SWIPE_EXCLUDED_SELECTOR)) return true;
+    if (typeof window !== "undefined" && window.getSelection()?.toString())
+      return true;
+    return false;
+  };
+
+  handleTouchStart = event => {
+    if (event.touches.length !== 1 || this.swipeIsBlocked(event.target)) {
+      this.swipeStart = null;
+      return;
+    }
+
+    const touch = event.touches[0];
+    this.swipeStart = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: Date.now()
+    };
+  };
+
+  handleTouchEnd = event => {
+    if (!this.swipeStart || event.changedTouches.length !== 1) {
+      this.swipeStart = null;
+      return;
+    }
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - this.swipeStart.x;
+    const deltaY = touch.clientY - this.swipeStart.y;
+    const duration = Date.now() - this.swipeStart.time;
+    this.swipeStart = null;
+
+    if (duration > SWIPE_MAX_DURATION) return;
+    if (Math.abs(deltaX) < SWIPE_MIN_DISTANCE) return;
+    if (Math.abs(deltaX) < Math.abs(deltaY) * SWIPE_AXIS_RATIO) return;
+
+    this.navigateSection(deltaX < 0 ? "forward" : "backward");
+  };
+
+  navigateSection = direction => {
+    const { text, section, history } = this.props;
+    const sectionsMap = text?.attributes?.sectionsMap;
+    if (!section?.id || !Array.isArray(sectionsMap) || !history) return;
+
+    const currentIndex = sectionsMap.findIndex(item => item.id === section.id);
+    if (currentIndex < 0) return;
+
+    const target =
+      direction === "forward"
+        ? getNextVisible(sectionsMap, currentIndex)
+        : getPrevVisible(sectionsMap, currentIndex);
+    if (!target) return;
+
+    history.push({
+      pathname: lh.link("readerSection", text.attributes.slug, target.id),
+      state: { pageChange: true, sectionDirection: direction }
+    });
+  };
+
   render() {
     if (this.shouldRedirect(this.props)) return this.renderRedirect(this.props);
 
@@ -280,6 +362,8 @@ export class ReaderContainer extends Component {
             id="skip-to-main"
             tabIndex={-1}
             className="main-content flex-viewport"
+            onTouchStart={this.handleTouchStart}
+            onTouchEnd={this.handleTouchEnd}
           >
             {this.maybeRenderOverlay(this.props)}
             {this.renderRoutes()}
