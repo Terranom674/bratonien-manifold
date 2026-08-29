@@ -31,13 +31,8 @@ function ProjectCollectionSummaryEntityCollection({
     );
   }, []);
 
-  const getProjects = () => {
-    const adjustedLimit = typeof limit === "number" && limit >= 0 ? limit : 12;
-    const projects = mapProjects(projectCollection);
-    return projects.slice(0, adjustedLimit);
-  };
-
-  const projects = getProjects();
+  const adjustedLimit = typeof limit === "number" && limit >= 0 ? limit : 12;
+  const projects = mapProjects(projectCollection).slice(0, adjustedLimit);
   const headerLayout = getHeaderLayout(projectCollection);
   const image = getHeroImage(headerLayout, projectCollection);
   const imageAlt = projectCollection.attributes.heroAltText;
@@ -73,7 +68,7 @@ function ProjectCollectionSummaryEntityCollection({
         )
       }
       FooterComponent={() =>
-        totalprojectCount > limit && (
+        totalprojectCount > adjustedLimit && (
           <FooterLink
             to={lh.link("frontendProjectCollection", slug)}
             label={t("navigation.see_full_collection")}
