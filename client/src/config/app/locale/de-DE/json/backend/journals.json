@@ -19,7 +19,7 @@
       "descript_label": "Kurzbeschreibung",
       "submit_label": "Speichern und fortfahren",
       "logo": "Logo",
-      "logo_instructions": "Wenn ein Logo für die Zeitschrift festgelegt ist, wird es vertikal und horizontal zentriert über dem Hero-Bereich angezeigt.",
+      "logo_instructions": "Wenn ein Logo für die Zeitschrift festgelegt ist, wird es vertikal und horizontal zentriert über dem Titelbereich angezeigt.",
       "logo_alt_label": "Alternativtext des Logos",
       "properties": {
         "header": "Eigenschaften",
@@ -37,7 +37,7 @@
         "social_card_placeholder": "Optional einen Social-Media-Titel eingeben",
         "social_card_instructions": "Wenn das Feld leer ist, wird der Titel für die Titel-Meta-Tags verwendet.",
         "social_description_label": "Open-Graph-Beschreibung",
-        "social_description_instructions": "Wenn das Feld leer ist, wird das Beschreibungsfeld im Hero-Block als Ersatz für das Meta-Tag og:description verwendet.",
+        "social_description_instructions": "Wenn das Feld leer ist, wird das Beschreibungsfeld im Titelbereich als Ersatz für das Meta-Tag og:description verwendet.",
         "social_description_placeholder": "Optional eine Beschreibung eingeben",
         "social_image_label": "Open-Graph-Bild",
         "social_image_instructions": "Wenn das Feld leer ist, werden zunächst das Logo und anschließend das Vorschaubild als Ersatz für og:image-Meta-Tags verwendet.",
