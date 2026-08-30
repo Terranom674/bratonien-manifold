@@ -15,7 +15,7 @@ class NotificationMailer < ApplicationMailer
   def flag_notification(user, resource, message)
     user_assignment user
     @resource = resource.decorate
-    @kind = resource.class.name.downcase
+    @kind = { "annotation" => "Annotation", "comment" => "Kommentar" }.fetch(resource.class.name.downcase, "Inhalt")
     @message = message
     subject = "Ein Inhalt wurde gemeldet"
     mail(to: @user.email, subject: subject)
