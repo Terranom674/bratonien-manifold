@@ -78,7 +78,7 @@
       }
     },
     "create": {
-      "drawer_instructions": "Erstelle im aktuellen Projekt einen neuen Manifold-Text. Sobald der Text erstellt ist, kannst du Inhalte hinzufügen, indem du die Abschnitte und Assets des Textes verwaltest.",
+      "drawer_instructions": "Erstelle im aktuellen Projekt einen neuen Manifold-Text. Sobald der Text erstellt ist, kannst du Inhalte hinzufügen, indem du die Abschnitte und Dateien des Textes verwaltest.",
       "text_title": "Texttitel",
       "title_placeholder": "Titel des neuen Textes",
       "cover_section_label": "Cover",
@@ -140,15 +140,15 @@
       }
     },
     "assets": {
-      "header": "Assets",
-      "instructions": "Assets sind Dateien, die einem Text zugeordnet sind. Assets besitzen stabile URLs und können im Manifold-Reader dargestellt werden.",
-      "add_button_label": "Neues Asset hinzufügen",
-      "edit_header": "Asset bearbeiten",
-      "name_label": "Asset-Name",
+      "header": "Dateien",
+      "instructions": "Dateien sind einem Text zugeordnet. Sie besitzen stabile URLs und können im Manifold-Reader dargestellt werden.",
+      "add_button_label": "Neue Datei hinzufügen",
+      "edit_header": "Datei bearbeiten",
+      "name_label": "Dateiname",
       "name_instructions": "Dieses Feld unterstützt Markdown.",
-      "id_label": "Asset-ID",
-      "url_label": "Asset-URL",
-      "upload_label": "Asset-Datei hochladen",
+      "id_label": "Datei-ID",
+      "url_label": "Datei-URL",
+      "upload_label": "Datei hochladen",
       "upload_instructions": "Unterstützte Dateitypen findest du in der Dokumentation.",
       "copy_button_label": "URL kopieren",
       "alt_label": "Alternativtext"
