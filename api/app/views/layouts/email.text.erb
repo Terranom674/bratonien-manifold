@@ -1,5 +1,5 @@
 <% if @user %>
-Hi <%= @user.nickname %>,
+Hallo <%= @user.nickname %>,
 <% end %>
 
 <%= yield -%>
@@ -9,8 +9,8 @@ Hi <%= @user.nickname %>,
 
 <% end %>
 --
-Powered by Manifold Scholarship
+Bereitgestellt mit Manifold Scholarship
 http://manifoldapp.org
 
-Manage notification preferences: <%= @client_url %>/subscriptions
-Unsubscribe: <%= @client_url %>/unsubscribe/
+Benachrichtigungseinstellungen verwalten: <%= @client_url %>/subscriptions
+Abbestellen: <%= @client_url %>/unsubscribe/
