@@ -9,7 +9,7 @@ class ContactMailer < ApplicationMailer
     @email = email
     @message = message
 
-    subject = "#{full_name} has a question about #{@installation_name}."
+    subject = "#{full_name} hat eine Frage zu #{@installation_name}."
     mail(to: installation_contact, subject: subject)
   end
 end
