@@ -1,4 +1,100 @@
 de:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%d. %b"
+      long: "%d. %B %Y"
+    day_names:
+      - Sonntag
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Freitag
+      - Samstag
+    abbr_day_names:
+      - So
+      - Mo
+      - Di
+      - Mi
+      - Do
+      - Fr
+      - Sa
+    month_names:
+      - ~
+      - Januar
+      - Februar
+      - März
+      - April
+      - Mai
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - Dezember
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mär
+      - Apr
+      - Mai
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dez
+    order:
+      - :day
+      - :month
+      - :year
+  time:
+    formats:
+      default: "%A, %d. %B %Y, %H:%M Uhr"
+      short: "%d. %B, %H:%M Uhr"
+      long: "%A, %d. %B %Y, %H:%M Uhr"
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " und "
+      last_word_connector: " und "
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "muss akzeptiert werden"
+      blank: "muss ausgefüllt werden"
+      confirmation: "stimmt nicht mit %{attribute} überein"
+      empty: "muss ausgefüllt werden"
+      equal_to: "muss gleich %{count} sein"
+      even: "muss gerade sein"
+      exclusion: "ist nicht verfügbar"
+      greater_than: "muss größer als %{count} sein"
+      greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+      inclusion: "ist kein gültiger Wert"
+      invalid: "ist ungültig"
+      less_than: "muss kleiner als %{count} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
+      model_invalid: "Validierung fehlgeschlagen: %{errors}"
+      not_a_number: "ist keine Zahl"
+      not_an_integer: "ist keine ganze Zahl"
+      odd: "muss ungerade sein"
+      other_than: "darf nicht gleich %{count} sein"
+      present: "darf nicht ausgefüllt werden"
+      required: "muss vorhanden sein"
+      taken: "ist bereits vergeben"
+      too_long:
+        one: "ist zu lang (maximal 1 Zeichen)"
+        other: "ist zu lang (maximal %{count} Zeichen)"
+      too_short:
+        one: "ist zu kurz (mindestens 1 Zeichen)"
+        other: "ist zu kurz (mindestens %{count} Zeichen)"
+      wrong_length:
+        one: "hat die falsche Länge (muss genau 1 Zeichen lang sein)"
+        other: "hat die falsche Länge (muss genau %{count} Zeichen lang sein)"
   attributes:
     descriptions:
       slug: "Eine eindeutige Kennung, die vom Benutzer gewünscht wird. Sie wird auf den pendingSlug oder den Titel gesetzt, sofern dieser noch nicht vergeben ist."
@@ -37,6 +133,10 @@ de:
     attributes:
     errors:
       messages:
+        record_invalid: "Validierung fehlgeschlagen: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Datensatz kann nicht gelöscht werden, da ein abhängiger Datensatz %{record} existiert"
+          has_many: "Datensatz kann nicht gelöscht werden, da abhängige Datensätze %{record} existieren"
         public_reading_groups_disabled: "Öffentliche Lesegruppen sind deaktiviert"
         spam: "ist Spam"
       models:
