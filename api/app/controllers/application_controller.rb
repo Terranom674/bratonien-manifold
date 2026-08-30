@@ -54,10 +54,6 @@ class ApplicationController < ActionController::API
     Kaminari.config.max_per_page
   end
 
-  def page_number
-    params.dig(:page, :number).to_i.clamp(1, Float::INFINITY)
-  end
-
   def with_pagination!(filter_params)
     filter_params = {} if filter_params.nil?
 
@@ -171,7 +167,7 @@ class ApplicationController < ActionController::API
 
     options = {
       status: 500,
-      title: "Manifold encountered an error",
+      title: "In Manifold ist ein Fehler aufgetreten",
       detail: error.message
     }
 
