@@ -1,0 +1,33 @@
+# Benutzerdefinierte Prädikate für dry-logic
+
+de:
+  custom_predicates: &custom
+    rails_blank?: "muss leer sein"
+
+    rails_present?: "darf nicht leer sein"
+
+    email?: "muss eine gültige E-Mail-Adresse sein"
+
+    global_id_uri?: "muss eine GlobalID-URI sein"
+
+    global_id?: "muss eine GlobalID sein"
+
+    entitlement_subject_gid?: "muss eine GlobalID für ein Berechtigungsobjekt sein"
+
+    entitlement_target_gid?: "muss eine GlobalID für ein Berechtigungsobjekt sein"
+
+    model?: "muss ein Modell sein"
+
+    model_list?: "muss ein Array aus Modellen sein"
+
+    model_class?: "muss eine Modellklasse sein"
+
+    model_class_list?: "muss ein Array aus Modellklassen sein"
+
+    specific_model?: "muss ein Modell vom Typ %{model_name} sein"
+  dry_schema:
+    errors:
+      <<: *custom
+  dry_validation:
+    errors:
+      <<: *custom
