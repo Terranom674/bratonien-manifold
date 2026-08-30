@@ -74,10 +74,10 @@ module ManifoldApi
     # Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    # The default locale is :en and all translations from
+    # The default locale is German and all translations from
     # config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Rails.root.glob('config/locales/**/*.{rb,yml}')
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :de
 
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
