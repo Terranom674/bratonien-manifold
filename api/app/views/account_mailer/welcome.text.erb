@@ -1,15 +1,15 @@
 <% if @created_by_admin %>
-Welcome to <%= @installation_name %>.
+Willkommen bei <%= @installation_name %>.
 
-An admin user has created a user account for you. Your credentials are as follows:
+Ein Administrator hat ein Benutzerkonto für dich erstellt. Deine Zugangsdaten lauten:
 
-Email: <%= @user.email %>
-Password: <%= @user.password %>
+E-Mail: <%= @user.email %>
+Passwort: <%= @user.password %>
 <% else %>
-Welcome to <%= @installation_name %>. Thanks for signing up!
+Willkommen bei <%= @installation_name %>. Danke für deine Registrierung!
 <% end %>
 
-Please confirm your email address: <%= @email_confirmation_url %>
+Bitte bestätige deine E-Mail-Adresse: <%= @email_confirmation_url %>
 
-Once you've logged in, you'll be able to annotate project texts and view your annotations.
-You'll also be able to engage in discussion about the texts and project resources.
+Nach der Anmeldung kannst du Projekttexte annotieren und deine Annotationen ansehen.
+Außerdem kannst du dich an Diskussionen über Texte und Projektressourcen beteiligen.
