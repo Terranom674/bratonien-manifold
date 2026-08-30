@@ -49,7 +49,7 @@
         "disable_public_label": "Öffentliche Annotationen und Kommentare deaktivieren",
         "disable_public_instructions": "Wenn aktiviert, verhindert diese Einstellung, dass Benutzer dieses Projekt öffentlich kommentieren oder annotieren. Annotationen in Lesegruppen werden nur Gruppenmitgliedern angezeigt.",
         "save": "Projekt speichern",
-        "social_image_instructions": "Wenn das Feld leer ist, werden zuerst Cover und anschließend Thumbnail als Ersatz für og:image-Meta-Tags verwendet.",
+        "social_image_instructions": "Wenn das Feld leer ist, werden zuerst das Cover und anschließend das Vorschaubild als Ersatz für og:image-Meta-Tags verwendet.",
         "external_id_label": "Externe Kennung",
         "external_id_placeholder": "Externe ID eingeben",
         "external_id_instructions": "Wird von externen Identitätsanbietern verwendet, um Benutzergruppen Berechtigungen für dieses Projekt zuzuweisen"
@@ -107,11 +107,11 @@
       "uncategorized_tooltip": "Nicht kategorisierte Texte können im Frontend über den Inhaltsblock „Texte“ dieses Projekts ausgeblendet werden. Wenn nicht kategorisierte Texte sichtbar sind, erscheinen sie unter der Überschrift „Nicht kategorisiert“."
     },
     "thumbnail": {
-      "thumbnail_label": "Thumbnail für {{title}}",
-      "thumbnail": "Thumbnail",
-      "current_thumbnail": "Aktuelles Projekt-Thumbnail",
-      "default_thumbnail": "Standard-Hintergrundfarbe des Thumbnails",
-      "custom_thumbnail": "Eigenes Thumbnail-Bild",
+      "thumbnail_label": "Vorschaubild für {{title}}",
+      "thumbnail": "Vorschaubild",
+      "current_thumbnail": "Aktuelles Projekt-Vorschaubild",
+      "default_thumbnail": "Standard-Hintergrundfarbe des Vorschaubildes",
+      "custom_thumbnail": "Eigenes Vorschaubild",
       "green": "Grün",
       "gray": "Grau",
       "blue": "Blau",
@@ -119,7 +119,7 @@
       "violet": "Violett",
       "white": "Weiß",
       "color_instructions": "Andere Hintergrundfarbe auswählen",
-      "alt_label": "Alternativtext des Thumbnails"
+      "alt_label": "Alternativtext des Vorschaubildes"
     },
     "permissions": {
       "header": "Editorberechtigungen",
