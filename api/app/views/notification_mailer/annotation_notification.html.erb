@@ -1,5 +1,5 @@
 <div>
-  <p><%= @annotation.creator_name %> annotated the text <em><%= @annotation.text_title %></em>:</p>
+  <p><%= @annotation.creator_name %> hat den Text <em><%= @annotation.text_title %></em> annotiert:</p>
 
   <blockquote style="margin: 0; padding: 20px; background: #cccccc;">
     <%= @annotation.subject %>
@@ -8,5 +8,5 @@
     <em><%= @annotation.body %></em>
   </blockquote>
 
-  <p style="margin-top: 15px; margin-bottom: 40px;"><a href="<%= @annotation.reader_url %>">View Annotation</a></p>
+  <p style="margin-top: 15px; margin-bottom: 40px;"><a href="<%= @annotation.reader_url %>">Annotation ansehen</a></p>
 </div>
