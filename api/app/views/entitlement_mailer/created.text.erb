@@ -1,5 +1,5 @@
 Dir wurde Zugriff <%= @subject_description %> gewährt.
 
 <%- if @entitlement.expirable? -%>
-Dieser Zugriff läuft am <%= @entitlement.expires_on.to_s(:long) %> (<%= @entitlement.expires_on.iso8601 %>) ab.
+Dieser Zugriff läuft am <%= l(@entitlement.expires_on, format: :long) %> (<%= @entitlement.expires_on.iso8601 %>) ab.
 <%- end -%>
