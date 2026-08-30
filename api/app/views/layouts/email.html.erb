@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>A Manifold Email</title>
+  <title>Eine E-Mail von Manifold</title>
   <link href="mail_styles.css" rel="stylesheet" />
 </head>
 
@@ -15,14 +15,14 @@
       <table class="container" width="700">
         <tr class="header">
           <td class="logo">
-            <img width="120" src="<%= @client_url %>/static/images/manifold-mail-logo-primary.jpg" alt="Manifold logo and text: Manifold"/>
+            <img width="120" src="<%= @client_url %>/static/images/manifold-mail-logo-primary.jpg" alt="Manifold-Logo und Schriftzug: Manifold"/>
           </td>
         </tr>
         <tr>
           <td align="left">
             <% if @user %>
               <p>
-                Hi <%= @user.nickname %>,
+                Hallo <%= @user.nickname %>,
               </p>
             <% end %>
             <%= yield %>
@@ -34,7 +34,7 @@
         <% if @unsubscribe_token %>
         <tr>
           <td>
-            <a width="50%" href="<%= ClientURL.call(:subscriptions) %>">Manage Notification Settings</a> | <a width="50%" href="<%= ClientURL.call(:unsubscribe, token: @unsubscribe_token) %>">Unsubscribe All</a>
+            <a width="50%" href="<%= ClientURL.call(:subscriptions) %>">Benachrichtigungseinstellungen verwalten</a> | <a width="50%" href="<%= ClientURL.call(:unsubscribe, token: @unsubscribe_token) %>">Alle Benachrichtigungen abbestellen</a>
           </td>
         </tr>
         <% end %>
@@ -47,8 +47,8 @@
               <tr>
                 <td class="logo">
                   <a href="http://manifoldapp.org">
-                    <img width="163" src="<%= @client_url %>/static/images/manifold-mail-logo-secondary.jpg" alt="Manifold logo and text: Manifold Scholarship. Click to visit manifoldapp.org"/>
-                    Manifold logo and text: Manifold Scholarship. Click to visit manifoldapp.org
+                    <img width="163" src="<%= @client_url %>/static/images/manifold-mail-logo-secondary.jpg" alt="Manifold-Logo und Schriftzug: Manifold Scholarship. Zum Besuch von manifoldapp.org anklicken"/>
+                    Manifold-Logo und Schriftzug: Manifold Scholarship. Zum Besuch von manifoldapp.org anklicken
                   </a>
                 </td>
                 <td class="external" width="71">
@@ -56,14 +56,14 @@
                     <tr>
                       <td width="50%">
                         <a href="https://twitter.com/manifoldscholar">
-                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-twitter.jpg" alt="Twitter logo. Click to visit Manifold on Twitter"/>
-                          Twitter logo. Click to visit Manifold on Twitter
+                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-twitter.jpg" alt="Twitter-Logo. Zum Besuch von Manifold auf Twitter anklicken"/>
+                          Twitter-Logo. Zum Besuch von Manifold auf Twitter anklicken
                         </a>
                       </td>
                       <td width="50%">
                         <a href="https://github.com/ManifoldScholar/manifold">
-                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-github.jpg" alt="Github Logo. Click to visit Manifold Source on Github"/>
-                          Github Logo. Click to visit Manifold Source on Github
+                          <img width="21" src="<%= @client_url %>/static/images/manifold-mail-github.jpg" alt="GitHub-Logo. Zum Manifold-Quellcode auf GitHub anklicken"/>
+                          GitHub-Logo. Zum Manifold-Quellcode auf GitHub anklicken
                         </a>
                       </td>
                     </tr>
