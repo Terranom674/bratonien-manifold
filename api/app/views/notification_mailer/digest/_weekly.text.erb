@@ -3,11 +3,13 @@ Hier ist deine wöchentliche Manifold-Aktivitätsübersicht:
 <% labels = { "Text" => ["Text", "Texte"], "Resource" => ["Ressource", "Ressourcen"], "Collection" => ["Sammlung", "Sammlungen"], "Annotation" => ["Annotation", "Annotationen"], "Comment" => ["Kommentar", "Kommentare"] } %>
 <% @projects&.each do |project, events| %><% project = project.decorate %>
 <% counted = events.group_by(&:subject_type).map {|type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}"} %>
-* <%= counted.to_sentence %> zu "<%= project.title %>" hinzugefügt
+<% counted_sentence = counted.length > 1 ? "#{counted[0...-1].join(', ')} und #{counted.last}" : counted.first %>
+* <%= counted_sentence %> zu "<%= project.title %>" hinzugefügt
 > <%= project.url %>
 <% end %>
 <% @annotations_and_comments&.each do |project, events| %><% project = project.decorate %>
 <% counted = events.group_by(&:subject_type).map {|type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}"} %>
-* <%= counted.to_sentence %> zu "<%= project.title %>" hinzugefügt
+<% counted_sentence = counted.length > 1 ? "#{counted[0...-1].join(', ')} und #{counted.last}" : counted.first %>
+* <%= counted_sentence %> zu "<%= project.title %>" hinzugefügt
 > <%= project.url %>
 <% end %>
