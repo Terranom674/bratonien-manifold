@@ -8,7 +8,7 @@ class NotificationMailer < ApplicationMailer
     @frequency = frequency
     @projects, @annotations_and_comments =
       digest_events.values_at :projects, :annotations_and_comments
-    frequency_label = { daily: "tägliche", weekly: "wöchentliche" }.fetch(frequency.to_sym, frequency.to_s)
+    frequency_label = { daily: "Tägliche", weekly: "Wöchentliche" }.fetch(frequency.to_sym, frequency.to_s.capitalize)
     mail(to: @user.email, subject: "Deine #{frequency_label} Manifold-Zusammenfassung")
   end
 

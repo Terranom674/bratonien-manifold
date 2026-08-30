@@ -17,7 +17,7 @@
     "short_description_placeholder": "Kurzbeschreibung eingeben",
     "short_description_instructions": "Wenn gesetzt, wird diese in Zusammenfassungen der Sammlung anstelle der Beschreibung angezeigt.",
     "slug_placeholder": "URL-Slug eingeben",
-    "hero_image": "Titelbild",
+    "hero_image": "Hero-Bild",
     "homepage_visible": "Auf der Startseite anzeigen:",
     "homepage_visible_instructions": "Wenn Datumswerte gesetzt sind, erscheint die Projektsammlung im angegebenen Zeitraum automatisch auf der Startseite.",
     "homepage_visible_start": "Sichtbar auf Startseite ab",
@@ -32,7 +32,7 @@
     "social_description": "Open-Graph-Beschreibung",
     "social_description_placeholder": "Optional eine Beschreibung eingeben",
     "social_image": "Open-Graph-Bild",
-    "social_image_instructions": "Wenn das Feld leer ist, wird das Titelbild für og:image-Meta-Tags verwendet.",
+    "social_image_instructions": "Wenn das Feld leer ist, wird das Hero-Bild für og:image-Meta-Tags verwendet.",
     "book_stack_icon": "Bücherstapel",
     "lamp_icon": "Lampe",
     "new_icon": "Englisches Wort „New“ mit rundem Hintergrund",
@@ -54,7 +54,7 @@
     "tags": "Projekte mit diesen Tags anzeigen",
     "tags_placeholder": "Tags eingeben",
     "order_manually": "Manuell sortieren",
-    "order_manually_instructions": "Projekte durch Ziehen und Ablegen neu anordnen.",
+    "order_manually_instructions": "Projekte per Drag-and-drop neu anordnen.",
     "order_collection_manually": "Sammlung manuell sortieren",
     "include_title": "$t(project_collections.include) {{title}}",
     "exclude_title": "$t(project_collections.exclude) {{title}}",
@@ -67,7 +67,7 @@
     "collection_is_visible": "Sammlung ist sichtbar",
     "collection_is_not_visible": "Sammlung ist nicht sichtbar",
     "save_button_label": "$t(actions.save) Projektsammlung",
-    "hero_alt_label": "Alternativtext des Titelbildes",
+    "hero_alt_label": "Alternativtext des Hero-Bildes",
     "display_header": "Anzeigeeinstellungen"
   }
 }

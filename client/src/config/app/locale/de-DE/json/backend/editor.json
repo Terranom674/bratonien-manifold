@@ -38,7 +38,7 @@
         "html_label": "HTML-Editor",
         "html_label_mobile": "HTML",
         "rte_label": "Rich-Text-Editor",
-        "rte_label_mobile": "Rich-Text",
+        "rte_label_mobile": "Rich Text",
         "dark_mode_label": "Dunkel",
         "light_mode_label": "Hell"
       }

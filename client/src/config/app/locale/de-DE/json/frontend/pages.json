@@ -17,7 +17,7 @@
     "public_groups": "Öffentliche Lesegruppen",
     "reading_group": {
       "homepage_edit_header": "Startseite bearbeiten",
-      "homepage_edit_instructions": "Organisiere und bearbeite die Inhalte der Startseite deiner Lesegruppe. Suche nach neuen Inhalten, erstelle eigene Kategorien oder Markdown-Blöcke und verschiebe Inhalte zwischen Kategorien und innerhalb von Inhaltstypen durch Ziehen und Ablegen.",
+      "homepage_edit_instructions": "Organisiere und bearbeite die Inhalte der Startseite deiner Lesegruppe. Suche nach neuen Inhalten, erstelle eigene Kategorien oder Markdown-Blöcke und verschiebe Inhalte zwischen Kategorien und innerhalb von Inhaltstypen per Drag-and-drop.",
       "search_title": "Inhalt suchen + hinzufügen:",
       "search_instructions": "Suche nach Inhalten und markiere die gewünschten Elemente mit einem Stern, um sie zur Startseite hinzuzufügen.",
       "search_button_label": "$t(actions.add) $t(common.content)"
@@ -33,7 +33,7 @@
       "full_description": "Vollständige Beschreibung",
       "tags_list": "Tag-Liste",
       "variants": "Herunterladbare Varianten",
-      "resource_slideshow": "Ressourcen-Diaschau",
+      "resource_slideshow": "Ressourcen-Slideshow",
       "resource_list": "Ressourcen",
       "group_details": "Gruppendetails",
       "group_summary": "Gruppenzusammenfassung"

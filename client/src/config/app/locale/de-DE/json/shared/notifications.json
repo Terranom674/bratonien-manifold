@@ -11,7 +11,7 @@
     "email_success_body": "Sie sollte in Kürze eintreffen.",
     "entitlement_import_success": "Import erfolgreich!",
     "entitlement_import_success_body": "Manifold verarbeitet deinen Upload. Berechtigungen für bestehende Benutzer werden direkt zum Projekt oder zur Zeitschrift hinzugefügt. Berechtigungen für noch nicht registrierte Benutzer erscheinen hier in Kürze. Aktualisiere die Liste oder kehre in einigen Minuten zu dieser Seite zurück, um sie anzuzeigen.",
-    "feature_delete": "Der Startseitenbeitrag wurde gelöscht.",
+    "feature_delete": "Das Feature wurde gelöscht.",
     "journal_delete": "Die Zeitschrift wurde gelöscht.",
     "page_delete": "Die Seite wurde gelöscht.",
     "reading_group_delete": "Die Lesegruppe wurde gelöscht.",

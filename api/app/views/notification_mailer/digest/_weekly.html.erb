@@ -7,8 +7,7 @@ Hier ist deine wöchentliche <strong>Manifold</strong>-Aktivitätsübersicht:
       <% project = project.decorate %>
       <li>
         <% counted = events.group_by(&:subject_type).map { |type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}" } %>
-        <% counted_sentence = counted.length > 1 ? "#{counted[0...-1].join(', ')} und #{counted.last}" : counted.first %>
-        <%= counted_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
+        <%= counted.to_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
       </li>
     <% end %>
 
@@ -16,8 +15,7 @@ Hier ist deine wöchentliche <strong>Manifold</strong>-Aktivitätsübersicht:
       <% project = project.decorate %>
       <li>
         <% counted = events.group_by(&:subject_type).map { |type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}" } %>
-        <% counted_sentence = counted.length > 1 ? "#{counted[0...-1].join(', ')} und #{counted.last}" : counted.first %>
-        <%= counted_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
+        <%= counted.to_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
       </li>
     <% end %>
   </ul>

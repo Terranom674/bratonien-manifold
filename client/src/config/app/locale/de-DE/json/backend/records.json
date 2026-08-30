@@ -123,41 +123,41 @@
       "states_instructions": "Sichtbarkeit und Anzeige der Seite in der Navigation verwalten",
       "states_options": {
         "hide": "Seite ausblenden",
-        "footer": "In der Fußzeile anzeigen",
-        "header": "In der Kopfzeile anzeigen"
+        "footer": "Im Footer anzeigen",
+        "header": "Im Header anzeigen"
       }
     },
     "features": {
-      "header": "Startseitenbeiträge verwalten",
-      "button_label": "Neuen Startseitenbeitrag hinzufügen",
-      "back_label": "Alle Startseitenbeiträge",
-      "publish": "Startseitenbeitrag veröffentlichen",
-      "unpublish": "Veröffentlichung des Startseitenbeitrags aufheben",
+      "header": "Features verwalten",
+      "button_label": "Neues Feature hinzufügen",
+      "back_label": "Alle Features",
+      "publish": "Feature veröffentlichen",
+      "unpublish": "Veröffentlichung des Features aufheben",
       "preview": {
-        "section_title": "Vorschau des Startseitenbeitrags",
+        "section_title": "Feature-Vorschau",
         "no_title": "Ohne Titel #{{position}}",
-        "unauthorized_create": "Du darfst keine Startseitenbeiträge erstellen.",
-        "unauthorized_update": "Du darfst Startseitenbeiträge nicht aktualisieren.",
-        "instructions": "Dies ist eine ungefähre Vorschau deines Startseitenbeitrags. Vordergrund, Hintergrund und Markdown werden erst angezeigt, nachdem der Startseitenbeitrag gespeichert wurde."
+        "unauthorized_create": "Du darfst keine Features erstellen.",
+        "unauthorized_update": "Du darfst Features nicht aktualisieren.",
+        "instructions": "Dies ist eine ungefähre Vorschau deines Features. Vordergrund, Hintergrund und Markdown werden erst angezeigt, nachdem das Feature gespeichert wurde."
       },
       "untitled_record": "Ohne Titel #{{number}}",
-      "new_header": "Neuer Startseitenbeitrag",
-      "new_instructions": "Fülle das folgende Formular aus, um einen neuen Startseitenbeitrag zu erstellen. Speichere anschließend, um fortzufahren.",
+      "new_header": "Neues Feature",
+      "new_instructions": "Fülle das folgende Formular aus, um ein neues Feature zu erstellen. Speichere anschließend, um fortzufahren.",
       "properties_label": "Eigenschaften",
       "published_label": "Veröffentlicht",
-      "published_instructions": "Nur veröffentlichte Startseitenbeiträge erscheinen auf der Startseite.",
+      "published_instructions": "Nur veröffentlichte Features erscheinen auf der Startseite.",
       "header_label": "Überschrift",
-      "header_placeholder": "Überschrift des Startseitenbeitrags eingeben",
+      "header_placeholder": "Feature-Überschrift eingeben",
       "subheader_label": "Unterüberschrift",
       "subheader_placeholder": "Optional eine Unterüberschrift eingeben",
       "body_label": "Inhalt",
-      "body_placeholder": "Ein paar Sätze über den Startseitenbeitrag",
+      "body_placeholder": "Ein paar Sätze über das Feature",
       "link_label": "Linktext",
       "link_placeholder": "Linktext eingeben",
       "url_label": "Link-URL",
       "url_placeholder": "Link-URL eingeben",
       "sign_up_label": "Registrierungsschaltfläche anzeigen",
-      "sign_up_instructions": "Wenn aktiviert, wird nicht angemeldeten Benutzern über dem Startseitenbeitrag eine Registrierungsschaltfläche angezeigt.",
+      "sign_up_instructions": "Wenn aktiviert, wird nicht angemeldeten Benutzern über dem Feature eine Registrierungsschaltfläche angezeigt.",
       "style_label": "Stil",
       "style_options": {
         "dark": "Dunkler Hintergrund (Standard)",
@@ -167,7 +167,7 @@
       "foreground_label": "Vordergrundfarbe",
       "header_color_label": "Überschriftsfarbe",
       "background_image_label": "Hintergrundbild",
-      "background_image_instructions": "Der Hintergrund des Startseitenbeitrags",
+      "background_image_instructions": "Der Hintergrund des Features",
       "foreground_image_label": "Vordergrundbild",
       "foreground_image_instructions": "Ein Bild, das im Vordergrund angezeigt wird",
       "foreground_image_position": {
@@ -179,7 +179,7 @@
           "absolute": "Absolut"
         }
       },
-      "submit_label": "Startseitenbeitrag speichern"
+      "submit_label": "Feature speichern"
     },
     "tracks": {
       "header": "Textspuren verwalten",

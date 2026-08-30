@@ -3,7 +3,7 @@
 </p>
 <%- if @entitlement.expirable? -%>
   <p>
-    Dieser Zugriff läuft am <time datetime=<%= @entitlement.expires_on.iso8601.inspect %>><%= l(@entitlement.expires_on, format: :long) %></time> ab.
+    Dieser Zugriff läuft am <time datetime=<%= @entitlement.expires_on.iso8601.inspect %>><%= @entitlement.expires_on.to_s(:long) %></time> ab.
   </p>
 <%- end -%>
 <%= render partial: "partials/email/spacer", locals: { height: 10 } %>
