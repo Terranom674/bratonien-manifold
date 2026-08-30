@@ -22,7 +22,7 @@
       "body": "Du musst angemeldet sein, um Benachrichtigungseinstellungen zu verwalten.",
       "privacy_body": "Du musst angemeldet sein, um Datenschutzeinstellungen zu verwalten."
     },
-    "no_collapse_context": "Collapse-Komponenten können nicht außerhalb der Collapse-Wrapper-Komponente dargestellt werden.",
+    "no_collapse_context": "Einklappbare Komponenten können nicht außerhalb der zugehörigen Container-Komponente dargestellt werden.",
     "color_scheme": "Fehler im Manifold-Farbschema!",
     "fatal": {
       "heading_line_one": "Hier ist etwas schiefgelaufen.",
@@ -35,6 +35,6 @@
     "section_reorder": "Beim Aktualisieren der Abschnittsreihenfolge ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
     "toc_reorder": "Beim Aktualisieren der Reihenfolge des Inhaltsverzeichnisses ist ein Fehler aufgetreten. Die Liste wurde zurückgesetzt.",
     "invalid_html_save": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler und versuche erneut zu speichern.",
-    "invalid_html_switch": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler, bevor du in den RTE-Modus wechselst."
+    "invalid_html_switch": "Das HTML ist ungültig. Behebe die im Editor angezeigten Fehler, bevor du in den Rich-Text-Modus wechselst."
   }
 }
