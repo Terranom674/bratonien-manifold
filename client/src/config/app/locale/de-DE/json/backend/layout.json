@@ -27,7 +27,7 @@
     "description_and_images_description": "Beschreibungstext, Cover und Hintergrundbild",
     "hero_block": "Hero-Bereich",
     "hero_block_instructions": "Der Hero-Bereich steht oben auf deiner {{entity}}-Seite. Passe hier Inhalt, Layout und Einstellungen an.",
-    "calls_to_action": "Call-to-Actions",
+    "calls_to_action": "Handlungsaufforderungen",
     "calls_to_action_description": "Schaltflächen und Links zu verwandten Ressourcen",
     "visibility_options": {
       "always": "Immer sichtbar",
@@ -58,8 +58,8 @@
     "hashtag_placeholder": "Hashtag für {{entity}} eingeben"
   },
   "call_to_action": {
-    "edit_drawer_title": "Call-to-Action bearbeiten",
-    "create_drawer_title": "Neuer Call-to-Action",
+    "edit_drawer_title": "Handlungsaufforderung bearbeiten",
+    "create_drawer_title": "Neue Handlungsaufforderung",
     "text_select_placeholder": "Text auswählen",
     "input_labels": {
       "title": "Titel",
