@@ -11,7 +11,7 @@ class EntitlementMailer < ApplicationMailer
 
     @subject_description = ManifoldApi::Container["entitlements.describe_subject"].(entitlement).value!
 
-    mail to: @user.email, subject: "Access Granted: #{@subject_title}"
+    mail to: @user.email, subject: "Zugriff gewährt: #{@subject_title}"
   end
 
   # @param [PendingEntitlement] pending_entitlement
@@ -24,6 +24,6 @@ class EntitlementMailer < ApplicationMailer
 
     @identifier = pending_entitlement.first_name.presence || pending_entitlement.email
 
-    mail to: pending_entitlement.email, subject: "You have a pending entitlement on #{@installation_name}"
+    mail to: pending_entitlement.email, subject: "Du hast eine ausstehende Zugriffsberechtigung auf #{@installation_name}"
   end
 end
