@@ -1,0 +1,81 @@
+de:
+  services:
+    ingestions:
+      logging:
+        ingestion_start: 'Import von "%{name}" wird gestartet'
+        using_strategy: 'Strategie %{strategy} wird verwendet'
+        ingestion_end: 'Import abgeschlossen.'
+      fetcher:
+        log:
+          download_external: 'Externe Ressource wird heruntergeladen: %{url}'
+          drive_failed_direct_fallback: 'Datei konnte nicht direkt von Google Drive abgerufen werden; direkter Download wird versucht'
+      conversion:
+        log:
+          perform: 'Quelldatei "%{source}" wird konvertiert'
+      compiler:
+        text:
+          log:
+            new: 'Neuer Text "%{id}" wurde erstellt'
+            updated: 'Text "%{id}" wurde aktualisiert'
+            cover: 'Cover ist "%{cover}"'
+            lang: 'Sprache ist "%{lang}"'
+            date: 'Veröffentlichungsdatum ist "%{date}"'
+            rights: 'Rechte sind "%{rights}"'
+            desc: 'Beschreibung ist "%{desc}"'
+        maker:
+          log:
+            new: 'Neue %{role} "%{name}" wurde erstellt'
+            updated: '%{role} "%{name}" wurde aktualisiert'
+            invalid: 'Name für "%{name}" konnte nicht verarbeitet werden'
+        title:
+          log:
+            new: 'Neuer %{kind}-Titel "%{name}" wurde erstellt'
+            updated: '%{kind}-Titel "%{name}" wurde aktualisiert'
+        ingestion_source:
+          log:
+            new: 'Neue Importquelle "%{source_path}" wurde erstellt'
+            updated: 'Importquelle "%{source_path}" wurde aktualisiert'
+            invalid: 'Importquelle wurde übersprungen, weil sie ungültig ist: "%{source_path}"'
+        stylesheet:
+          log:
+            new: 'Neues Stylesheet "%{name}" wurde erstellt'
+            updated: 'Stylesheet "%{name}" wurde aktualisiert'
+        text_section:
+          log:
+            new: 'Neuer Textabschnitt "%{name}" wurde erstellt'
+            updated: 'Textabschnitt "%{name}" wurde aktualisiert'
+      inspector:
+        log:
+          landmark_nav_title: 'Titel der Landmarken-Navigation ist "%{text}"'
+          toc_nav_title: 'Titel der Inhaltsverzeichnis-Navigation ist "%{text}"'
+          page_list_nav_title: 'Titel der Seitenlisten-Navigation ist "%{text}"'
+      pre_processor:
+        manifest:
+          missing_source_paths: "Ein oder mehrere im Manifest definierte Quellpfade wurden nicht gefunden. Bitte Schreibweise sowie Groß- und Kleinschreibung prüfen."
+          missing_source_path: "Das Manifest konnte einen erwarteten Quellpfad nicht finden: %{source_path}"
+      post_processor:
+        log:
+          transform_toc_structure: 'Struktur des Inhaltsverzeichnisses wird umgewandelt'
+          toc_empty: 'Das Inhaltsverzeichnis enthält keine Einträge'
+          find_page_list_structure: 'Seitenlisten-Struktur wird gesucht'
+          find_landmark_structure: 'Landmarken-Struktur wird gesucht'
+          spine_populated: 'Lesereihenfolge enthält %{number} Einträge'
+          spine_empty: 'In der Lesereihenfolge wurden keine Einträge gefunden'
+          transform_ts: 'Textabschnitt "%{name}" wird umgewandelt'
+          transforming_ts: 'Textabschnitte werden umgewandelt'
+          transform_ss: 'Stylesheet "%{name}" wird umgewandelt'
+          transforming_ss: 'Stylesheets werden umgewandelt'
+          remove_stylesheet: 'Veraltetes Stylesheet "%{id}" wurde entfernt'
+          remove_text_section: 'Veralteter Textabschnitt "%{id}" wurde entfernt'
+          start_section: 'Startabschnitt ist "%{source_identifier}"'
+          text_cover_present: 'Text-Cover wurde auf "%{filename}" gesetzt'
+          text_cover_empty: 'Kein Text-Cover gefunden'
+    factory:
+      event:
+        event_title:
+          project_created: "Projekt gestartet"
+          text_added: "Text hinzugefügt"
+          resource_added: "Ressource hinzugefügt"
+        event_subtitle:
+          project_created: "Ein neues Projekt auf %{global_installation_name} wurde erstellt!"
+
