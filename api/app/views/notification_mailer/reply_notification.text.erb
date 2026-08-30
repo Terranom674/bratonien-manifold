@@ -1,8 +1,8 @@
-<%= @comment.creator&.full_name || "A deleted user" %> replied to your comment on "<%= @comment.title %>."
+<%= @comment.creator&.full_name || "Ein gelöschter Benutzer" %> hat auf deinen Kommentar zu "<%= @comment.title %>" geantwortet.
 
 -----------------------------------------------------------
 <%= @comment.body %>
 -----------------------------------------------------------
 
-To view the thread, copy and paste the following URL into your browser:
+Um die Diskussion anzusehen, kopiere die folgende URL und füge sie in deinen Browser ein:
 <%= @comment.subject_url %>
