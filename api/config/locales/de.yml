@@ -1,0 +1,87 @@
+de:
+  attributes:
+    descriptions:
+      slug: "Eine eindeutige Kennung, die vom Benutzer gewünscht wird. Sie wird auf den pendingSlug oder den Titel gesetzt, sofern dieser noch nicht vergeben ist."
+      pending_slug: "Die vom Benutzer gewünschte eindeutige Kennung. Sie kann bereits vergeben sein; in diesem Fall werden Zeichen angehängt, um sie eindeutig zu machen."
+      avatar_meta: "Ein Hash mit Daten zum Avatarbild"
+  swagger:
+    access_denied: "\tDer API-Schlüssel verfügt nicht über die erforderlichen Berechtigungen für diese Anfrage."
+    not_authenticated: "Es wurde kein gültiger API-Schlüssel angegeben."
+    not_found: "Die angeforderte Ressource existiert nicht."
+    unprocessable: "Auf Seiten von Manifold ist ein Fehler aufgetreten."
+    index:
+      summary: "Alle %{type} auflisten"
+      summary_with_parent: "%{parent_article} %{parent_possessive} %{type} auflisten"
+      success: "Gibt ein Array von %{type}-Ressourcen zurück."
+    show:
+      summary: "%{article} %{type} abrufen"
+      summary_with_parent: "%{article} %{type} für %{parent_article} %{parent} abrufen"
+      success: "Ruft %{article} %{type} ab."
+    create:
+      summary: "%{article} %{type} erstellen"
+      summary_with_parent: "%{article} %{type} für %{parent_article} %{parent} erstellen"
+      success: "Gibt die Ressource %{type} zurück."
+    update:
+      summary: "%{article} %{type} aktualisieren"
+      summary_with_parent: "%{parent_article} %{parent_possessive} %{type} aktualisieren"
+      success: "Gibt die aktualisierte Ressource %{type} zurück."
+    destroy:
+      summary: "%{article} %{type} löschen"
+      summary_with_parent: "%{parent_article} %{parent_possessive} %{type} löschen"
+      success: "Entfernt die Ressource %{type}."
+  active_interaction:
+    errors:
+      messages:
+        invalid: "ist ungültig"
+  activerecord:
+    attributes:
+    errors:
+      messages:
+        public_reading_groups_disabled: "Öffentliche Lesegruppen sind deaktiviert"
+        spam: "ist Spam"
+      models:
+        resource:
+          attributes:
+            external_id:
+              missing: "^Die Video-ID darf nicht leer sein."
+        page:
+          attributes:
+            purpose:
+              in_use: "kann nicht mehr als einer Seite zugewiesen werden"
+        resource_import:
+          attributes:
+            url:
+              blank: "für die Google-Tabelle darf nicht leer sein. Bitte lade eine gültige CSV-Datei hoch oder gib die URL einer öffentlichen Google-Tabelle ein"
+            source:
+              inclusion: "enthält ungültige Daten. Bitte lade eine gültige CSV-Datei hoch oder gib die URL einer öffentlichen Google-Tabelle ein"
+  classy_enum:
+    user_classification:
+      anonymous: "Anonym"
+      command_line: "CLI"
+      deleted: "Gelöscht"
+  controllers:
+    errors:
+      project_exportation:
+        failed: "^Der Projektexport konnte nicht gestartet werden. Wähle einen Speicherort und versuche es erneut."
+      auth_timeout:
+        title: "Authentifizierung abgelaufen"
+        detail: "Deine Anmeldesitzung ist abgelaufen. Bitte authentifiziere dich erneut."
+      unauthorized:
+        title: "Authentifizierung erforderlich"
+        detail: "Du musst angemeldet sein, um auf diese Ressource zuzugreifen."
+      not_found:
+        title: "Ressource nicht gefunden"
+        detail: "Manifold hat versucht, auf einen API-Endpunkt zuzugreifen, der nicht existiert."
+      bad_request:
+        title: "Ungültige Anfrage"
+        detail: "Die Anfrage war ungültig."
+      forbidden_generic:
+        title: "Zugriff verweigert"
+        detail: "Du bist nicht berechtigt, auf diese Ressource zuzugreifen."
+      forbidden:
+        class:
+          title: "%{action} fehlgeschlagen"
+          detail: "Du bist nicht berechtigt, %{action} für %{resource} auszuführen."
+        instance:
+          title: "%{action} fehlgeschlagen"
+          detail: "Du bist nicht berechtigt, %{action} für %{resource} auszuführen."
