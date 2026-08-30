@@ -8,7 +8,8 @@ class NotificationMailer < ApplicationMailer
     @frequency = frequency
     @projects, @annotations_and_comments =
       digest_events.values_at :projects, :annotations_and_comments
-    mail(to: @user.email, subject: "Your #{frequency.to_s.capitalize} Manifold Summary")
+    frequency_label = { daily: "Tägliche", weekly: "Wöchentliche" }.fetch(frequency.to_sym, frequency.to_s.capitalize)
+    mail(to: @user.email, subject: "Deine #{frequency_label} Manifold-Zusammenfassung")
   end
 
   def flag_notification(user, resource, message)
@@ -16,33 +17,33 @@ class NotificationMailer < ApplicationMailer
     @resource = resource.decorate
     @kind = resource.class.name.downcase
     @message = message
-    subject = "#{indefinite_article_for @kind} #{@kind} has been flagged"
+    subject = "Ein Inhalt wurde gemeldet"
     mail(to: @user.email, subject: subject)
   end
 
   def comment_notification(user, comment)
     user_assignment user
     @comment = comment.decorate
-    mail(to: @user.email, subject: "A comment has been made on #{@comment.title}")
+    mail(to: @user.email, subject: "Ein Kommentar wurde zu #{@comment.title} verfasst")
   end
 
   def annotation_notification(user, annotation)
     user_assignment user
     @annotation = annotation.decorate
-    mail(to: @user.email, subject: "An annotation has been made on #{@annotation.text_title}")
+    mail(to: @user.email, subject: "Eine Annotation wurde zu #{@annotation.text_title} erstellt")
   end
 
   def reply_notification(user, comment)
     user_assignment user
     @comment = comment.decorate
-    subject = "Someone replied to your comment on #{@comment.title}"
+    subject = "Jemand hat auf deinen Kommentar zu #{@comment.title} geantwortet"
     mail(to: @user.email, subject: subject)
   end
 
   def reading_group_join_notification(user, reading_group_membership)
     user_assignment user
     @reading_group_membership = reading_group_membership.decorate
-    subject = "Someone joined your reading group \"#{@reading_group_membership.reading_group_name}\""
+    subject = "Jemand ist deiner Lesegruppe \"#{@reading_group_membership.reading_group_name}\" beigetreten"
     mail(to: @user.email, subject: subject)
   end
 
@@ -51,12 +52,5 @@ class NotificationMailer < ApplicationMailer
   def user_assignment(user)
     @user = user
     @unsubscribe_token = UnsubscribeToken.generate user
-  end
-
-  # Roughly...
-  def indefinite_article_for(name)
-    return "A " unless %w(a e i o u).include? name.first
-
-    "An "
   end
 end
