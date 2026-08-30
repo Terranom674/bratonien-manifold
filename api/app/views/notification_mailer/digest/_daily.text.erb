@@ -1,11 +1,12 @@
 
-Here's your daily Manifold activity update:
+Hier ist deine tägliche Manifold-Aktivitätsübersicht:
 
+<% labels = { "Text" => "Texte", "Resource" => "Ressourcen", "Collection" => "Sammlungen", "Annotation" => "Annotationen", "Comment" => "Kommentare" } %>
 <% if @projects.present? %>
 <% @projects.each do |project, events| %>
 <%= render "notification_mailer/digest/daily/project_header", project: project.decorate %>
 <% events.group_by(&:subject_type).each do |event_type, event_list| %>
-New <%= event_type.pluralize %>:
+Neue <%= labels.fetch(event_type, event_type.pluralize) %>:
 -----------------------------------------------------------
 <% event_list.each do |event| %>
 <%= render "notification_mailer/digest/daily/#{event_type.downcase}_event", event: event %>
@@ -14,7 +15,7 @@ New <%= event_type.pluralize %>:
 <% if @annotations_and_comments.present? %>
 <% @annotations_and_comments.select {|subject_project| subject_project == project}.each do |_subject_project, interaction_events| %>
 <% interaction_events.group_by(&:subject_type).each do |event_type, event_list| %>
-New <%= event_type.pluralize %>:
+Neue <%= labels.fetch(event_type, event_type.pluralize) %>:
 -----------------------------------------------------------
 <% event_list.each do |event| %>
 <%= render "notification_mailer/digest/daily/#{event_type.downcase}_event", event: event %>
@@ -31,7 +32,7 @@ New <%= event_type.pluralize %>:
 <% @annotations_and_comments.each do |project, events| %>
 <%= render "notification_mailer/digest/daily/project_header", project: project.decorate %>
 <% events.group_by(&:subject_type).each do |event_type, event_list| %>
-New <%= event_type.pluralize %>:
+Neue <%= labels.fetch(event_type, event_type.pluralize) %>:
 <% event_list.each do |event| %>
 <%= render "notification_mailer/digest/daily/#{event_type.downcase}_event", event: event %>
 <% end %>
