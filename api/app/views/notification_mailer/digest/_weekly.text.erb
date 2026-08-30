@@ -1,12 +1,13 @@
 
-Here's your weekly Manifold activity update:
+Hier ist deine wöchentliche Manifold-Aktivitätsübersicht:
+<% labels = { "Text" => ["Text", "Texte"], "Resource" => ["Ressource", "Ressourcen"], "Collection" => ["Sammlung", "Sammlungen"], "Annotation" => ["Annotation", "Annotationen"], "Comment" => ["Kommentar", "Kommentare"] } %>
 <% @projects&.each do |project, events| %><% project = project.decorate %>
-<% counted = events.group_by(&:subject_type).map {|type, list| pluralize(list.length, type)} %>
-* <%= counted.to_sentence %> added to "<%= project.title %>"
+<% counted = events.group_by(&:subject_type).map {|type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}"} %>
+* <%= counted.to_sentence %> zu "<%= project.title %>" hinzugefügt
 > <%= project.url %>
 <% end %>
 <% @annotations_and_comments&.each do |project, events| %><% project = project.decorate %>
-<% counted = events.group_by(&:subject_type).map {|type, list| pluralize(list.length, type)} %>
-* <%= counted.to_sentence %> added to "<%= project.title %>"
+<% counted = events.group_by(&:subject_type).map {|type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}"} %>
+* <%= counted.to_sentence %> zu "<%= project.title %>" hinzugefügt
 > <%= project.url %>
 <% end %>
