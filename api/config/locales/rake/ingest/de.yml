@@ -1,0 +1,5 @@
+de:
+  rake:
+    ingest:
+      errors:
+        missing_path: "Ein Pfad zu einer importierbaren Datei muss angegeben werden: `rake manifold:ingest[PATH]`"
