@@ -1,12 +1,12 @@
-The following <%= @kind %> in "<%= @resource.project.title.titleize %>" has been flagged <%= @resource.flags_count %> <%= "time".pluralize(@resource.flags_count) %>.
+Der folgende <%= @kind %>-Inhalt in "<%= @resource.project.title.titleize %>" wurde <%= @resource.flags_count %>-mal gemeldet.
 
 -----------------------------------------------------------
 <%= @resource.body %>
 -----------------------------------------------------------
 
 <% if @message %>
-User message: <%= @message %>
+Benutzernachricht: <%= @message %>
 <% end %>
 
-To view the <%= @kind %>, copy and paste the following URL into your browser:
+Um den Inhalt anzusehen, kopiere die folgende URL und füge sie in deinen Browser ein:
 <%= @resource.subject_url %>
