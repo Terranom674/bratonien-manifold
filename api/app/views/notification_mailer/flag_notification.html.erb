@@ -1,5 +1,5 @@
 <div>
-  The following <%= @kind %> in <a href="<%= @resource.subject_url %>"><%= sanitize @resource.project.title %></a> has been flagged <%= @resource.flags_count %> <%= "time".pluralize(@resource.flags_count) %>.
+  Der folgende <%= @kind %>-Inhalt in <a href="<%= @resource.subject_url %>"><%= sanitize @resource.project.title %></a> wurde <%= @resource.flags_count %>-mal gemeldet.
 
   <div>
     <p style="margin-top: 15px; margin-bottom: 0;">
@@ -10,7 +10,7 @@
   <% if @message %>
     <div style="margin-top: 30px; margin-bottom: 30px;">
       <span style="display: block; margin-top: 15px;">
-        With the latest flag, the user included this comment:
+        Bei der letzten Meldung hat der Benutzer folgenden Kommentar hinzugefügt:
       </span>
       <p><em><%= @message %></em></p>
     </div>
