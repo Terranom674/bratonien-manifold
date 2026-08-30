@@ -1,5 +1,5 @@
 <div>
-  <%= @comment.creator&.full_name || "A deleted user" %> replied to your comment on <a href="<%= @comment.subject_url %>"><%= @comment.title %></a>.
+  <%= @comment.creator&.full_name || "Ein gelöschter Benutzer" %> hat auf deinen Kommentar zu <a href="<%= @comment.subject_url %>"><%= @comment.title %></a> geantwortet.
 
   <p style="margin-top: 15px; margin-bottom: 0;">
     <em><%= @comment.body %></em>
