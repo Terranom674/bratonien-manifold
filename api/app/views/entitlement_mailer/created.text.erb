@@ -1,5 +1,5 @@
-You have been granted access <%= @subject_description %>.
+Dir wurde Zugriff <%= @subject_description %> gewährt.
 
 <%- if @entitlement.expirable? -%>
-This will expire on <%= @entitlement.expires_on.to_s(:long) %> (<%= @entitlement.expires_on.iso8601 %>).
+Dieser Zugriff läuft am <%= @entitlement.expires_on.to_s(:long) %> (<%= @entitlement.expires_on.iso8601 %>) ab.
 <%- end -%>
