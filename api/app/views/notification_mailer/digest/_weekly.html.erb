@@ -1,20 +1,21 @@
-Here's your weekly <strong>Manifold</strong> activity update:
+Hier ist deine wöchentliche <strong>Manifold</strong>-Aktivitätsübersicht:
 
+<% labels = { "Text" => ["Text", "Texte"], "Resource" => ["Ressource", "Ressourcen"], "Collection" => ["Sammlung", "Sammlungen"], "Annotation" => ["Annotation", "Annotationen"], "Comment" => ["Kommentar", "Kommentare"] } %>
 <div>
   <ul class="event-list">
     <% @projects&.each do |project, events| %>
       <% project = project.decorate %>
       <li>
-        <% counted = events.group_by(&:subject_type).map { |type, list| pluralize(list.length, type) } %>
-        <%= counted.to_sentence %> added to <a href="<%= project.url %>"><%= project.title %></a>
+        <% counted = events.group_by(&:subject_type).map { |type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}" } %>
+        <%= counted.to_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
       </li>
     <% end %>
 
     <% @annotations_and_comments&.each do |project, events| %>
       <% project = project.decorate %>
       <li>
-        <% counted = events.group_by(&:subject_type).map { |type, list| pluralize(list.length, type) } %>
-        <%= counted.to_sentence %> added to <a href="<%= project.url %>"><%= project.title %></a>
+        <% counted = events.group_by(&:subject_type).map { |type, list| label = labels.fetch(type, [type, type.pluralize]); "#{list.length} #{list.length == 1 ? label.first : label.last}" } %>
+        <%= counted.to_sentence %> zu <a href="<%= project.url %>"><%= project.title %></a> hinzugefügt
       </li>
     <% end %>
   </ul>
