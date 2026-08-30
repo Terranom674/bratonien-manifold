@@ -1,9 +1,9 @@
 <p>
-  Hi <%= @identifier %>,
+  Hallo <%= @identifier %>,
 </p>
 <p>
-  You have been granted pending access <%= @subject_description %> on <%= @installation_name.inspect %>, a Manifold installation.
-  Create and verify an account with this same email address in order to view your content.
+  Dir wurde ein ausstehender Zugriff <%= @subject_description %> auf <%= @installation_name.inspect %>, einer Manifold-Installation, gewährt.
+  Erstelle und bestätige ein Konto mit derselben E-Mail-Adresse, um auf deine Inhalte zugreifen zu können.
 </p>
 <%= render partial: "partials/email/spacer", locals: { height: 10 } %>
-<%= render partial: "partials/email/button", locals: { text: "Login", url: @client_url } %>
+<%= render partial: "partials/email/button", locals: { text: "Anmelden", url: @client_url } %>
