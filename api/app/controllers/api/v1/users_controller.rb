@@ -29,8 +29,9 @@ module API
       end
 
       def create
-        @user = ::Updaters::User.new(user_params).update(User.new)
-        created_by_admin = user_params.dig("data", "meta", "created_by_admin") == true
+        create_params = public_signup? ? public_signup_params : user_params
+        @user = ::Updaters::User.new(create_params).update(User.new)
+        created_by_admin = create_params.dig("data", "meta", "created_by_admin") == true
         AccountMailer.welcome(@user, created_by_admin: created_by_admin).deliver if @user.valid?
         render_single_resource @user
       end
@@ -44,6 +45,30 @@ module API
       def destroy
         @user = load_and_authorize_user
         @user.destroy
+      end
+
+      private
+
+      def public_signup?
+        @current_user.blank?
+      end
+
+      def public_signup_params
+        user_params.deep_dup.tap do |safe_params|
+          attributes = safe_params.dig("data", "attributes")
+          if attributes
+            attributes.delete("role")
+            attributes.delete(:role)
+            attributes.delete("kind")
+            attributes.delete(:kind)
+          end
+
+          meta = safe_params.dig("data", "meta")
+          if meta
+            meta.delete("created_by_admin")
+            meta.delete(:created_by_admin)
+          end
+        end
       end
     end
   end
