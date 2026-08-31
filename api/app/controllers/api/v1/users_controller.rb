@@ -57,10 +57,18 @@ module API
         user_params.deep_dup.tap do |safe_params|
           attributes = safe_params.dig("data", "attributes")
           if attributes
-            attributes.delete("role")
+            attributes["role"] = "reader"
             attributes.delete(:role)
             attributes.delete("kind")
             attributes.delete(:kind)
+            attributes.delete("admin_verified")
+            attributes.delete(:admin_verified)
+            attributes.delete("verified_by_admin_at")
+            attributes.delete(:verified_by_admin_at)
+            attributes.delete("established")
+            attributes.delete(:established)
+            attributes.delete("trusted")
+            attributes.delete(:trusted)
           end
 
           meta = safe_params.dig("data", "meta")
