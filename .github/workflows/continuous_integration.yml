@@ -1,15 +1,8 @@
 name: Continuous Integration
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
+  workflow_dispatch:
+
 env:
   BROWSERSLIST_IGNORE_OLD_DATA: beQuiet
   DISABLE_SPRING: yes
