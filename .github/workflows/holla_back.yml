@@ -2,8 +2,7 @@ name: Holla Back Bot
 
 # To trigger this workflow, post a comment like @bot bug
 on:
-  issue_comment:
-    types: [created]
+  workflow_dispatch:
 
 jobs:
   issue-auto-reply:
