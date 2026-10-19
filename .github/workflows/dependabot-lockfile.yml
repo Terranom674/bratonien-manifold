@@ -1,9 +1,7 @@
 name: Update Yarn Lockfile for Dependabot
 
 on:
-  pull_request:
-    paths:
-      - "client/package.json"
+  workflow_dispatch:
 
 permissions:
   contents: write

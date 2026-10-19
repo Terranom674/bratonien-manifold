@@ -1,11 +1,6 @@
 name: "Build & Push Docker"
 
 on:
-  push:
-    branches:
-      - edge # Edge, tags as "edge"; next major version; deploys to edge.manifoldapp.org
-      - main # Preview, tags as "preview"; bugfix/minor version preview; deploys to preview.manifoldapp.org
-      - release # Stable production build, tags as "latest" and "<semver>" from MANIFOLD_VERSION
   workflow_dispatch: # Allows this workflow to be triggered by release-please
 
 concurrency:
